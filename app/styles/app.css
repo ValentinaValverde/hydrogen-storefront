@@ -471,3 +471,56 @@ aside li {
 .account-logout {
   display: inline-block;
 }
+
+
+/*
+* --------------------------------------------------
+* my styles :)
+* --------------------------------------------------
+*/
+
+.ourMessageContainer{
+  display: flex;
+  margin: 20px;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  .block{
+    width: 400px;
+    max-width: 90%;
+  }
+
+  .ourMessage{
+    font-size: 75px;
+  }
+
+  .ourMessageScript{
+    text-align: right;
+    margin: 10px;
+  }
+}
+
+
+.aboutUsContainer{
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+
+  h1{
+    font-size: 50px;
+  }
+
+  .pTag{
+    margin: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  /* img{
+    border: solid black;
+  } */
+}

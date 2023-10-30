@@ -1,8 +1,6 @@
 import { Link } from "@remix-run/react";
 import { Image } from "@shopify/hydrogen";
 
-
-
  export default function FeaturedCollection({collection}) {
  if (!collection) return null;
  const image = collection?.image;
@@ -28,5 +26,3 @@ import { Image } from "@shopify/hydrogen";
 // *   collection: FeaturedCollectionFragment;
 // * }}
 // */
-
-

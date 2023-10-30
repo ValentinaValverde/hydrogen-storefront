@@ -2,6 +2,8 @@ import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import FeaturedCollection from '~/components/FeaturedCollection';
 import RecommendedProducts from '~/components/RecommendedProducts';
+import OurMessage from '~/components/OurMessage';
+import AboutUs from '~/components/AboutUs';
 
 // /**
 //  * @type {V2_MetaFunction}
@@ -17,9 +19,9 @@ export const meta = () => {
 
 export async function loader({context}) {
   const {storefront} = context;
-  const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY);
+  const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY); //reference to graphql
   const featuredCollection = collections.nodes[0];
-  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
+  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
 
   return defer({featuredCollection, recommendedProducts});
 }
@@ -29,8 +31,11 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home">
-      <FeaturedCollection collection={data.featuredCollection} />
-      <RecommendedProducts products={data.recommendedProducts} />
+      <OurMessage />
+      <AboutUs />
+
+      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+      {/* <RecommendedProducts products={data.recommendedProducts} /> */}
     </div>
   );
 }

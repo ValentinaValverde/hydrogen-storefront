@@ -2,7 +2,6 @@ import { Link, Await } from "@remix-run/react";
 import { Image, Money } from "@shopify/hydrogen";
 import { Suspense } from "react";
 
-
 export default function RecommendedProducts({products}) {
  return (
    <div className="recommended-products">
