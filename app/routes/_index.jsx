@@ -38,53 +38,70 @@ export default function Homepage() {
  *   collection: FeaturedCollectionFragment;
  * }}
  */
+
+//feels as though this could be moved into it's own seperate file... 
 function FeaturedCollection({collection}) {
   if (!collection) return null;
   const image = collection?.image;
   return (
     <Link
       className="featured-collection"
-      to={`/collections/${collection.handle}`}
+      to={'/collections/'} //took out ${collection.handle} after the slash
     >
-      {image && (
+      {/* {image && (   -seems unecessary  */}
         <div className="featured-collection-image">
           <Image data={image} sizes="100vw" />
         </div>
-      )}
-      <h1>{collection.title}</h1>
+      {/* )}  -seems unecessary */} 
+      <h1>Collections</h1>
     </Link>
   );
 }
+
+
 
 /**
  * @param {{
  *   products: Promise<RecommendedProductsQuery>;
  * }}
  */
+//feels as though this could be moved into it's own seperate file... 
 function RecommendedProducts({products}) {
   return (
     <div className="recommended-products">
       <h2>Recommended Products</h2>
+
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
+
+          {/* similar to ((something => {function things})) */}
           {({products}) => (
             <div className="recommended-products-grid">
               {products.nodes.map((product) => (
+                
+                
                 <Link
                   key={product.id}
                   className="recommended-product"
                   to={`/products/${product.handle}`}
                 >
+
+
                   <Image
                     data={product.images.nodes[0]}
                     aspectRatio="1/1"
                     sizes="(min-width: 45em) 20vw, 50vw"
                   />
+
+
                   <h4>{product.title}</h4>
+
+                  {/* <small> tag used for styling */}
                   <small>
                     <Money data={product.priceRange.minVariantPrice} />
                   </small>
                 </Link>
+
               ))}
             </div>
           )}
