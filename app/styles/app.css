@@ -325,9 +325,9 @@ aside li {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
-  @media (min-width: 45em) {
+  /* @media (min-width: 45em) {
     grid-template-columns: repeat(4, 1fr);
-  }
+  } */
 }
 
 .recommended-product img {
@@ -472,14 +472,13 @@ aside li {
   display: inline-block;
 }
 
-
 /*
 * --------------------------------------------------
 * my styles :)
 * --------------------------------------------------
 */
 
-.ourMessageContainer{
+.ourMessageContainer {
   display: flex;
   margin: 20px;
   padding: 10px;
@@ -489,38 +488,40 @@ aside li {
   flex-grow: 1;
   flex-shrink: 1;
 
-  .block{
+  .block {
     width: 400px;
     max-width: 90%;
   }
 
-  .ourMessage{
+  .ourMessage {
     font-size: 75px;
   }
 
-  .ourMessageScript{
+  .ourMessageScript {
     text-align: right;
     margin: 10px;
   }
 }
 
-
-.aboutUsContainer{
+.aboutUsContainer {
   text-align: center;
+  /* border: solid black; */
   margin: 20px;
   padding: 10px;
 
-  h1{
+  h1 {
     font-size: 50px;
   }
 
-  .pTag{
+  .pTag {
     margin: 20px;
     margin-left: 50px;
     margin-right: 50px;
   }
 
-  /* img{
-    border: solid black;
-  } */
+  img {
+    width: 40%;
+    max-width: 80%;
+    clip-path: circle(45%);
+  }
 }

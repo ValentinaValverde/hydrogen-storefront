@@ -1,3 +1,5 @@
+// THIS IS THE WORKING CODE FOR RECOMMENDEDPRODUCTS
+
 import {Link, Await} from '@remix-run/react';
 import {Image, Money} from '@shopify/hydrogen';
 import {Suspense} from 'react';
@@ -31,6 +33,7 @@ export default function RecommendedProducts({products}) {
                     <p>
                       Collections:
                       {product.collections.edges.map((collection) => {
+                        console.log('COLLECTION.NODE: ', collection.node);
                         return <li>{collection.node.title}</li>;
                       })}
                     </p>

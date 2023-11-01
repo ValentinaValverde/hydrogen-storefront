@@ -4,6 +4,8 @@ import FeaturedCollection from '~/components/FeaturedCollection';
 import RecommendedProducts from '~/components/RecommendedProducts';
 import OurMessage from '~/components/OurMessage';
 import AboutUs from '~/components/AboutUs';
+import Beginning from '~/components/Beginning';
+// import Collections from './collections._handle.jsx';
 
 // /**
 //  * @type {V2_MetaFunction}
@@ -20,7 +22,7 @@ export const meta = () => {
 export async function loader({context}) {
   const {storefront} = context;
   const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY); //reference to graphql
-  const featuredCollection = collections.nodes[0];
+  const featuredCollection = collections;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
 
   return defer({featuredCollection, recommendedProducts});
@@ -28,20 +30,18 @@ export async function loader({context}) {
 
 export default function Homepage() {
   /** @type {LoaderReturnData} */
-  const data = useLoaderData();
+  const {recommendedProducts} = useLoaderData();
+
   return (
     <div className="home">
+      <Beginning />
       <OurMessage />
       <AboutUs />
-
-      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
-      {/* <RecommendedProducts products={data.recommendedProducts} /> */}
+      <RecommendedProducts products={recommendedProducts} />
+      {/* <Collections /> */}
     </div>
   );
 }
-
-
-
 
 //graphql things from here on out:
 const FEATURED_COLLECTION_QUERY = `#graphql
@@ -72,6 +72,19 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     id
     title
     handle
+    collections(first: 5){
+      edges{
+        node{
+          id
+          title
+          handle
+          image {
+            id
+          }
+        }
+      }
+    }
+    
     priceRange {
       minVariantPrice {
         amount

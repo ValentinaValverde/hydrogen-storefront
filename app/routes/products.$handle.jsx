@@ -354,11 +354,24 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
 `;
 
 const PRODUCT_FRAGMENT = `#graphql
-  fragment Product on Product {
-    id
-    title
-    vendor
-    handle
+  id
+  title
+  vendor
+  handle
+  collections(first: 5){
+      edges{
+        node{
+          id
+          title
+          handle
+          image {
+            id
+          }
+        }
+      }
+    
+
+
     descriptionHtml
     description
     options {
@@ -393,6 +406,7 @@ const PRODUCT_QUERY = `#graphql
     }
   }
   ${PRODUCT_FRAGMENT}
+
 `;
 
 const PRODUCT_VARIANTS_FRAGMENT = `#graphql
