@@ -1,6 +1,5 @@
 import {Link, Await} from '@remix-run/react';
 import {Suspense} from 'react';
-import {Image} from '@shopify/hydrogen';
 
 export default function HomeCollections({collections}) {
   return (
@@ -19,12 +18,13 @@ export default function HomeCollections({collections}) {
                     return (
                       <>
                         <div className="collectionCard">
-                          <Image
-                            data={collections.images}
-                            aspectRatio="1/1"
+                          <Link
                             key={something.id}
-                          />
-                          <p key={something.id}>{something.title}</p>
+                            to={`collections/${something.handle}`}
+                          >
+                            <img src={something.image.url} />
+                            <p>{something.title}</p>
+                          </Link>
                         </div>
                       </>
                     );
