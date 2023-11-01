@@ -4,6 +4,7 @@
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
   --header-height: 64px;
+  color: white;
   --color-dark: #000;
   --color-light: #fff;
 }
@@ -478,19 +479,20 @@ aside li {
 * --------------------------------------------------
 */
 
-/* .home {
-  background: linear-gradient(black 0 25%, white 0);
-} */
+body {
+  background-color: #252422;
+  color: white;
+}
 
 .malovaContainer {
   color: black;
   height: 600px;
-  /* background-image: url('https://img.freepik.com/premium-photo/row-white-t-shirts-hangers-hanging-rack_93675-117172.jpg'); */
-  background-color: aliceblue;
+  background-color: black;
+  /* box-shadow: 0px 10px 5px black; */
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   .container {
@@ -498,11 +500,24 @@ aside li {
     text-align: center;
   }
 
+  .containerOne {
+    height: 600px;
+    width: 800px;
+    max-width: 60%;
+    box-shadow: inset 0px 0px 45px 10px black;
+    background-image: url('/not_okay.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+
   h1 {
     font-size: 75px;
+    color: white;
   }
+
   button {
-    background-color: gainsboro;
+    background-color: #f90093;
     width: 150px;
     height: 50px;
     color: white;
@@ -510,7 +525,18 @@ aside li {
       Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
       sans-serif;
     border-radius: 5px;
+    border: #c60f7b solid 3px;
   }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+.ourMessageScreen {
+  width: 90%;
+  margin: 50px;
+  display: flex;
 }
 
 .ourMessageContainer {
@@ -522,9 +548,11 @@ aside li {
   flex-wrap: wrap;
   flex-grow: 1;
   flex-shrink: 1;
+  width: 80%;
+  height: 400px;
 
-  background-color: gainsboro;
-  color: black;
+  background-color: #403d39;
+  box-shadow: -5px 5px 5px black;
   border-radius: 5px;
 
   .block {
@@ -541,14 +569,19 @@ aside li {
   .ourMessageScript {
     text-align: right;
     margin: 10px;
+    color: #e5ece9;
   }
 }
 
 .aboutUsContainer {
   text-align: center;
-  /* border: solid black; */
   margin: 20px;
   padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
   h1 {
     font-size: 50px;
@@ -558,11 +591,26 @@ aside li {
     margin: 20px;
     margin-left: 50px;
     margin-right: 50px;
+    color: #e5ece9;
   }
 
   img {
-    width: 40%;
     max-width: 80%;
     clip-path: circle(45%);
+  }
+
+  .tag-wrap {
+    filter: drop-shadow(-1px 10px 30px black);
+  }
+
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container {
+    width: 600px;
+    max-width: 90%;
   }
 }

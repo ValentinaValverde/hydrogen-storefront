@@ -5,7 +5,7 @@ import RecommendedProducts from '~/components/RecommendedProducts';
 import OurMessage from '~/components/OurMessage';
 import AboutUs from '~/components/AboutUs';
 import Beginning from '~/components/Beginning';
-// import Collections from './collections._handle.jsx';
+import HomeCollections from '~/components/HomeCollections';
 
 // /**
 //  * @type {V2_MetaFunction}
@@ -25,20 +25,24 @@ export async function loader({context}) {
   const featuredCollection = collections;
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
 
-  return defer({featuredCollection, recommendedProducts});
+  const mainCollections = storefront.query(COLLECTIONS_QUERY); //reference to graphql
+  const main = mainCollections;
+
+  return defer({featuredCollection, recommendedProducts, main});
 }
 
 export default function Homepage() {
   /** @type {LoaderReturnData} */
-  const {recommendedProducts} = useLoaderData();
-
+  const {recommendedProducts, main} = useLoaderData();
+  console.log(main);
   return (
     <div className="home">
       <Beginning />
       <OurMessage />
       <AboutUs />
       {/* <RecommendedProducts products={recommendedProducts} /> */}
-      {/* <Collections /> */}
+      <FeaturedCollection />
+      <HomeCollections />
     </div>
   );
 }
@@ -106,6 +110,46 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     products(first: 4, sortKey: UPDATED_AT, reverse: true) {
       nodes {
         ...RecommendedProduct
+      }
+    }
+  }
+`;
+
+const COLLECTIONS_QUERY = `#graphql
+  fragment Collection on Collection {
+    id
+    title
+    handle
+    image {
+      id
+      url
+      altText
+      width
+      height
+    }
+  }
+  query StoreCollections(
+    $country: CountryCode
+    $endCursor: String
+    $first: Int
+    $language: LanguageCode
+    $last: Int
+    $startCursor: String
+  ) @inContext(country: $country, language: $language) {
+    collections(
+      first: $first,
+      last: $last,
+      before: $startCursor,
+      after: $endCursor
+    ) {
+      nodes {
+        ...Collection
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
       }
     }
   }
