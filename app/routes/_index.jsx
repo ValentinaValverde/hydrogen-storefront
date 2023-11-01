@@ -27,15 +27,14 @@ export async function loader({context}) {
   const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
 
   const mainCollections = storefront.query(COLLECTIONS_QUERY); //reference to graphql
-  const main = mainCollections;
 
-  return defer({featuredCollection, recommendedProducts, main});
+  return defer({featuredCollection, recommendedProducts, mainCollections});
 }
 
 export default function Homepage() {
   /** @type {LoaderReturnData} */
-  const {recommendedProducts, main} = useLoaderData();
-  console.log(main);
+  const {recommendedProducts, mainCollections} = useLoaderData();
+  console.log(mainCollections);
   return (
     <div className="home">
       <Beginning />
@@ -43,7 +42,7 @@ export default function Homepage() {
       <AboutUs />
       {/* <RecommendedProducts products={recommendedProducts} /> */}
       <FeaturedCollection />
-      <HomeCollections />
+      <HomeCollections collections={mainCollections} />
       <Connect />
     </div>
   );
@@ -118,43 +117,41 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
 `;
 
 const COLLECTIONS_QUERY = `#graphql
-  fragment Collection on Collection {
+fragment Collection on Collection {
+  id
+  title
+  handle
+  image {
     id
-    title
-    handle
-    image {
-      id
-      url
-      altText
-      width
-      height
+    url
+    altText
+    width
+    height
+  }
+}
+query StoreCollections(
+  $country: CountryCode
+  $endCursor: String
+  $language: LanguageCode
+  $startCursor: String
+) @inContext(country: $country, language: $language) {
+  collections(
+    first: 10,
+    before: $startCursor,
+    after: $endCursor
+  ) {
+    nodes {
+      ...Collection
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+      startCursor
+      endCursor
     }
   }
-  query StoreCollections(
-    $country: CountryCode
-    $endCursor: String
-    $first: Int
-    $language: LanguageCode
-    $last: Int
-    $startCursor: String
-  ) @inContext(country: $country, language: $language) {
-    collections(
-      first: $first,
-      last: $last,
-      before: $startCursor,
-      after: $endCursor
-    ) {
-      nodes {
-        ...Collection
-      }
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
-        startCursor
-        endCursor
-      }
-    }
-  }
+}
+
 `;
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderArgs} LoaderArgs */

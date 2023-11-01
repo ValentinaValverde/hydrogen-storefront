@@ -3,7 +3,7 @@ export default function AboutUs() {
     <>
       <div className="aboutUsContainer">
         <div className="container">
-          <span class="tag-wrap">
+          <span className="tag-wrap">
             <img src="./CreatorImage.JPG" alt="creatorImage" />
           </span>
         </div>

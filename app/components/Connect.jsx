@@ -4,7 +4,7 @@ export default function Connect() {
   return (
     <>
       <div className="connect">
-        <h1>Connect with us!</h1>
+        <h1>Connect with Us!</h1>
         <p className="connectScript">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error
           ducimus culpa sapiente rem quidem accusantium nihil ipsam nulla magnam
@@ -24,7 +24,7 @@ export default function Connect() {
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-instagram"
+              className="bi bi-instagram"
               viewBox="0 0 16 16"
               className="igLogo"
             >
