@@ -37,7 +37,7 @@ export default function Homepage() {
       <Beginning />
       <OurMessage />
       <AboutUs />
-      <RecommendedProducts products={recommendedProducts} />
+      {/* <RecommendedProducts products={recommendedProducts} /> */}
       {/* <Collections /> */}
     </div>
   );

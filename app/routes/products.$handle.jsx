@@ -76,6 +76,7 @@ export async function loader({params, request, context}) {
     variables: {handle},
   });
 
+  console.log('PRODUCT: ', product);
   return defer({product, variants});
 }
 
@@ -150,30 +151,9 @@ function ProductMain({selectedVariant, product, variants}) {
   return (
     <div className="product-main">
       <h1>{title}</h1>
-      <ProductPrice selectedVariant={selectedVariant} />
+      {/* <ProductPrice selectedVariant={selectedVariant} /> */}
       <br />
-      <Suspense
-        fallback={
-          <ProductForm
-            product={product}
-            selectedVariant={selectedVariant}
-            variants={[]}
-          />
-        }
-      >
-        <Await
-          errorElement="There was a problem loading product variants"
-          resolve={variants}
-        >
-          {(data) => (
-            <ProductForm
-              product={product}
-              selectedVariant={selectedVariant}
-              variants={data.product?.variants.nodes || []}
-            />
-          )}
-        </Await>
-      </Suspense>
+
       <br />
       <br />
       <p>
@@ -295,24 +275,25 @@ function ProductOptions({option}) {
  */
 function AddToCartButton({analytics, children, disabled, lines, onClick}) {
   return (
-    <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
-      {(fetcher) => (
-        <>
-          <input
-            name="analytics"
-            type="hidden"
-            value={JSON.stringify(analytics)}
-          />
-          <button
-            type="submit"
-            onClick={onClick}
-            disabled={disabled ?? fetcher.state !== 'idle'}
-          >
-            {children}
-          </button>
-        </>
-      )}
-    </CartForm>
+    // <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
+    //   {(fetcher) => (
+    //     <>
+    //       <input
+    //         name="analytics"
+    //         type="hidden"
+    //         value={JSON.stringify(analytics)}
+    //       />
+    //       <button
+    //         type="submit"
+    //         onClick={onClick}
+    //         disabled={disabled ?? fetcher.state !== 'idle'}
+    //       >
+    //         {children}
+    //       </button>
+    //     </>
+    //   )}
+    // </CartForm>
+    <p>CART</p>
   );
 }
 
@@ -358,23 +339,21 @@ const PRODUCT_FRAGMENT = `#graphql
   title
   vendor
   handle
+  descriptionHtml
+  description
   collections(first: 5){
-      edges{
-        node{
+    edges{
+      node{
+        id
+        title
+        handle
+        image {
           id
-          title
-          handle
-          image {
-            id
-          }
         }
       }
-    
-
-
-    descriptionHtml
-    description
-    options {
+    }
+  }
+  options {
       name
       values
     }

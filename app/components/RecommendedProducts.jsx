@@ -25,16 +25,15 @@ export default function RecommendedProducts({products}) {
                       aspectRatio="1/1"
                       sizes="(min-width: 45em) 20vw, 50vw"
                     />
-
                     <h4>{product.title}</h4>
-
-                    <p>
-                      Collections:
-                      {product.collections.edges.map((collection) => {
-                        return <li>{collection.node.title}</li>;
-                      })}
-                    </p>
-
+                    Collections:
+                    {product.collections.edges.map((collection) => {
+                      return (
+                        <li key={collection.node.id}>
+                          {collection.node.title}
+                        </li>
+                      );
+                    })}
                     <small>
                       <Money data={product.priceRange.minVariantPrice} />
                     </small>
