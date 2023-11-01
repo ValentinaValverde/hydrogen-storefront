@@ -6,6 +6,7 @@ import OurMessage from '~/components/OurMessage';
 import AboutUs from '~/components/AboutUs';
 import Beginning from '~/components/Beginning';
 import HomeCollections from '~/components/HomeCollections';
+import Connect from '~/components/Connect';
 
 // /**
 //  * @type {V2_MetaFunction}
@@ -43,6 +44,7 @@ export default function Homepage() {
       {/* <RecommendedProducts products={recommendedProducts} /> */}
       <FeaturedCollection />
       <HomeCollections />
+      <Connect />
     </div>
   );
 }
