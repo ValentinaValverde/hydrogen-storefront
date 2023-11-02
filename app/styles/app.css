@@ -502,13 +502,16 @@ body {
   justify-content: space-around;
   align-items: center;
 
-  .container {
-    width: 40%;
+  .malovaSubContainer {
+    width: 600px;
     text-align: center;
+    /* background-color: #c60f7b; */
+    /* position: absolute; */
+    text-shadow: black 1px 0 10px;
   }
 
-  .containerOne {
-    height: 600px;
+  .malovaContainerBackground {
+    height: 100%;
     width: 800px;
     max-width: 60%;
     box-shadow: inset 0px 0px 45px 10px black;
@@ -542,10 +545,23 @@ body {
   }
 }
 
+@media (width <= 800px) {
+  .malovaSubContainer {
+    position: absolute;
+  }
+
+  .malovaContainerBackground {
+    display: none;
+  }
+}
+
 .ourMessageScreen {
   width: 90%;
   margin: 50px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #c60f7b; */
 }
 
 .ourMessageContainer {
@@ -557,7 +573,8 @@ body {
   flex-wrap: wrap;
   flex-grow: 1;
   flex-shrink: 1;
-  width: 100%;
+  width: 90%;
+  max-width: 90%;
 
   background-color: gainsboro;
   color: black;
@@ -584,6 +601,12 @@ body {
   }
 }
 
+@media (width <= 800px) {
+  .ourMessageContainer {
+    margin: 0px;
+  }
+}
+
 .aboutUsContainer {
   padding: 10px;
   background-color: #403d39;
@@ -605,7 +628,15 @@ body {
 
   img {
     height: 600px;
+    max-width: 90%;
     border-radius: 0%;
+  }
+
+  @media (width <= 800px) {
+    img {
+      height: auto;
+      width: auto;
+    }
   }
 
   .heart {
@@ -658,6 +689,13 @@ body {
     height: auto;
     width: 30%;
     max-width: 90%;
+  }
+
+  @media (width <= 800px) {
+    .collectionCard {
+      margin: 10px;
+      width: 125px;
+    }
   }
 
   img {
@@ -771,5 +809,13 @@ body {
 
   .igLogoContainer:hover .igImageLogo {
     opacity: 1;
+  }
+
+  @media (width <= 800px) {
+    .igLogoContainer {
+      height: 100px;
+      width: 100px;
+      margin: 5px;
+    }
   }
 }

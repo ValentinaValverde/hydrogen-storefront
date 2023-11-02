@@ -2,9 +2,9 @@ export default function Beginning() {
   return (
     <>
       <div className="malovaContainer">
-        <div className="containerOne">{/* <img src="/not_okay.png" /> */}</div>
+        <div className="malovaContainerBackground"></div>
 
-        <div className="container">
+        <div className="malovaSubContainer">
           <h1>
             Malova <br></br> Designs
           </h1>
