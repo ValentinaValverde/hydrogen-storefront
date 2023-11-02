@@ -7,6 +7,7 @@ import AboutUs from '~/components/AboutUs';
 import Beginning from '~/components/Beginning';
 import HomeCollections from '~/components/HomeCollections';
 import Connect from '~/components/Connect';
+import '../fonts/ClassicalDiary-Regular.ttf';
 
 // /**
 //  * @type {V2_MetaFunction}

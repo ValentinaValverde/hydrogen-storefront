@@ -151,10 +151,7 @@ function ProductMain({selectedVariant, product, variants}) {
   return (
     <div className="product-main">
       <h1>{title}</h1>
-      {/* <ProductPrice selectedVariant={selectedVariant} /> */}
-      <br />
-
-      <br />
+      <ProductPrice selectedVariant={selectedVariant} />
       <br />
       <p>
         <strong>Description</strong>
@@ -162,6 +159,28 @@ function ProductMain({selectedVariant, product, variants}) {
       <br />
       <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
       <br />
+      <Suspense
+        fallback={
+          <ProductForm
+            product={product}
+            selectedVariant={selectedVariant}
+            variants={[]}
+          />
+        }
+      >
+        <Await
+          errorElement="There was a problem loading product variants"
+          resolve={variants}
+        >
+          {(data) => (
+            <ProductForm
+              product={product}
+              selectedVariant={selectedVariant}
+              variants={data.product?.variants.nodes || []}
+            />
+          )}
+        </Await>
+      </Suspense>
     </div>
   );
 }
@@ -275,25 +294,31 @@ function ProductOptions({option}) {
  */
 function AddToCartButton({analytics, children, disabled, lines, onClick}) {
   return (
-    // <CartForm route="/cart" inputs={{lines}} action={CartForm.ACTIONS.LinesAdd}>
-    //   {(fetcher) => (
-    //     <>
-    //       <input
-    //         name="analytics"
-    //         type="hidden"
-    //         value={JSON.stringify(analytics)}
-    //       />
-    //       <button
-    //         type="submit"
-    //         onClick={onClick}
-    //         disabled={disabled ?? fetcher.state !== 'idle'}
-    //       >
-    //         {children}
-    //       </button>
-    //     </>
-    //   )}
-    // </CartForm>
-    <p>CART</p>
+    <>
+      <CartForm
+        route="/cart"
+        inputs={{lines}}
+        action={CartForm.ACTIONS.LinesAdd}
+      >
+        {(fetcher) => (
+          <>
+            <input
+              name="analytics"
+              type="hidden"
+              value={JSON.stringify(analytics)}
+            />
+            <button
+              type="submit"
+              onClick={onClick}
+              disabled={disabled ?? fetcher.state !== 'idle'}
+            >
+              {children}
+            </button>
+          </>
+        )}
+      </CartForm>
+      <p>CART</p>
+    </>
   );
 }
 
