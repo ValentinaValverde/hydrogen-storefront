@@ -1,7 +1,5 @@
 import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import FeaturedCollection from '~/components/FeaturedCollection';
-import RecommendedProducts from '~/components/RecommendedProducts';
 import OurMessage from '~/components/OurMessage';
 import AboutUs from '~/components/AboutUs';
 import Beginning from '~/components/Beginning';
@@ -41,8 +39,6 @@ export default function Homepage() {
       <Beginning />
       <OurMessage />
       <AboutUs />
-      {/* <RecommendedProducts products={recommendedProducts} /> */}
-      <FeaturedCollection />
       <HomeCollections collections={mainCollections} />
       <Connect />
     </div>

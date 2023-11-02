@@ -487,6 +487,7 @@ aside li {
 
 body {
   background-color: #252422;
+  /* background-color: #403d39; */
   color: white;
 }
 
@@ -521,6 +522,7 @@ body {
     font-size: 75px;
     color: white;
     font-family: 'Classical_Diary';
+    letter-spacing: 3px;
   }
 
   button {
@@ -555,10 +557,10 @@ body {
   flex-wrap: wrap;
   flex-grow: 1;
   flex-shrink: 1;
-  width: 80%;
-  height: 400px;
+  width: 100%;
 
-  background-color: #403d39;
+  background-color: gainsboro;
+  color: black;
   box-shadow: -5px 5px 5px black;
   border-radius: 5px;
 
@@ -570,21 +572,21 @@ body {
   .ourMessage {
     font-size: 75px;
     font-family: 'Classical_Diary';
+    letter-spacing: 3px;
     /* temporary solution: */
     word-break: break-word;
   }
 
   .ourMessageScript {
     text-align: right;
-    margin: 10px;
-    color: #e5ece9;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
 }
 
 .aboutUsContainer {
-  text-align: center;
-  margin: 20px;
   padding: 10px;
+  background-color: #403d39;
 
   display: flex;
   flex-direction: row;
@@ -594,22 +596,24 @@ body {
   h1 {
     font-size: 50px;
     font-family: 'Classical_Diary';
+    letter-spacing: 3px;
   }
 
   .pTag {
-    margin: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
     color: #e5ece9;
   }
 
   img {
-    max-width: 80%;
-    clip-path: circle(45%);
+    height: 600px;
+    border-radius: 0%;
   }
 
-  .tag-wrap {
-    filter: drop-shadow(-1px 10px 30px black);
+  .heart {
+    color: pink;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+    margin-bottom: 10px;
   }
 
   .aboutUs {
@@ -619,8 +623,13 @@ body {
   }
 
   .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 600px;
     max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -629,6 +638,7 @@ body {
   font-size: 50px;
   margin-top: 50px;
   font-family: 'Classical_Diary';
+  letter-spacing: 3px;
 }
 
 .collectionsContainer {
@@ -640,19 +650,36 @@ body {
   margin-bottom: 100px;
 
   .collectionCard {
-    background-color: gray;
+    background-color: #e5ece9;
     border: solid black;
     text-align: center;
     border-radius: 10px;
     margin: 20px;
     height: auto;
-    width: 40%;
+    width: 30%;
     max-width: 90%;
   }
 
   img {
     width: 100%;
     overflow: hidden;
+  }
+}
+.connectHeader {
+  /* background-color: #e5ece9; */
+  display: flex;
+  justify-content: space-between;
+
+  .igLogoBlock {
+    /* background-color: wheat; */
+    text-align: right;
+    margin: 20px;
+  }
+
+  .igLogo {
+    color: #f90093;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -668,20 +695,25 @@ body {
   h1 {
     font-size: 50px;
     font-family: 'Classical_Diary';
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: #e5ece9;
   }
 
   .followSpan {
     color: white;
   }
 
-  .igLogo {
-    color: #f90093;
-  }
-
   .followUs {
     text-align: center;
     margin: 10px;
     font-family: 'Classical_Diary';
+    letter-spacing: 1px;
   }
   .connectScript {
     margin-left: 50px;

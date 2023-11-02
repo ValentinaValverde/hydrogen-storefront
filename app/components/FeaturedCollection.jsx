@@ -14,7 +14,7 @@ export default function FeaturedCollection({collection}) {
         <Image data={image} sizes="100vw" />
       </div>
       {/* )}  -seems unecessary */}
-      <h1>Collections</h1>
+      <h1>collections</h1>
     </Link>
   );
 }
