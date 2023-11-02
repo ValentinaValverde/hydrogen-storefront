@@ -670,23 +670,43 @@ body {
   .followUs {
     text-align: center;
   }
-
-  .placeholderContainer {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
-  .placeholder {
-    height: 400px;
-    width: 400px;
-    max-width: 90%;
-    background-color: gray;
-    margin: 10px;
-  }
   .connectScript {
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 30px;
+  }
+}
+
+.igPostContainer {
+  display: flex;
+  justify-content: space-around;
+
+  .igPostBlock {
+    width: 400px;
+    max-width: 30%;
+    margin: 1%;
+  }
+
+  .igImage {
+    width: 100%;
+    height: 400px;
+    margin: 1%;
+  }
+
+  .igImage:hover {
+    opacity: 0.5;
+  }
+
+  .igLogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+  }
+
+  .igImageLogo {
+    color: white;
+    /* opacity: 0; */
   }
 }

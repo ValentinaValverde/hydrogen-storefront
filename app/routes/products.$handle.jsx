@@ -335,6 +335,7 @@ const PRODUCT_VARIANT_FRAGMENT = `#graphql
 `;
 
 const PRODUCT_FRAGMENT = `#graphql
+fragment Product on Product {
   id
   title
   vendor

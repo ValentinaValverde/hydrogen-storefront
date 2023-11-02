@@ -9,7 +9,7 @@ export default function AboutUs() {
         </div>
 
         <div className="aboutUs container">
-          <h1 className="aboutUsTitle">About Malova</h1>
+          <h1 className="aboutUsTitle">We're Malova</h1>
 
           <div className="pTag">
             <p>
