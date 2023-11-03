@@ -145,8 +145,11 @@ aside li {
 }
 
 .malovaHomeLinkContainer {
-  /* background-color: #fff; */
   padding: 10px;
+  /* background-color: #f90093; */
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 20px;
 }
 
 .malovaHomeLink {
@@ -167,6 +170,7 @@ aside li {
   padding-right: 10px;
   margin: 20px;
   border-radius: 5px;
+  box-shadow: -1px 1px 3px black;
 }
 
 .navLinks {

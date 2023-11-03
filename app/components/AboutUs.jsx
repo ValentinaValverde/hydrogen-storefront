@@ -23,14 +23,12 @@ export default function AboutUs() {
           <h1 className="aboutUsTitle">We're Malova</h1>
           <div className="pTag">
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid
-              minima ullam fugiat rem doloremque, vel modi quibusdam expedita
-              distinctio ducimus? Ipsa necessitatibus excepturi sapiente
-              corrupti culpa autem! Vero, autem voluptatibus. Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Laboriosam totam doloremque
-              aperiam. Iste quod magni at placeat. Assumenda, error maiores
-              sapiente amet quis inventore, veritatis sint labore quibusdam
-              voluptatem consequuntur.
+              We are a mother-daughter team running a small business to bring
+              awareness to mental health issues in our community. We started in
+              2020, the year of COVID, as that was the year we started to notice
+              mental health issues within our family. What sets us apart from
+              others is that we have a message: Mental Health Matters.{' '}
+              <i>You Matter.</i> And we hope you never forget it.
             </p>
           </div>
         </div>
