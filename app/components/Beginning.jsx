@@ -8,6 +8,9 @@ export default function Beginning() {
           <h1>
             Malova <br></br> Designs
           </h1>
+          <p>
+            <i>mental health matters</i>
+          </p>
           <button>shop</button>
         </div>
       </div>

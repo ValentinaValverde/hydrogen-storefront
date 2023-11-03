@@ -495,6 +495,7 @@ body {
   color: black;
   height: 600px;
   background-color: black;
+  color: white;
   /* box-shadow: 0px 10px 5px black; */
 
   display: flex;
@@ -505,8 +506,6 @@ body {
   .malovaSubContainer {
     width: 600px;
     text-align: center;
-    /* background-color: #c60f7b; */
-    /* position: absolute; */
     text-shadow: black 1px 0 10px;
   }
 
@@ -523,21 +522,24 @@ body {
 
   h1 {
     font-size: 75px;
-    color: white;
     font-family: 'Classical_Diary';
     letter-spacing: 3px;
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: 30px;
   }
 
   button {
     background-color: #f90093;
+    border: none;
     width: 150px;
     height: 50px;
     color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
-      sans-serif;
     border-radius: 5px;
-    border: #c60f7b solid 3px;
+    font-family: 'Classical_Diary';
+    font-size: 20px;
   }
 
   button:hover {
