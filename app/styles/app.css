@@ -130,30 +130,22 @@ aside li {
 */
 .header {
   align-items: center;
-  /* background: pink; */
+  background: black;
   width: 100%;
-  margin: 10px auto;
+  top: 0;
 
   display: flex;
   justify-content: space-between;
 
   height: var(--header-height);
   padding: 0 1rem;
-  position: fixed;
+  position: sticky;
   top: 0;
-  z-index: 1;
-}
-
-.malovaHomeLinkContainer {
-  padding: 10px;
-  /* background-color: #f90093; */
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 20px;
+  z-index: 3;
 }
 
 .malovaHomeLink {
-  font-family: Classical_Diary;
+  font-family: 'Classical_Diary';
   font-size: 30px;
   color: white;
   text-shadow: 1px 1px 2px black;
@@ -163,14 +155,12 @@ aside li {
   align-items: center;
   display: flex;
   grid-gap: 1rem;
-  margin-left: auto;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(5px);
+
   padding-left: 10px;
   padding-right: 10px;
   margin: 20px;
   border-radius: 5px;
-  box-shadow: -1px 1px 3px black;
+  /* box-shadow: -1px 1px 3px black; */
 }
 
 .navLinks {
@@ -415,12 +405,19 @@ aside li {
 * --------------------------------------------------
 */
 .product {
+  margin-top: 10%;
   display: grid;
   @media (min-width: 45em) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 4rem;
   }
 }
+
+/* @media (width <= 1200px) {
+  .product {
+    margin-top: 50%;
+  }
+} */
 
 .product h1 {
   margin-top: 0;

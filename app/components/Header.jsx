@@ -8,11 +8,9 @@ export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
     <header className="header">
-      <div className="malovaHomeLinkContainer">
-        <NavLink prefetch="intent" to="/" className="malovaHomeLink" end>
-          <strong>Malova</strong>
-        </NavLink>
-      </div>
+      <NavLink prefetch="intent" to="/" className="malovaHomeLink" end>
+        <strong>Malova</strong>
+      </NavLink>
       {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
