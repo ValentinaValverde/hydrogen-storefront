@@ -130,26 +130,56 @@ aside li {
 */
 .header {
   align-items: center;
-  background: #fff;
+  /* background: pink; */
+  width: 100%;
+  margin: 10px auto;
+
   display: flex;
+  justify-content: space-between;
+
   height: var(--header-height);
   padding: 0 1rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
 }
 
-.header-menu-mobile-toggle {
+.malovaHomeLinkContainer {
+  /* background-color: #fff; */
+  padding: 10px;
+}
+
+.malovaHomeLink {
+  font-family: Classical_Diary;
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.header-ctas {
+  align-items: center;
+  display: flex;
+  grid-gap: 1rem;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.navLinks {
+  color: white;
+}
+
+/* .header-menu-mobile-toggle {
   @media (min-width: 48em) {
     display: none;
   }
 }
 
-.header-menu-mobile {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 1rem;
-}
+
 
 .header-menu-desktop {
   display: none;
@@ -163,13 +193,12 @@ aside li {
 
 .header-menu-item {
   cursor: pointer;
-}
+} */
 
-.header-ctas {
-  align-items: center;
+.header-menu-mobile {
   display: flex;
+  flex-direction: column;
   grid-gap: 1rem;
-  margin-left: auto;
 }
 
 /*
@@ -507,6 +536,7 @@ body {
     width: 600px;
     text-align: center;
     text-shadow: black 1px 0 10px;
+    z-index: 2;
   }
 
   .malovaContainerBackground {
@@ -547,13 +577,14 @@ body {
   }
 }
 
-@media (width <= 800px) {
+@media (width <= 1200px) {
   .malovaSubContainer {
     position: absolute;
   }
 
   .malovaContainerBackground {
-    display: none;
+    opacity: 0.5;
+    overflow: hidden;
   }
 }
 
@@ -696,7 +727,7 @@ body {
   @media (width <= 800px) {
     .collectionCard {
       margin: 10px;
-      width: 125px;
+      width: 40%;
     }
   }
 
@@ -815,8 +846,8 @@ body {
 
   @media (width <= 800px) {
     .igLogoContainer {
-      height: 100px;
-      width: 100px;
+      height: 200px;
+      width: 30%;
       margin: 5px;
     }
   }

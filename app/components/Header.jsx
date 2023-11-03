@@ -8,10 +8,12 @@ export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
     <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
-      </NavLink>
-      <HeaderMenu menu={menu} viewport="desktop" />
+      <div className="malovaHomeLinkContainer">
+        <NavLink prefetch="intent" to="/" className="malovaHomeLink" end>
+          <strong>Malova</strong>
+        </NavLink>
+      </div>
+      {/* <HeaderMenu menu={menu} viewport="desktop" /> */}
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
@@ -57,6 +59,7 @@ export function HeaderMenu({menu, viewport}) {
           item.url.includes(publicStoreDomain)
             ? new URL(item.url).pathname
             : item.url;
+
         return (
           <NavLink
             className="header-menu-item"
@@ -81,12 +84,12 @@ export function HeaderMenu({menu, viewport}) {
 function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
-      <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+      <NavLink prefetch="intent" to="/account" className="navLinks">
         {isLoggedIn ? 'Account' : 'Sign in'}
       </NavLink>
       <SearchToggle />
       <CartToggle cart={cart} />
+      <HeaderMenuMobileToggle />
     </nav>
   );
 }
@@ -94,20 +97,28 @@ function HeaderCtas({isLoggedIn, cart}) {
 function HeaderMenuMobileToggle() {
   return (
     <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      <h3>☰</h3>
+      <h3 className="navLinks">☰</h3>
     </a>
   );
 }
 
 function SearchToggle() {
-  return <a href="#search-aside">Search</a>;
+  return (
+    <a href="#search-aside" className="navLinks">
+      Search
+    </a>
+  );
 }
 
 /**
  * @param {{count: number}}
  */
 function CartBadge({count}) {
-  return <a href="#cart-aside">Cart {count}</a>;
+  return (
+    <a href="#cart-aside" className="navLinks">
+      Cart {count}
+    </a>
+  );
 }
 
 /**
@@ -119,7 +130,11 @@ function CartToggle({cart}) {
       <Await resolve={cart}>
         {(cart) => {
           if (!cart) return <CartBadge count={0} />;
-          return <CartBadge count={cart.totalQuantity || 0} />;
+          return (
+            <>
+              <CartBadge count={cart.totalQuantity || 0} />
+            </>
+          );
         }}
       </Await>
     </Suspense>
