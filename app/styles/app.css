@@ -713,12 +713,12 @@ body {
   height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   margin-bottom: 100px;
 
   .collectionCard {
     background-color: #e5ece9;
+    background-color: rgba(255, 255, 255, 0.15);
     border: solid black;
     text-align: center;
     border-radius: 10px;
@@ -726,6 +726,8 @@ body {
     height: auto;
     width: 30%;
     max-width: 90%;
+    box-shadow: -2px 2px 5px black;
+    transition: 1s;
   }
 
   @media (width <= 800px) {
@@ -735,9 +737,25 @@ body {
     }
   }
 
+  .collectionCard:hover {
+    scale: 1.1;
+  }
+
   img {
     width: 100%;
     overflow: hidden;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .cardTitleContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+
+  .collectionCardTitle {
+    color: white;
+    height: 50px;
   }
 }
 .connectHeader {

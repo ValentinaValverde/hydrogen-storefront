@@ -23,7 +23,11 @@ export default function HomeCollections({collections}) {
                             to={`collections/${something.handle}`}
                           >
                             <img src={something.image.url} />
-                            <p>{something.title}</p>
+                            <div className="cardTitleContainer">
+                              <div className="collectionCardTitle">
+                                <p>{something.title}</p>
+                              </div>
+                            </div>
                           </Link>
                         </div>
                       </>

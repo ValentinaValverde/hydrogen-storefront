@@ -23,12 +23,13 @@ export default function AboutUs() {
           <h1 className="aboutUsTitle">We're Malova</h1>
           <div className="pTag">
             <p>
-              We are a mother-daughter team running a small business to bring
-              awareness to mental health issues in our community. We started in
-              2020, the year of COVID, as that was the year we started to notice
-              mental health issues within our family. What sets us apart from
-              others is that we have a message: Mental Health Matters.{' '}
-              <i>You Matter.</i> And we hope you never forget it.
+              &nbsp; &nbsp; &nbsp; &nbsp; We are a mother-daughter team running
+              a small business to bring awareness to mental health issues in our
+              community. We started in 2020, the year of COVID, as that was the
+              year we started to notice mental health issues within our family.
+              What sets us apart from others is that we have a message: Mental
+              Health Matters. <i>You Matter.</i> And we hope you never forget
+              it.
             </p>
           </div>
         </div>
