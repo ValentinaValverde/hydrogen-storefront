@@ -4,7 +4,7 @@
   --cart-aside-summary-height: 250px;
   --grid-item-width: 355px;
   --header-height: 64px;
-  color: white;
+  --color: white;
   --color-dark: #000;
   --color-light: #fff;
 }
@@ -173,8 +173,6 @@ aside li {
   }
 }
 
-
-
 .header-menu-desktop {
   display: none;
   grid-gap: 1rem;
@@ -231,6 +229,7 @@ aside li {
   max-height: calc(100vh - var(--cart-aside-summary-height));
   overflow-y: auto;
   width: auto;
+  z-index: 100;
 }
 
 .cart-main.with-discount {
@@ -379,24 +378,56 @@ aside li {
 * routes/collections.$handle.tsx
 * --------------------------------------------------
 */
-.collection-description {
+
+.collectionTop {
+  padding: 10px;
+  margin: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+    font-family: 'Classical_Diary';
+    font-size: 50px;
+    letter-spacing: 1px;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+/* .collection-description {
   margin-bottom: 1rem;
   max-width: 95%;
   @media (min-width: 45em) {
     max-width: 600px;
   }
-}
+} */
 
 .products-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #403d39;
 }
 
 .product-item img {
-  height: auto;
-  width: 100%;
+  width: 300px;
+  height: 300px;
+}
+
+@media (width <= 800px) {
+  .product-item img {
+    width: 40%;
+    height: auto;
+  }
+}
+
+.product-item {
+  color: #e5ece9;
+  margin: 10px;
+  margin-bottom: 20px;
 }
 
 /*

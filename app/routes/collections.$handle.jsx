@@ -47,8 +47,12 @@ export default function Collection() {
 
   return (
     <div className="collection">
-      <h1>{collection.title}</h1>
-      <p className="collection-description">{collection.description}</p>
+      <div className="collectionTop">
+        <h1>{collection.title}</h1>
+        <p className="collection-description">
+          <i>{collection.description}</i>
+        </p>
+      </div>
       <Pagination connection={collection.products}>
         {({nodes, isLoading, PreviousLink, NextLink}) => (
           <>
@@ -102,15 +106,12 @@ function ProductItem({product, loading}) {
       prefetch="intent"
       to={variantUrl}
     >
-      {product.featuredImage && (
-        <Image
-          alt={product.featuredImage.altText || product.title}
-          aspectRatio="1/1"
-          data={product.featuredImage}
-          loading={loading}
-          sizes="(min-width: 45em) 400px, 100vw"
-        />
-      )}
+      <Image
+        alt={product.featuredImage.altText || product.title}
+        aspectRatio="1/1"
+        data={product.featuredImage}
+        loading={loading}
+      />
       <h4>{product.title}</h4>
       <small>
         <Money data={product.priceRange.minVariantPrice} />

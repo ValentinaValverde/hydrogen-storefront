@@ -1,3 +1,5 @@
+import {Link} from '@remix-run/react';
+
 export default function Beginning() {
   return (
     <>
@@ -11,7 +13,9 @@ export default function Beginning() {
           <p>
             <i>mental health matters</i>
           </p>
-          <button>shop</button>
+          <Link to={'collections/all-products'}>
+            <button>shop all</button>
+          </Link>
         </div>
       </div>
     </>

@@ -15,6 +15,7 @@ export default function HomeCollections({collections}) {
               <>
                 <div className="collectionsContainer">
                   {collections.nodes.map((something) => {
+                    console.log('SOMETHING: ', something);
                     return (
                       <>
                         <div className="collectionCard">
@@ -22,7 +23,7 @@ export default function HomeCollections({collections}) {
                             key={something.id}
                             to={`collections/${something.handle}`}
                           >
-                            <img src={something.image.url} />
+                            <img src={something.image?.url} />
                             <div className="cardTitleContainer">
                               <div className="collectionCardTitle">
                                 <p>{something.title}</p>
