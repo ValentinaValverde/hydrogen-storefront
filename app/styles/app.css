@@ -74,6 +74,16 @@ aside li {
   margin-bottom: 0.125rem;
 }
 
+.collectionsMenuList {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .link {
+    font-weight: normal;
+  }
+}
+
 /* HERE I AM FIND ME!!! */
 
 .overlay {

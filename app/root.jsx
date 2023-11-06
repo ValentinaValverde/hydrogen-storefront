@@ -103,9 +103,6 @@ export default function App() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
 
-
-
-
   //THIS IS WHERE EVERYTHING IS!!
   return (
     <html lang="en">
@@ -126,9 +123,6 @@ export default function App() {
     </html>
   );
 }
-
-
-
 
 export function ErrorBoundary() {
   const error = useRouteError();
@@ -249,6 +243,11 @@ const HEADER_QUERY = `#graphql
       }
     }
   }
+  fragment Collection on Collection {
+    id
+    title
+    handle
+  }
   query Header(
     $country: CountryCode
     $headerMenuHandle: String!
@@ -259,6 +258,13 @@ const HEADER_QUERY = `#graphql
     }
     menu(handle: $headerMenuHandle) {
       ...Menu
+    }
+    collections(first: 10) {
+      edges {
+        node {
+          ...Collection
+        }
+      }
     }
   }
   ${MENU_FRAGMENT}

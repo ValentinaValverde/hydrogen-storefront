@@ -1,67 +1,42 @@
-export default function AsideMenu() {
-  //   const {storefront} = context;
-  //   const menuCollectionList = storefront.query(COLLECTIONS_LIST_QUERY); //reference to graphql
-  console.log('MENU COLLECTION LIST: ', menuCollectionList);
-  console.log('I AM HERE!!');
+import {Link, useLoaderData} from '@remix-run/react';
 
+export default function AsideMenu() {
   return (
     <>
-      <p>something!</p>
-
-      {/* <div>
-          {collections.nodes.map((something) => {
-            console.log('SOMETHING: ', something);
-            return (
-              <>
-                <div>
-                  <Link
-                    key={something.id}
-                    to={`collections/${something.handle}`}
-                  >
-                    <p>{something.title}</p>
-                  </Link>
-                </div>
-              </>
-            );
-          })}
-        </div> */}
+      <div className="collectionsMenuList">
+        <Link to={'/'} className="link">
+          Home
+        </Link>{' '}
+        <br />
+        <Link to={'/collections/all-products'} className="link">
+          All Products
+        </Link>{' '}
+        <br />
+        <Link to={'/collections/glass-cans'} className="link">
+          Glass Cans
+        </Link>{' '}
+        <br />
+        <Link to={'/collections/mug-collection'} className="link">
+          Mugs
+        </Link>{' '}
+        <br />
+        <Link to={'/collections/milk-cartons'} className="link">
+          Milk Cartons
+        </Link>{' '}
+        <br />
+        <Link to={'/collections/hoodies-crewnecks'} className="link">
+          Hoodies & Crewnecks
+        </Link>
+        <br />
+        <Link to={'/collections/tees-1'} className="link">
+          Tees
+        </Link>{' '}
+        <br />
+        <Link to={'/collections/malova-tote-bags'} className="link">
+          Totes
+        </Link>{' '}
+        <br />
+      </div>
     </>
   );
 }
-
-const COLLECTIONS_LIST_QUERY = `#graphql
-fragment Collection on Collection {
-  id
-  title
-  handle
-  image {
-    id
-    url
-    altText
-    width
-    height
-  }
-}
-query StoreCollections(
-  $country: CountryCode
-  $endCursor: String
-  $language: LanguageCode
-  $startCursor: String
-) @inContext(country: $country, language: $language) {
-  collections(
-    first: 10,
-    before: $startCursor,
-    after: $endCursor
-  ) {
-    nodes {
-      ...Collection
-    }
-    pageInfo {
-      hasNextPage
-      hasPreviousPage
-      startCursor
-      endCursor
-    }
-  }
-}
-`;

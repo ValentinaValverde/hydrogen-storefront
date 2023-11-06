@@ -83,9 +83,8 @@ function MobileMenuAside({menu}) {
   return (
     <>
       <Aside id="mobile-menu-aside" heading="MENU">
-        <HeaderMenu menu={menu} viewport="mobile" />
-        <p>hello?</p>
-        {/* <AsideMenu /> */}
+        {/* <HeaderMenu menu={menu} viewport="mobile" /> */}
+        <AsideMenu />
       </Aside>
     </>
   );
