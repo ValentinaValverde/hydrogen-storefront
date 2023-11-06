@@ -12,7 +12,7 @@ export default function AsideMenu() {
           All Products
         </Link>{' '}
         <br />
-        <Link to={'/collections/glass-cans'} className="link">
+        <Link to={'/collections/glass-cans'} className="link glassCans">
           Glass Cans
         </Link>{' '}
         <br />
