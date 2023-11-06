@@ -9,13 +9,10 @@ export default function HomeCollections({collections}) {
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={collections}>
           {({collections}) => {
-            console.log('COLLECTIONS YO', collections);
-
             return (
               <>
                 <div className="collectionsContainer">
                   {collections.nodes.map((something) => {
-                    console.log('SOMETHING: ', something);
                     return (
                       <>
                         <div className="collectionCard">

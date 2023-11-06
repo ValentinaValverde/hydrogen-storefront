@@ -33,7 +33,7 @@ export async function loader({context}) {
 export default function Homepage() {
   /** @type {LoaderReturnData} */
   const {recommendedProducts, mainCollections} = useLoaderData();
-  console.log(mainCollections);
+  // console.log(mainCollections);
   return (
     <div className="home">
       <Beginning />

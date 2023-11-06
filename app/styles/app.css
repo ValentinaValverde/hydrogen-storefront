@@ -74,6 +74,8 @@ aside li {
   margin-bottom: 0.125rem;
 }
 
+/* HERE I AM FIND ME!!! */
+
 .overlay {
   background: rgba(0, 0, 0, 0.2);
   bottom: 0;
@@ -87,6 +89,7 @@ aside li {
   transition: opacity 400ms;
   visibility: hidden;
   z-index: 10;
+  color: black;
 }
 
 .overlay .close-outside {
