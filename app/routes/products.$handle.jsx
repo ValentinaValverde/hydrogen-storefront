@@ -1,6 +1,8 @@
 import {Suspense} from 'react';
 import {defer, redirect} from '@shopify/remix-oxygen';
 import {Await, Link, useLoaderData} from '@remix-run/react';
+import React from 'react';
+import {useState} from 'react';
 
 import {
   Image,
@@ -23,6 +25,7 @@ export const meta = ({data}) => {
  */
 export async function loader({params, request, context}) {
   const {handle} = params;
+  console.log({handle});
   const {storefront} = context;
 
   const selectedOptions = getSelectedProductOptions(request).filter(
@@ -106,10 +109,11 @@ function redirectToFirstVariant({product, request}) {
 export default function Product() {
   /** @type {LoaderReturnData} */
   const {product, variants} = useLoaderData();
-  const {selectedVariant} = product;
+  console.log({product});
+  const {selectedVariant, media} = product;
   return (
     <div className="product">
-      <ProductImage image={selectedVariant?.image} />
+      <ProductImage media={media} />
       <ProductMain
         selectedVariant={selectedVariant}
         product={product}
@@ -122,19 +126,18 @@ export default function Product() {
 /**
  * @param {{image: ProductVariantFragment['image']}}
  */
-function ProductImage({image}) {
-  if (!image) {
+function ProductImage({media}) {
+  if (!media) {
     return <div className="product-image" />;
   }
+  console.log({media});
+  const edges = media.edges;
   return (
     <div className="product-image">
-      <Image
-        alt={image.altText || 'Product Image'}
-        aspectRatio="1/1"
-        data={image}
-        key={image.id}
-        sizes="(min-width: 45em) 50vw, 100vw"
-      />
+      {edges.map(({node}) => {
+        console.log(node.previewImage.url);
+        <img src={node.previewImage.url} alt="previewImage" />;
+      })}
     </div>
   );
 }
@@ -146,19 +149,55 @@ function ProductImage({image}) {
  *   variants: Promise<ProductVariantsQuery>;
  * }}
  */
+
+function ProductDescription({product}) {
+  const {descriptionHtml} = product;
+  const [description, setDescription] = useState(true);
+
+  const onClick = () => {
+    console.log('clicked!');
+    setDescription(!description);
+  };
+
+  return (
+    <>
+      <h2 className="descriptionTitle" onClick={onClick}>
+        <strong>Description</strong>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          className="bi bi-arrow-down-short descriptionArrow"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+          />
+        </svg>
+      </h2>
+      <div className="productDescription">
+        <br />
+        {description && (
+          <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
+        )}
+        <br />
+      </div>
+    </>
+  );
+}
+
 function ProductMain({selectedVariant, product, variants}) {
-  const {title, descriptionHtml} = product;
+  const {title} = product;
+
   return (
     <div className="product-main">
-      <h1>{title}</h1>
+      <h1 className="title">{title}</h1>
       <ProductPrice selectedVariant={selectedVariant} />
       <br />
-      <p>
-        <strong>Description</strong>
-      </p>
-      <br />
-      <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
-      <br />
+      <ProductDescription product={product} />
+
       <Suspense
         fallback={
           <ProductForm
@@ -257,7 +296,7 @@ function ProductForm({product, selectedVariant, variants}) {
 function ProductOptions({option}) {
   return (
     <div className="product-options" key={option.name}>
-      <h5>{option.name}</h5>
+      <h5 className="optionName">{option.name}</h5>
       <div className="product-options-grid">
         {option.values.map(({value, isAvailable, isActive, to}) => {
           return (
@@ -269,8 +308,12 @@ function ProductOptions({option}) {
               replace
               to={to}
               style={{
-                border: isActive ? '1px solid black' : '1px solid transparent',
+                border: isActive ? '1px solid white ' : '1px solid transparent',
+                backgroundColor: isActive ? 'white' : 'transparent',
+                color: isActive ? 'black' : 'white',
                 opacity: isAvailable ? 1 : 0.3,
+                borderRadius: '16px',
+                padding: '10px',
               }}
             >
               {value}
@@ -311,13 +354,13 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
               type="submit"
               onClick={onClick}
               disabled={disabled ?? fetcher.state !== 'idle'}
+              className="addToCartButton"
             >
               {children}
             </button>
           </>
         )}
       </CartForm>
-      <p>CART</p>
     </>
   );
 }
@@ -367,6 +410,16 @@ fragment Product on Product {
   handle
   descriptionHtml
   description
+  media(first: 15) {
+    edges {
+      node{
+        id
+        previewImage {
+          url
+        }
+      }
+    }  
+  }
   collections(first: 5){
     edges{
       node{

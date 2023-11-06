@@ -328,7 +328,6 @@ aside li {
   transition: 1s;
 }
 
-/* HERE I AM FIND ME!!! */
 .productSearchLink:hover {
   scale: 1.1;
 }
@@ -415,6 +414,20 @@ aside li {
   height: auto;
 }
 
+.addToCartButton {
+  background-color: #f90093;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 16px;
+  /* font-family: 'Classical_Diary'; */
+  font-size: 16px;
+}
+
+.addToCartButton:hover {
+  cursor: pointer;
+}
+
 /*
 * --------------------------------------------------
 * routes/collections._index.tsx
@@ -497,7 +510,7 @@ aside li {
 * --------------------------------------------------
 */
 .product {
-  margin-top: 10%;
+  margin-top: 50px;
   display: grid;
   @media (min-width: 45em) {
     grid-template-columns: 1fr 1fr;
@@ -520,15 +533,21 @@ aside li {
   grid-gap: 1rem;
 }
 
+/* HERE I AM FIND ME!!! */
 .product-image img {
   height: auto;
-  width: 100%;
 }
 
 .product-main {
   align-self: start;
   position: sticky;
   top: 6rem;
+  color: #e5ece9;
+
+  .title {
+    font-family: 'Classical_Diary';
+    font-size: 40px;
+  }
 }
 
 .product-price-on-sale {
@@ -547,8 +566,31 @@ aside li {
 }
 
 .product-options-item {
-  padding: 0.25rem 0.5rem;
+  /* padding: 0.25rem 0.5rem; */
+  color: #e5ece9;
 }
+
+.descriptionTitle {
+  cursor: pointer;
+}
+
+.productDescription {
+  transition: 1s;
+  margin-left: 10px;
+}
+
+.descriptionArrow {
+  width: 20px;
+  height: 20px;
+}
+
+.optionName {
+  font-size: larger;
+}
+
+/* .borderSomething {
+  color: pink;
+} */
 
 /*
 * --------------------------------------------------
