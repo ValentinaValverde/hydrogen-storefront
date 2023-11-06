@@ -13,13 +13,11 @@ export default function HomeCollections({collections}) {
               <>
                 <div className="collectionsContainer">
                   {collections.nodes.map((something) => {
+                    console.log('SOMETHING: ', something);
                     return (
                       <>
-                        <div className="collectionCard">
-                          <Link
-                            key={something.id}
-                            to={`collections/${something.handle}`}
-                          >
+                        <div key={something.id} className="collectionCard">
+                          <Link to={`collections/${something.handle}`}>
                             <img src={something.image?.url} />
                             <div className="cardTitleContainer">
                               <div className="collectionCardTitle">

@@ -46,7 +46,9 @@ export function SearchForm({searchTerm}) {
         type="search"
       />
       &nbsp;
-      <button type="submit">Search</button>
+      <button type="submit" className="searchButton">
+        Search
+      </button>
     </Form>
   );
 }
@@ -102,6 +104,8 @@ export function SearchResults({results}) {
  * @param {Pick<SearchQuery, 'products'>}
  */
 function SearchResultsProductsGrid({products}) {
+  console.log('PRODUCTS: ', products);
+
   return (
     <div className="search-result">
       <h2>Products</h2>
@@ -110,8 +114,9 @@ function SearchResultsProductsGrid({products}) {
           const itemsMarkup = nodes.map((product) => (
             <div className="search-results-item" key={product.id}>
               <Link prefetch="intent" to={`/products/${product.handle}`}>
-                <span>{product.title}</span>
+                <span className="productSearchLink">{product.title}</span>
               </Link>
+              {/* <img src={product.url} alt="productImage"></img> */}
             </div>
           ));
           return (
@@ -127,7 +132,11 @@ function SearchResultsProductsGrid({products}) {
               </div>
               <div>
                 <NextLink>
-                  {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+                  {isLoading ? (
+                    'Loading...'
+                  ) : (
+                    <span className="loadMoreSearch">Load more ↓</span>
+                  )}
                 </NextLink>
               </div>
             </div>

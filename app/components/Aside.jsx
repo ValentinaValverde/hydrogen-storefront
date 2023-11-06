@@ -20,13 +20,13 @@ export function Aside({children, heading, id = 'aside'}) {
       <button
         className="close-outside"
         onClick={() => {
-          history.go(-1);
+          // history.go(-1);
           window.location.hash = '';
         }}
       />
       <aside>
         <header>
-          <h3>{heading}</h3>
+          <h3 className="asideHeading">{heading}</h3>
           <CloseAside />
         </header>
         <main>{children}</main>
@@ -38,8 +38,10 @@ export function Aside({children, heading, id = 'aside'}) {
 function CloseAside() {
   return (
     /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
-    <a className="close" href="#" onChange={() => history.go(-1)}>
-      &times;
+    // onChange={() => history.go(-1)}
+    //took that out of the anchor tag ^
+    <a className="close" href="#">
+      x
     </a>
   );
 }

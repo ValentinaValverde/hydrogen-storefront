@@ -81,7 +81,11 @@ function OrdersTable({orders}) {
                   return <OrderItem key={order.id} order={order} />;
                 })}
                 <NextLink>
-                  {isLoading ? 'Loading...' : <span>Load more ↓</span>}
+                  {isLoading ? (
+                    'Loading...'
+                  ) : (
+                    <span className="loadMoreSearch">Load more ↓</span>
+                  )}
                 </NextLink>
               </>
             );

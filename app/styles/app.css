@@ -37,8 +37,6 @@ aside {
   }
 }
 
-/* HERE I AM FIND ME!!! */
-
 .collectionsMenuList {
   display: flex;
   flex-direction: column;
@@ -46,7 +44,7 @@ aside {
   .link {
     margin-left: 10px;
     font-weight: normal;
-    font-size: 50px;
+    font-size: 30px;
     transition: 1s;
   }
 
@@ -56,7 +54,7 @@ aside {
 
   @media (width <= 800px) {
     .link {
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 }
@@ -71,7 +69,9 @@ aside header {
 }
 
 aside header h3 {
-  margin: 0;
+  margin: 5px;
+  font-family: 'Classical_Diary';
+  font-size: 30px;
 }
 
 aside header .close {
@@ -83,6 +83,10 @@ aside header .close {
   &:hover {
     opacity: 1;
   }
+}
+
+.close {
+  font-size: 25px;
 }
 
 aside header h2 {
@@ -312,6 +316,23 @@ aside li {
 * components/Search
 * --------------------------------------------------
 */
+.search-result {
+  h2 {
+    margin-top: 10px;
+    font-family: 'Classical_Diary';
+  }
+}
+
+.productSearchLink {
+  color: #e5ece9;
+  transition: 1s;
+}
+
+/* HERE I AM FIND ME!!! */
+.productSearchLink:hover {
+  scale: 1.1;
+}
+
 .predictive-search {
   height: calc(100vh - var(--header-height) - 40px);
   overflow-y: auto;
@@ -351,6 +372,10 @@ aside li {
 
 .search-results-item {
   margin-bottom: 0.5rem;
+}
+
+.loadMoreSearch {
+  color: white;
 }
 
 /*
@@ -942,4 +967,18 @@ body {
       margin: 5px;
     }
   }
+}
+
+.searchButton {
+  background-color: #f90093;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: 'Classical_Diary';
+  font-size: 20px;
+  padding: 10px;
+}
+
+.searchButton:hover {
+  cursor: pointer;
 }
