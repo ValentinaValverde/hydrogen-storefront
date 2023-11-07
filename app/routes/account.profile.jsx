@@ -30,6 +30,10 @@ export async function loader({context}) {
 export async function action({request, context}) {
   const {session, storefront} = context;
 
+  console.log(session);
+  console.log(storefront);
+  console.log(request);
+
   if (request.method !== 'PUT') {
     return json({error: 'Method not allowed'}, {status: 405});
   }
@@ -109,7 +113,7 @@ export default function AccountProfile() {
   /** @type {ActionReturnData} */
   const action = useActionData();
   const customer = action?.customer ?? account?.customer;
-
+  console.log(customer);
   return (
     <div className="account-profile">
       <h2>My profile</h2>

@@ -168,6 +168,11 @@ export const CUSTOMER_FRAGMENT = `#graphql
     lastName
     numberOfOrders
     phone
+    metafields(identifiers: [{namespace: "custom", key: "favorites"}]) {
+      id
+      key
+      value
+    }
   }
   fragment Address on MailingAddress {
     id
