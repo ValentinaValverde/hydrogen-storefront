@@ -1141,3 +1141,35 @@ body {
   padding: 8px;
   font-size: 16px;
 }
+
+.collectionPageCard {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: solid black;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: -2px 2px 5px black;
+  transition: 1s;
+}
+
+@media (width <= 800px) {
+  .collectionPageCard {
+    margin: 10px;
+    width: 40%;
+    height: 300px;
+  }
+}
+
+.collectionPageCard:hover {
+  scale: 1.05;
+}
+
+.collectionPageCardTitle {
+  color: white;
+  font-size: 20px;
+}
+
+.collectionPageTitle {
+  font-family: Classical_Diary;
+  font-size: 40px;
+  text-align: center;
+}
