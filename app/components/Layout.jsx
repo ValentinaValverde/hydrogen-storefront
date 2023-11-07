@@ -21,11 +21,11 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
       <MobileMenuAside menu={header.menu} />
       <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />
       <main>{children}</main>
-      {/* <Suspense>
+      <Suspense>
         <Await resolve={footer}>
           {(footer) => <Footer menu={footer.menu} />}
         </Await>
-      </Suspense> */}
+      </Suspense>
     </>
   );
 }
