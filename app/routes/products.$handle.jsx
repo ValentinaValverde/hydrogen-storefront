@@ -109,10 +109,23 @@ function redirectToFirstVariant({product, request}) {
 export default function Product() {
   /** @type {LoaderReturnData} */
   const {product, variants} = useLoaderData();
-  console.log({product});
   const {selectedVariant, media} = product;
   return (
     <div className="product">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        className="bi bi-arrow-left-square backButton"
+        viewBox="0 0 16 16"
+        onClick={() => {
+          history.go(-1);
+        }}
+      >
+        <path
+          fillRule="evenodd"
+          d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+        />
+      </svg>
       <ProductImage media={media} />
       <ProductMain
         selectedVariant={selectedVariant}
@@ -127,16 +140,21 @@ export default function Product() {
  * @param {{image: ProductVariantFragment['image']}}
  */
 function ProductImage({media}) {
-  if (!media) {
-    return <div className="product-image" />;
-  }
-  console.log({media});
+  console.log('MEDIA: ', media);
+  //I AM HERE!!!
   const edges = media.edges;
   return (
     <div className="product-image">
       {edges.map(({node}) => {
-        console.log(node.previewImage.url);
-        <img src={node.previewImage.url} alt="previewImage" />;
+        console.log('PREVIEW IMAGE URL: ', node.previewImage.url);
+        return (
+          <Image
+            src={node.previewImage.url}
+            alt="previewImage"
+            className="productImage"
+            key={node.id}
+          />
+        );
       })}
     </div>
   );
@@ -155,7 +173,6 @@ function ProductDescription({product}) {
   const [description, setDescription] = useState(true);
 
   const onClick = () => {
-    console.log('clicked!');
     setDescription(!description);
   };
 
@@ -172,7 +189,7 @@ function ProductDescription({product}) {
           viewBox="0 0 16 16"
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
           />
         </svg>
@@ -284,7 +301,7 @@ function ProductForm({product, selectedVariant, variants}) {
             : []
         }
       >
-        {selectedVariant?.availableForSale ? 'Add to cart' : 'Sold out'}
+        {selectedVariant?.availableForSale ? 'ADD TO CART' : 'Sold out'}
       </AddToCartButton>
     </div>
   );
@@ -410,7 +427,7 @@ fragment Product on Product {
   handle
   descriptionHtml
   description
-  media(first: 15) {
+  media(first: 20) {
     edges {
       node{
         id

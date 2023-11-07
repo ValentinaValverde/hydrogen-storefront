@@ -48,9 +48,9 @@ aside {
     transition: 1s;
   }
 
-  .link:hover {
+  /* .link:hover {
     scale: 1.05;
-  }
+  } */
 
   @media (width <= 800px) {
     .link {
@@ -375,6 +375,9 @@ aside li {
 
 .loadMoreSearch {
   color: white;
+  border: solid 2px white;
+  border-radius: 16px;
+  padding: 10px;
 }
 
 /*
@@ -420,8 +423,7 @@ aside li {
   padding: 10px;
   color: white;
   border-radius: 16px;
-  /* font-family: 'Classical_Diary'; */
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .addToCartButton:hover {
@@ -504,6 +506,10 @@ aside li {
   margin-bottom: 20px;
 }
 
+.productImage {
+  margin: 10px;
+}
+
 /*
 * --------------------------------------------------
 * routes/products.$handle.tsx
@@ -533,7 +539,6 @@ aside li {
   grid-gap: 1rem;
 }
 
-/* HERE I AM FIND ME!!! */
 .product-image img {
   height: auto;
 }
@@ -1022,5 +1027,17 @@ body {
 }
 
 .searchButton:hover {
+  cursor: pointer;
+}
+
+.backButton {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-top: -30px;
+  margin-left: 10px;
+}
+
+.backButton:hover {
   cursor: pointer;
 }
