@@ -167,7 +167,7 @@ aside li {
 .header {
   align-items: center;
   background: black;
-  width: 100%;
+  width: 100vw;
   top: 0;
 
   display: flex;
@@ -227,6 +227,25 @@ aside li {
   display: flex;
   flex-direction: column;
   grid-gap: 1rem;
+}
+
+.headerContainer {
+  /* background-color: #403d39; */
+  margin: 0px;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
 }
 
 /*
