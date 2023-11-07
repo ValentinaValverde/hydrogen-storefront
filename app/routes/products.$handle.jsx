@@ -3,6 +3,7 @@ import {defer, redirect} from '@shopify/remix-oxygen';
 import {Await, Link, useLoaderData} from '@remix-run/react';
 import React from 'react';
 import {useState} from 'react';
+import RecommendedProducts from '../components/RecommendedProducts';
 
 import {
   Image,
@@ -27,6 +28,7 @@ export async function loader({params, request, context}) {
   const {handle} = params;
   console.log({handle});
   const {storefront} = context;
+  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>
@@ -80,7 +82,7 @@ export async function loader({params, request, context}) {
   });
 
   console.log('PRODUCT: ', product);
-  return defer({product, variants});
+  return defer({product, variants, recommendedProducts});
 }
 
 /**
@@ -108,31 +110,35 @@ function redirectToFirstVariant({product, request}) {
 
 export default function Product() {
   /** @type {LoaderReturnData} */
-  const {product, variants} = useLoaderData();
+  const {product, variants, recommendedProducts} = useLoaderData();
   const {selectedVariant, media} = product;
   return (
-    <div className="product">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        className="bi bi-arrow-left-square backButton"
-        viewBox="0 0 16 16"
-        onClick={() => {
-          history.go(-1);
-        }}
-      >
-        <path
-          fillRule="evenodd"
-          d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+    <>
+      <div className="product">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          className="bi bi-arrow-left-square backButton"
+          viewBox="0 0 16 16"
+          onClick={() => {
+            history.go(-1);
+          }}
+        >
+          <path
+            fillRule="evenodd"
+            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+          />
+        </svg>
+        <ProductImage media={media} />
+        <ProductMain
+          selectedVariant={selectedVariant}
+          product={product}
+          variants={variants}
         />
-      </svg>
-      <ProductImage media={media} />
-      <ProductMain
-        selectedVariant={selectedVariant}
-        product={product}
-        variants={variants}
-      />
-    </div>
+      </div>
+      {/* HERE I AM!! */}
+      <RecommendedProducts products={recommendedProducts} />
+    </>
   );
 }
 
@@ -141,7 +147,6 @@ export default function Product() {
  */
 function ProductImage({media}) {
   console.log('MEDIA: ', media);
-  //I AM HERE!!!
   const edges = media.edges;
   return (
     <div className="product-image">
@@ -214,7 +219,6 @@ function ProductMain({selectedVariant, product, variants}) {
       <ProductPrice selectedVariant={selectedVariant} />
       <br />
       <ProductDescription product={product} />
-
       <Suspense
         fallback={
           <ProductForm
@@ -504,6 +508,50 @@ const VARIANTS_QUERY = `#graphql
   ) @inContext(country: $country, language: $language) {
     product(handle: $handle) {
       ...ProductVariants
+    }
+  }
+`;
+
+const RECOMMENDED_PRODUCTS_QUERY = `#graphql
+  fragment RecommendedProduct on Product {
+    id
+    title
+    handle
+    collections(first: 1){
+      edges{
+        node{
+          id
+          title
+          handle
+          image {
+            id
+          }
+        }
+      }
+    }
+    
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    images(first: 1) {
+      nodes {
+        id
+        url
+        altText
+        width
+        height
+      }
+    }
+  }
+  query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    products(first: 8, sortKey: PRODUCT_TYPE, reverse: false) {
+      nodes {
+        ...RecommendedProduct
+      }
     }
   }
 `;

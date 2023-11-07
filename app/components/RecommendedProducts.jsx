@@ -5,7 +5,7 @@ import {Suspense} from 'react';
 export default function RecommendedProducts({products}) {
   return (
     <div className="recommended-products">
-      <h2>Malova's Pick</h2>
+      <h2>Recommended Products</h2>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
@@ -20,22 +20,13 @@ export default function RecommendedProducts({products}) {
                     className="recommended-product"
                     to={`/products/${product.handle}`}
                   >
-                    <Image
-                      data={product.images.nodes[0]}
-                      aspectRatio="1/1"
-                      sizes="(min-width: 45em) 20vw, 50vw"
-                    />
-                    <h4>{product.title}</h4>
-                    Collections:
-                    {product.collections.edges.map((collection) => {
-                      return (
-                        <li key={collection.node.id}>
-                          {collection.node.title}
-                        </li>
-                      );
-                    })}
+                    <Image data={product.images.nodes[0]} aspectRatio="1/1" />
+                    <h4 className="whiteText">{product.title}</h4>
                     <small>
-                      <Money data={product.priceRange.minVariantPrice} />
+                      <Money
+                        data={product.priceRange.minVariantPrice}
+                        className="whiteText"
+                      />
                     </small>
                   </Link>
                 ))}

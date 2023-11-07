@@ -127,15 +127,27 @@ function AccountMenu() {
 
   return (
     <nav role="navigation">
-      <NavLink to="/account/orders" style={isActiveStyle}>
+      <NavLink
+        to="/account/orders"
+        // style={isActiveStyle}
+        className="accountLinks"
+      >
         Orders &nbsp;
       </NavLink>
       &nbsp;|&nbsp;
-      <NavLink to="/account/profile" style={isActiveStyle}>
+      <NavLink
+        to="/account/profile"
+        // style={isActiveStyle}
+        className="accountLinks"
+      >
         &nbsp; Profile &nbsp;
       </NavLink>
       &nbsp;|&nbsp;
-      <NavLink to="/account/addresses" style={isActiveStyle}>
+      <NavLink
+        to="/account/addresses"
+        // style={isActiveStyle}
+        className="accountLinks"
+      >
         &nbsp; Addresses &nbsp;
       </NavLink>
       &nbsp;|&nbsp;
