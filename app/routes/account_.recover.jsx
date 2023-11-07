@@ -63,27 +63,30 @@ export default function Recover() {
           </>
         ) : (
           <>
-            <h1>Forgot Password.</h1>
+            <h1 className="forgotPasswordTitle">Forgot Password.</h1>
             <p>
               Enter the email address associated with your account to receive a
               link to reset your password.
             </p>
             <br />
             <Form method="POST">
-              <fieldset>
-                <label htmlFor="email">Email</label>
-                <input
-                  aria-label="Email address"
-                  autoComplete="email"
-                  // eslint-disable-next-line jsx-a11y/no-autofocus
-                  autoFocus
-                  id="email"
-                  name="email"
-                  placeholder="Email address"
-                  required
-                  type="email"
-                />
-              </fieldset>
+              <div className="forgotPasswordForm">
+                <fieldset>
+                  <label htmlFor="email">Email</label>
+                  <input
+                    aria-label="Email address"
+                    autoComplete="email"
+                    // eslint-disable-next-line jsx-a11y/no-autofocus
+                    autoFocus
+                    id="email"
+                    name="email"
+                    placeholder="Email address"
+                    required
+                    type="email"
+                  />
+                </fieldset>
+              </div>
+
               {action?.error ? (
                 <p>
                   <mark>
@@ -93,12 +96,16 @@ export default function Recover() {
               ) : (
                 <br />
               )}
-              <button type="submit">Request Reset Link</button>
+              <button type="submit" className="resetLinkButton">
+                Request Reset Link
+              </button>
             </Form>
             <div>
               <br />
               <p>
-                <Link to="/account/login">Login →</Link>
+                <Link to="/account/login" className="loginLink">
+                  Login →
+                </Link>
               </p>
             </div>
           </>

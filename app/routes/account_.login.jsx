@@ -74,33 +74,36 @@ export default function Login() {
 
   return (
     <div className="login">
-      <h1>Sign in.</h1>
+      <h1>Sign In.</h1>
       <Form method="POST">
-        <fieldset>
-          <label htmlFor="email">Email address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            placeholder="Email address"
-            aria-label="Email address"
-            // eslint-disable-next-line jsx-a11y/no-autofocus
-            autoFocus
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            placeholder="Password"
-            aria-label="Password"
-            minLength={8}
-            required
-          />
-        </fieldset>
+        <div className="signInForm">
+          <fieldset>
+            <label htmlFor="email">Email address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              required
+              placeholder="Email address"
+              aria-label="Email address"
+              // eslint-disable-next-line jsx-a11y/no-autofocus
+              autoFocus
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              placeholder="Password"
+              aria-label="Password"
+              minLength={8}
+              required
+            />
+          </fieldset>
+        </div>
+
         {error ? (
           <p>
             <mark>
@@ -110,15 +113,21 @@ export default function Login() {
         ) : (
           <br />
         )}
-        <button type="submit">Sign in</button>
+        <button type="submit" className="signInButton">
+          Sign in
+        </button>
       </Form>
       <br />
       <div>
         <p>
-          <Link to="/account/recover">Forgot password →</Link>
+          <Link to="/account/recover" className="forgotPassword">
+            Forgot password →
+          </Link>
         </p>
         <p>
-          <Link to="/account/register">Register →</Link>
+          <Link to="/account/register" className="register">
+            Register →
+          </Link>
         </p>
       </div>
     </div>

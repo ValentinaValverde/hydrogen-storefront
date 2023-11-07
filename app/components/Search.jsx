@@ -116,6 +116,7 @@ function SearchResultsProductsGrid({products}) {
               <Link prefetch="intent" to={`/products/${product.handle}`}>
                 <span className="productSearchLink">{product.title}</span>
               </Link>
+              {/* HERE I AM!! */}
               {/* <img src={product.url} alt="productImage"></img> */}
             </div>
           ));

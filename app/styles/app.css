@@ -380,6 +380,14 @@ aside li {
   padding: 10px;
 }
 
+.search {
+  font-size: 20px;
+  h1 {
+    font-family: Classical_Diary;
+    font-size: 40px;
+  }
+}
+
 /*
 * --------------------------------------------------
 * routes/__index
@@ -1040,4 +1048,77 @@ body {
 
 .backButton:hover {
   cursor: pointer;
+}
+
+.login {
+  h1 {
+    font-family: Classical_Diary;
+    letter-spacing: 1px;
+    font-size: 50px;
+  }
+}
+
+.signInForm {
+  fieldset {
+    border-radius: 16px;
+    background-color: #403d39;
+  }
+}
+
+.signInButton {
+  border-radius: 16px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.signInButton:hover {
+  cursor: pointer;
+}
+
+.forgotPasswordTitle {
+  font-family: Classical_Diary;
+  letter-spacing: 1px;
+  font-size: 40px;
+}
+
+.forgotPassword {
+  color: #e5ece9;
+}
+
+.register {
+  color: #e5ece9;
+}
+
+.forgotPasswordForm {
+  fieldset {
+    border-radius: 16px;
+    background-color: #403d39;
+  }
+}
+
+.resetLinkButton {
+  border-radius: 16px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.resetLinkButton:hover {
+  cursor: pointer;
+}
+
+.loginLink {
+  color: #e5ece9;
+}
+
+.registerForm {
+  fieldset {
+    border-radius: 16px;
+    background-color: #403d39;
+  }
+}
+
+.registerButton {
+  border-radius: 16px;
+  padding: 8px;
+  font-size: 16px;
 }
