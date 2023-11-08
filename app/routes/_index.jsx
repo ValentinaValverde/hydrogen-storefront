@@ -5,6 +5,7 @@ import AboutUs from '~/components/AboutUs';
 import Beginning from '~/components/Beginning';
 import HomeCollections from '~/components/HomeCollections';
 import Connect from '~/components/Connect';
+import WantCustom from '../components/CustomFormDisplay';
 import '../fonts/ClassicalDiary-Regular.ttf';
 
 // /**
@@ -40,6 +41,7 @@ export default function Homepage() {
       <OurMessage />
       <AboutUs />
       <HomeCollections collections={mainCollections} />
+      <WantCustom />
       <Connect />
     </div>
   );

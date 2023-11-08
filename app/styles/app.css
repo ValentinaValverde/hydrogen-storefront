@@ -350,11 +350,12 @@ aside li {
 .productSearchLink {
   color: #e5ece9;
   transition: 1s;
+  margin-bottom: 15px;
 }
 
-.productSearchLink:hover {
+/* .productSearchLink:hover {
   scale: 1.1;
-}
+} */
 
 .predictive-search {
   height: calc(100vh - var(--header-height) - 40px);
@@ -1208,4 +1209,58 @@ body {
 
 .whiteText {
   color: #e5ece9;
+}
+
+.customFormLink {
+  color: white;
+}
+
+.customForm {
+  background-color: #403d39;
+  border-radius: 16px;
+  margin: 10px;
+  width: 800px;
+  max-width: 100%;
+
+  h1 {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+}
+
+.contactCustomForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 40%;
+    margin: 5px;
+  }
+}
+
+.customFormBottom {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    width: 40%;
+  }
+
+  button {
+    width: 100px;
+  }
+
+  .selections {
+    width: 40%;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
 }
