@@ -19,6 +19,7 @@ import {Layout} from '~/components/Layout';
 // import tailwindCss from './styles/tailwind.css';
 import asideStyles from './components/Aside/aside.css';
 import headerStyles from './components/Header/header.css';
+import footerStyles from './components/Footer/footer.css';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -45,6 +46,7 @@ export function links() {
     {rel: 'stylesheet', href: appStyles},
     {rel: 'stylesheet', href: asideStyles},
     {rel: 'stylesheet', href: headerStyles},
+    {rel: 'stylesheet', href: footerStyles},
 
     {
       rel: 'preconnect',
