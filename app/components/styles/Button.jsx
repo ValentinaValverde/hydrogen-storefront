@@ -9,6 +9,9 @@ export const Button = styled.button`
   border-radius: 5px;
   font-family: 'Classical_Diary';
   font-size: 20px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 // Button:hover{

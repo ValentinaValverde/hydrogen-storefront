@@ -1,6 +1,6 @@
 import {Await} from '@remix-run/react';
 import {Suspense} from 'react';
-import {Aside} from '~/components/Aside';
+import {Aside} from './Aside/Aside';
 import {Footer} from '~/components/Footer';
 import {Header, HeaderMenu} from '~/components/Header';
 import {CartMain} from '~/components/Cart';
