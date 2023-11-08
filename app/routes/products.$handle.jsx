@@ -4,6 +4,7 @@ import {Await, Link, useLoaderData} from '@remix-run/react';
 import React from 'react';
 import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts';
+import {Button} from '../components/styles/Button';
 
 import {
   Image,
@@ -371,14 +372,14 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
               type="hidden"
               value={JSON.stringify(analytics)}
             />
-            <button
+            <Button
               type="submit"
               onClick={onClick}
               disabled={disabled ?? fetcher.state !== 'idle'}
               className="addToCartButton"
             >
               {children}
-            </button>
+            </Button>
           </>
         )}
       </CartForm>
