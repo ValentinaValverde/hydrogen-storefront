@@ -128,7 +128,6 @@ function HeaderCtas({isLoggedIn, cart}) {
 function HeaderMenuMobileToggle() {
   return (
     <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
-      {/* <h3 className="navLinks">☰</h3> */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"

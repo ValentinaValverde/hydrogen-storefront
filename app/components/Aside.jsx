@@ -15,15 +15,11 @@
  */
 
 export function Aside({children, heading, id = 'aside'}) {
+  // window.body.addEventListener('click');
+  // console.log('mouseddown');
+
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
-      <button
-        className="close-outside"
-        onClick={() => {
-          // history.go(-1);
-          window.location.hash = '';
-        }}
-      />
       <aside>
         <header>
           <h3 className="asideHeading">{heading}</h3>
@@ -37,9 +33,6 @@ export function Aside({children, heading, id = 'aside'}) {
 
 function CloseAside() {
   return (
-    /* eslint-disable-next-line jsx-a11y/anchor-is-valid */
-    // onChange={() => history.go(-1)}
-    //took that out of the anchor tag ^
     <a className="close" href="#">
       x
     </a>

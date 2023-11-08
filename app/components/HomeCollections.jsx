@@ -13,7 +13,6 @@ export default function HomeCollections({collections}) {
               <>
                 <div className="collectionsContainer">
                   {collections.nodes.map((something) => {
-                    console.log('SOMETHING: ', something);
                     return (
                       <>
                         <div key={something.id} className="collectionCard">
