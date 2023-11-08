@@ -391,10 +391,16 @@ aside li {
 
 .search-result {
   margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .search-results-item {
   margin-bottom: 0.5rem;
+  width: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .loadMoreSearch {
@@ -406,10 +412,17 @@ aside li {
 
 .search {
   font-size: 20px;
+  margin: 10px;
+
   h1 {
     font-family: Classical_Diary;
     font-size: 40px;
   }
+}
+
+.searchProductImage {
+  width: 200px;
+  height: auto;
 }
 
 /*

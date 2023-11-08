@@ -114,10 +114,15 @@ function SearchResultsProductsGrid({products}) {
           const itemsMarkup = nodes.map((product) => (
             <div className="search-results-item" key={product.id}>
               <Link prefetch="intent" to={`/products/${product.handle}`}>
-                <span className="productSearchLink">{product.title}</span>
+                <img
+                  className="searchProductImage"
+                  src={product.variants.nodes.map((nodes) => {
+                    return nodes.image.url;
+                  })}
+                  alt="productImage"
+                ></img>
+                <p className="productSearchLink">{product.title}</p>
               </Link>
-              {/* HERE I AM!! */}
-              {/* <img src={product.url} alt="productImage"></img> */}
             </div>
           ));
           return (

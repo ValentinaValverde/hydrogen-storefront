@@ -99,6 +99,7 @@ const SEARCH_QUERY = `#graphql
         product {
           handle
           title
+          
         }
       }
     }
