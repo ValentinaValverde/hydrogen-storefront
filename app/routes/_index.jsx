@@ -22,18 +22,14 @@ export const meta = () => {
 
 export async function loader({context}) {
   const {storefront} = context;
-  const {collections} = await storefront.query(FEATURED_COLLECTION_QUERY); //reference to graphql
-  const featuredCollection = collections;
-  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
-
   const mainCollections = storefront.query(COLLECTIONS_QUERY); //reference to graphql
 
-  return defer({featuredCollection, recommendedProducts, mainCollections});
+  return defer({mainCollections});
 }
 
 export default function Homepage() {
   /** @type {LoaderReturnData} */
-  const {recommendedProducts, mainCollections} = useLoaderData();
+  const {mainCollections} = useLoaderData();
   // console.log(mainCollections);
   return (
     <div className="home">
@@ -48,73 +44,6 @@ export default function Homepage() {
 }
 
 //graphql things from here on out:
-const FEATURED_COLLECTION_QUERY = `#graphql
-  fragment FeaturedCollection on Collection {
-    id
-    title
-    image {
-      id
-      url
-      altText
-      width
-      height
-    }
-    handle
-  }
-  query FeaturedCollection($country: CountryCode, $language: LanguageCode)
-    @inContext(country: $country, language: $language) {
-    collections(first: 1, sortKey: UPDATED_AT, reverse: true) {
-      nodes {
-        ...FeaturedCollection
-      }
-    }
-  }
-`;
-
-const RECOMMENDED_PRODUCTS_QUERY = `#graphql
-  fragment RecommendedProduct on Product {
-    id
-    title
-    handle
-    collections(first: 5){
-      edges{
-        node{
-          id
-          title
-          handle
-          image {
-            id
-          }
-        }
-      }
-    }
-    
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
-      }
-    }
-    images(first: 1) {
-      nodes {
-        id
-        url
-        altText
-        width
-        height
-      }
-    }
-  }
-  query RecommendedProducts ($country: CountryCode, $language: LanguageCode)
-    @inContext(country: $country, language: $language) {
-    products(first: 4, sortKey: UPDATED_AT, reverse: true) {
-      nodes {
-        ...RecommendedProduct
-      }
-    }
-  }
-`;
-
 const COLLECTIONS_QUERY = `#graphql
 fragment Collection on Collection {
   id
