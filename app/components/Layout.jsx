@@ -3,7 +3,7 @@ import {Suspense} from 'react';
 import {Aside} from './Aside/Aside';
 import {Footer} from './Footer/Footer';
 import {Header, HeaderMenu} from './Header/Header';
-import {CartMain} from '~/components/Cart';
+import {CartMain} from './Cart/Cart';
 import {
   PredictiveSearchForm,
   PredictiveSearchResults,
