@@ -198,6 +198,11 @@ aside li {
   border-radius: 5px;
   /* box-shadow: -1px 1px 3px black; */
 }
+@media (width <= 800px) {
+  .headerIcon {
+    display: none;
+  }
+}
 
 .navLinks {
   color: white;
@@ -521,6 +526,8 @@ aside li {
   background-color: #403d39;
   margin: -30px;
   margin-bottom: 0px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .product-item img {
@@ -618,11 +625,6 @@ aside li {
 .productDescription {
   transition: 1s;
   margin-left: 10px;
-}
-
-.descriptionArrow {
-  width: 20px;
-  height: 20px;
 }
 
 .optionName {
