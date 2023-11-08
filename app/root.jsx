@@ -23,6 +23,8 @@ import footerStyles from './components/Footer/footer.css';
 import cartStyles from './components/Cart/cart.css';
 import searchStyles from './components/Search/search.css';
 
+import routeStyles from './styles/routes.css';
+
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -51,6 +53,7 @@ export function links() {
     {rel: 'stylesheet', href: footerStyles},
     {rel: 'stylesheet', href: cartStyles},
     {rel: 'stylesheet', href: searchStyles},
+    {rel: 'stylesheet', href: routeStyles},
 
     {
       rel: 'preconnect',
