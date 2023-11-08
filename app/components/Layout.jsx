@@ -4,10 +4,7 @@ import {Aside} from './Aside/Aside';
 import {Footer} from './Footer/Footer';
 import {Header, HeaderMenu} from './Header/Header';
 import {CartMain} from './Cart/Cart';
-import {
-  PredictiveSearchForm,
-  PredictiveSearchResults,
-} from '~/components/Search';
+import {PredictiveSearchForm, PredictiveSearchResults} from './Search/Search';
 import AsideMenu from './AsideMenu';
 
 /**

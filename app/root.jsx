@@ -20,6 +20,8 @@ import {Layout} from '~/components/Layout';
 import asideStyles from './components/Aside/aside.css';
 import headerStyles from './components/Header/header.css';
 import footerStyles from './components/Footer/footer.css';
+import cartStyles from './components/Cart/cart.css';
+import searchStyles from './components/Search/search.css';
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -47,6 +49,8 @@ export function links() {
     {rel: 'stylesheet', href: asideStyles},
     {rel: 'stylesheet', href: headerStyles},
     {rel: 'stylesheet', href: footerStyles},
+    {rel: 'stylesheet', href: cartStyles},
+    {rel: 'stylesheet', href: searchStyles},
 
     {
       rel: 'preconnect',

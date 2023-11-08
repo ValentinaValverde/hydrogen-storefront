@@ -2,7 +2,11 @@ import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {getPaginationVariables} from '@shopify/hydrogen';
 
-import {SearchForm, SearchResults, NoSearchResults} from '~/components/Search';
+import {
+  SearchForm,
+  SearchResults,
+  NoSearchResults,
+} from '../components/Search/Search';
 
 /**
  * @type {V2_MetaFunction}
