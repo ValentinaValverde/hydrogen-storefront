@@ -2,7 +2,7 @@ import {Await} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Aside} from './Aside/Aside';
 import {Footer} from '~/components/Footer';
-import {Header, HeaderMenu} from '~/components/Header';
+import {Header, HeaderMenu} from './Header/Header';
 import {CartMain} from '~/components/Cart';
 import {
   PredictiveSearchForm,

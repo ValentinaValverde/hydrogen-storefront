@@ -258,4 +258,4 @@ function activeLinkStyle({isActive, isPending}) {
 /** @typedef {Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>} HeaderProps */
 /** @typedef {'desktop' | 'mobile'} Viewport */
 
-/** @typedef {import('./Layout').LayoutProps} LayoutProps */
+/** @typedef {import('../Layout').LayoutProps} LayoutProps */
