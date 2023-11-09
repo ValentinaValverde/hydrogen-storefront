@@ -1,5 +1,5 @@
 .connectHeader {
-  /* background-color: #e5ece9; */
+  /* background-color: white; */
   display: flex;
   justify-content: space-between;
 
@@ -35,7 +35,7 @@
   p {
     margin-bottom: 30px;
     margin-left: 10px;
-    color: #e5ece9;
+    color: white;
   }
 
   .followSpan {

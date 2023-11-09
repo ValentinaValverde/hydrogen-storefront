@@ -95,7 +95,7 @@
 }
 
 .product-item {
-  color: #e5ece9;
+  color: white;
   margin: 10px;
   margin-bottom: 20px;
 }
@@ -141,7 +141,7 @@
   align-self: start;
   position: sticky;
   top: 6rem;
-  color: #e5ece9;
+  color: white;
 
   .title {
     font-family: 'Classical_Diary';
@@ -166,7 +166,7 @@
 
 .product-options-item {
   /* padding: 0.25rem 0.5rem; */
-  color: #e5ece9;
+  color: white;
 }
 
 .descriptionTitle {
