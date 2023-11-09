@@ -26,6 +26,9 @@ import messageStyles from './components/OurMessage/ourMessage.css';
 import aboutStyles from './components/AboutUs/aboutUs.css';
 import homeCollectionStyles from './components/HomeCollections/homeCollections.css';
 import connectStyles from './components/Connect/connect.css';
+import beginningStyles from './components/Beginning/beginning.css';
+import recProdStyles from './components/RecommendedProducts/recProducts.css';
+import customFormStyles from './components/CustomForm/customForm.css';
 
 import routeStyles from './styles/routes.css';
 
@@ -62,6 +65,9 @@ export function links() {
     {rel: 'stylesheet', href: aboutStyles},
     {rel: 'stylesheet', href: homeCollectionStyles},
     {rel: 'stylesheet', href: connectStyles},
+    {rel: 'stylesheet', href: beginningStyles},
+    {rel: 'stylesheet', href: recProdStyles},
+    {rel: 'stylesheet', href: customFormStyles},
 
     {
       rel: 'preconnect',

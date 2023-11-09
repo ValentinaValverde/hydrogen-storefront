@@ -88,3 +88,17 @@
   width: 200px;
   height: auto;
 }
+
+.searchButton {
+  background-color: #f90093;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: 'Classical_Diary';
+  font-size: 20px;
+  padding: 10px;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+}

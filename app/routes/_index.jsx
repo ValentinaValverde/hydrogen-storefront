@@ -2,10 +2,10 @@ import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import OurMessage from '../components/OurMessage/OurMessage';
 import AboutUs from '../components/AboutUs/AboutUs';
-import Beginning from '~/components/Beginning';
+import Beginning from '../components/Beginning/Beginning';
 import HomeCollections from '../components/HomeCollections/HomeCollections';
 import Connect from '../components/Connect/Connect';
-import WantCustom from '../components/CustomFormDisplay';
+import WantCustom from '../components/CustomForm/CustomFormDisplay';
 import '../fonts/ClassicalDiary-Regular.ttf';
 
 // /**

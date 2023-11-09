@@ -22,28 +22,6 @@
   object-fit: cover;
 }
 
-.recommended-products {
-  h2 {
-    font-family: Classical_Diary;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    font-size: 30px;
-  }
-}
-
-.recommended-products-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(4, 1fr);
-  /* @media (min-width: 45em) {
-      grid-template-columns: repeat(4, 1fr);
-    } */
-}
-
-.recommended-product img {
-  height: auto;
-}
-
 /*
   * --------------------------------------------------
   * routes/collections._index.tsx

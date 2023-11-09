@@ -5,7 +5,7 @@ import {Footer} from './Footer/Footer';
 import {Header, HeaderMenu} from './Header/Header';
 import {CartMain} from './Cart/Cart';
 import {PredictiveSearchForm, PredictiveSearchResults} from './Search/Search';
-import AsideMenu from './AsideMenu';
+import AsideMenu from '../components/Aside/AsideMenu';
 
 /**
  * @param {LayoutProps}
