@@ -4,7 +4,7 @@ import {Await, Link, useLoaderData} from '@remix-run/react';
 import React from 'react';
 import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts';
-import {Button} from '../components/styles/Button';
+import {Button} from '../components/styledComponents/Button';
 
 import {
   Image,

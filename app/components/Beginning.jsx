@@ -1,5 +1,5 @@
 import {Link} from '@remix-run/react';
-import {Button} from './styles/Button';
+import {Button} from './styledComponents/Button';
 
 export default function Beginning() {
   return (
