@@ -1,0 +1,116 @@
+.connectHeader {
+  /* background-color: #e5ece9; */
+  display: flex;
+  justify-content: space-between;
+
+  .igLogoBlock {
+    /* background-color: wheat; */
+    text-align: right;
+    margin: 20px;
+  }
+
+  .igLogo {
+    color: #f90093;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.connect {
+  background-color: #000;
+  margin: -20px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 30px;
+  font-size: 20px;
+
+  h1 {
+    font-size: 50px;
+    font-family: 'Classical_Diary';
+    letter-spacing: 2px;
+    margin: 0;
+  }
+
+  p {
+    margin-bottom: 30px;
+    margin-left: 10px;
+    color: #e5ece9;
+  }
+
+  .followSpan {
+    color: white;
+  }
+
+  .followUs {
+    text-align: center;
+    margin: 10px;
+    font-family: 'Classical_Diary';
+    letter-spacing: 1px;
+  }
+  .connectScript {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+  }
+}
+
+.igPostContainer {
+  display: flex;
+  justify-content: space-around;
+
+  .igLogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 400px;
+    height: 400px;
+    transition: 1s;
+  }
+
+  .one {
+    background-image: url('/not_okay_ig.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .two {
+    background-image: url('/grow_ig.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .three {
+    background-image: url('/circle_okay_ig.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .igImageLogo {
+    color: white;
+    opacity: 0;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+  }
+
+  .igLogoContainer:hover {
+    opacity: 0.5;
+  }
+
+  .igLogoContainer:hover .igImageLogo {
+    opacity: 1;
+  }
+
+  @media (width <= 800px) {
+    .igLogoContainer {
+      height: 200px;
+      width: 30%;
+      margin: 5px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.aboutUsContainer {
+  padding: 10px;
+  background-color: #403d39;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: 50px;
+    font-family: 'Classical_Diary';
+    letter-spacing: 3px;
+  }
+
+  .pTag {
+    color: #e5ece9;
+  }
+
+  img {
+    height: 600px;
+    max-width: 90%;
+    border-radius: 0%;
+  }
+
+  @media (width <= 800px) {
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  .heart {
+    color: pink;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+    margin-bottom: 10px;
+  }
+
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 600px;
+    max-width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

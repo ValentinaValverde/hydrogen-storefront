@@ -23,6 +23,9 @@ import footerStyles from './components/Footer/footer.css';
 import cartStyles from './components/Cart/cart.css';
 import searchStyles from './components/Search/search.css';
 import messageStyles from './components/OurMessage/ourMessage.css';
+import aboutStyles from './components/AboutUs/aboutUs.css';
+import homeCollectionStyles from './components/HomeCollections/homeCollections.css';
+import connectStyles from './components/Connect/connect.css';
 
 import routeStyles from './styles/routes.css';
 
@@ -56,6 +59,9 @@ export function links() {
     {rel: 'stylesheet', href: searchStyles},
     {rel: 'stylesheet', href: routeStyles},
     {rel: 'stylesheet', href: messageStyles},
+    {rel: 'stylesheet', href: aboutStyles},
+    {rel: 'stylesheet', href: homeCollectionStyles},
+    {rel: 'stylesheet', href: connectStyles},
 
     {
       rel: 'preconnect',
