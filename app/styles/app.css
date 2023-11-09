@@ -85,58 +85,6 @@ body {
   }
 }
 
-.ourMessageScreen {
-  width: 90%;
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #c60f7b; */
-}
-
-.ourMessageContainer {
-  display: flex;
-  margin: 20px;
-  padding: 10px;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 90%;
-  max-width: 90%;
-
-  background-color: gainsboro;
-  color: black;
-  box-shadow: -5px 5px 5px black;
-  border-radius: 5px;
-
-  .block {
-    width: 400px;
-    max-width: 90%;
-  }
-
-  .ourMessage {
-    font-size: 75px;
-    font-family: 'Classical_Diary';
-    letter-spacing: 3px;
-    /* temporary solution: */
-    word-break: break-word;
-  }
-
-  .ourMessageScript {
-    text-align: right;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-}
-
-@media (width <= 800px) {
-  .ourMessageContainer {
-    margin: 0px;
-  }
-}
-
 .aboutUsContainer {
   padding: 10px;
   background-color: #403d39;

@@ -1,6 +1,6 @@
 import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import OurMessage from '~/components/OurMessage';
+import OurMessage from '../components/OurMessage/OurMessage';
 import AboutUs from '~/components/AboutUs';
 import Beginning from '~/components/Beginning';
 import HomeCollections from '~/components/HomeCollections';

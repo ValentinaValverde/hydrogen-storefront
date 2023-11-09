@@ -22,6 +22,7 @@ import headerStyles from './components/Header/header.css';
 import footerStyles from './components/Footer/footer.css';
 import cartStyles from './components/Cart/cart.css';
 import searchStyles from './components/Search/search.css';
+import messageStyles from './components/OurMessage/ourMessage.css';
 
 import routeStyles from './styles/routes.css';
 
@@ -54,6 +55,7 @@ export function links() {
     {rel: 'stylesheet', href: cartStyles},
     {rel: 'stylesheet', href: searchStyles},
     {rel: 'stylesheet', href: routeStyles},
+    {rel: 'stylesheet', href: messageStyles},
 
     {
       rel: 'preconnect',
