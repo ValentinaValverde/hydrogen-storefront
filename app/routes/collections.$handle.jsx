@@ -44,6 +44,8 @@ export async function loader({request, params, context}) {
 export default function Collection() {
   /** @type {LoaderReturnData} */
   const {collection} = useLoaderData();
+  //HERE I AM!!
+  console.log('COLLECTION ID: ', collection.id);
 
   return (
     <div className="collection">
@@ -103,6 +105,7 @@ function ProductsGrid({products}) {
 function ProductItem({product, loading}) {
   const variant = product.variants.nodes[0];
   const variantUrl = useVariantUrl(product.handle, variant.selectedOptions);
+  console.log('MY SELECTED PRODUCT: ', {product});
   return (
     <Link
       className="product-item"
@@ -140,6 +143,7 @@ const PRODUCT_ITEM_FRAGMENT = `#graphql
       width
       height
     }
+
     priceRange {
       minVariantPrice {
         ...MoneyProductItem
