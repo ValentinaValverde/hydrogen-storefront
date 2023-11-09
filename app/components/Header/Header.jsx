@@ -76,7 +76,6 @@ export function HeaderMenu({menu, viewport}) {
 /**
  * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>}
  */
-//ALSO HERE!!!
 function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
@@ -122,8 +121,6 @@ function HeaderCtas({isLoggedIn, cart}) {
     </nav>
   );
 }
-
-//HERE I AM!!
 
 function HeaderMenuMobileToggle() {
   return (

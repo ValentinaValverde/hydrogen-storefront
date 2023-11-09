@@ -141,7 +141,6 @@ export default function Product() {
           variants={variants}
         />
       </div>
-      {/* HERE I AM!! */}
       <RecommendedProducts products={recommendedProducts} />
     </>
   );

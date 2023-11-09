@@ -25,11 +25,8 @@ export default function Collections() {
     <div className="collections">
       <h1 className="collectionPageTitle">Collections</h1>
       <Pagination connection={collections}>
-        {({nodes, isLoading, PreviousLink, NextLink}) => (
+        {({nodes, isLoading, NextLink}) => (
           <div>
-            <PreviousLink>
-              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
-            </PreviousLink>
             <CollectionsGrid collections={nodes} />
             <NextLink>
               {isLoading ? (

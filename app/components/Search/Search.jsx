@@ -110,7 +110,7 @@ function SearchResultsProductsGrid({products}) {
     <div className="search-result">
       <h2>Products</h2>
       <Pagination connection={products}>
-        {({nodes, isLoading, NextLink, PreviousLink}) => {
+        {({nodes, isLoading, NextLink}) => {
           const itemsMarkup = nodes.map((product) => (
             <div className="search-results-item" key={product.id}>
               <Link prefetch="intent" to={`/products/${product.handle}`}>
@@ -127,11 +127,6 @@ function SearchResultsProductsGrid({products}) {
           ));
           return (
             <div>
-              <div>
-                <PreviousLink>
-                  {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
-                </PreviousLink>
-              </div>
               <div>
                 {itemsMarkup}
                 <br />
