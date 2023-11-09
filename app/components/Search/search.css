@@ -55,16 +55,15 @@
 
 .search-result {
   margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 .search-results-item {
   margin-bottom: 0.5rem;
-  width: 200px;
-  display: flex;
-  justify-content: center;
+  /* width: 200px; */
+  /* display: flex;
+  justify-content: center; */
 }
 
 .loadMoreSearch {
@@ -101,4 +100,14 @@
 
 .searchButton:hover {
   cursor: pointer;
+}
+
+/* .something {
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+} */
+
+.something {
+  background-color: aliceblue;
 }

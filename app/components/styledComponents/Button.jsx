@@ -14,6 +14,9 @@ export const Button = styled.button`
   }
 `;
 
-// Button:hover{
-//     cursor: pointer;
-// }
+export const LoadMoreButton = styled.button`
+  color: white;
+  border: solid 2px white;
+  border-radius: 16px;
+  padding: 10px;
+`;
