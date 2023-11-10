@@ -34,11 +34,11 @@ export default function Homepage() {
   return (
     <div className="home">
       <Beginning />
-      <OurMessage />
-      <AboutUs />
-      <HomeCollections collections={mainCollections} />
+      {/* <OurMessage /> */}
+      {/* <AboutUs /> */}
+      {/* <HomeCollections collections={mainCollections} /> */}
       {/* <WantCustom /> */}
-      <Connect />
+      {/* <Connect /> */}
     </div>
   );
 }
