@@ -4,10 +4,6 @@ import {YellowButton} from '../styledComponents/Button';
 export default function Beginning() {
   return (
     <>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-      </style>
       <div className="splash-page">
         <div>
           <div className="header">
