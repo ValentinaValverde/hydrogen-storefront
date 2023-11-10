@@ -17,7 +17,7 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
       <SearchAside />
       <MobileMenuAside menu={header.menu} />
       {/* HERE I AM: THIS IS THE HEADER!!! */}
-      {/* <Header header={header} cart={cart} isLoggedIn={isLoggedIn} /> */}
+      <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />
       <main>{children}</main>
       {/* <Suspense>
         <Await resolve={footer}>

@@ -1,0 +1,39 @@
+.header-ctas {
+  background-color: black;
+  position: sticky;
+  width: 100%;
+  top: 0;
+
+  .header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .header-icon {
+    color: white;
+    margin: 10px;
+  }
+
+  .malova-header-link {
+    color: white;
+    text-decoration: none;
+  }
+
+  .left-side {
+    width: 30%;
+  }
+
+  .right-side {
+    width: 30%;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .header-icon {
+    display: none;
+  }
+}

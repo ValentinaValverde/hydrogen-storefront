@@ -8,7 +8,7 @@ import {Link} from '@remix-run/react';
 export function Header({header, isLoggedIn, cart}) {
   const {shop, menu} = header;
   return (
-    <header className="header">
+    <header>
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
@@ -57,7 +57,7 @@ export function HeaderMenu({menu, viewport}) {
 
         return (
           <NavLink
-            className="header-menu-item"
+            // className="header-menu-item"
             end
             key={item.id}
             onClick={closeAside}
@@ -79,8 +79,8 @@ export function HeaderMenu({menu, viewport}) {
 function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
-      <div className="headerContainer">
-        <div>
+      <div className="header-container">
+        <div className="left-side">
           <HeaderMenuMobileToggle />
           <NavLink prefetch="intent" to="/account" className="navLinks">
             {/* {isLoggedIn ? 'Account' : 'Sign in'} */}
@@ -89,19 +89,17 @@ function HeaderCtas({isLoggedIn, cart}) {
               width="21"
               height="21"
               fill="currentColor"
-              className="bi bi-person-fill headerIcon"
+              className="bi bi-person-fill header-icon"
               viewBox="0 0 16 16"
             >
               <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
             </svg>
           </NavLink>
         </div>
-        <div>
-          <NavLink prefetch="intent" to="/" className="malovaHomeLink" end>
-            <h1>Malova</h1>
-          </NavLink>
-        </div>
-        <div>
+        <NavLink prefetch="intent" to="/" className="malova-header-link" end>
+          <h1>malova</h1>
+        </NavLink>
+        <div className="right-side">
           <SearchToggle />
           <Link to="/custom_form">
             <svg
@@ -109,7 +107,7 @@ function HeaderCtas({isLoggedIn, cart}) {
               width="16"
               height="16"
               fill="white"
-              className="bi bi-pencil-square headerIcon"
+              className="bi bi-pencil-square header-icon"
               viewBox="0 0 16 16"
             >
               <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -134,7 +132,7 @@ function HeaderMenuMobileToggle() {
         width="25"
         height="25"
         fill="white"
-        className="bi bi-flower3 headerIcon"
+        className="bi bi-flower3 header-icon"
         viewBox="0 0 16 16"
       >
         <path d="M11.424 8c.437-.052.811-.136 1.04-.268a2 2 0 0 0-2-3.464c-.229.132-.489.414-.752.767C9.886 4.63 10 4.264 10 4a2 2 0 1 0-4 0c0 .264.114.63.288 1.035-.263-.353-.523-.635-.752-.767a2 2 0 0 0-2 3.464c.229.132.603.216 1.04.268-.437.052-.811.136-1.04.268a2 2 0 1 0 2 3.464c.229-.132.489-.414.752-.767C6.114 11.37 6 11.736 6 12a2 2 0 1 0 4 0c0-.264-.114-.63-.288-1.035.263.353.523.635.752.767a2 2 0 1 0 2-3.464c-.229-.132-.603-.216-1.04-.268zM9 4a1.468 1.468 0 0 1-.045.205c-.039.132-.1.295-.183.484a12.88 12.88 0 0 1-.637 1.223L8 6.142a21.73 21.73 0 0 1-.135-.23 12.88 12.88 0 0 1-.637-1.223 4.216 4.216 0 0 1-.183-.484A1.473 1.473 0 0 1 7 4a1 1 0 1 1 2 0zM3.67 5.5a1 1 0 0 1 1.366-.366 1.472 1.472 0 0 1 .156.142c.094.1.204.233.326.4.245.333.502.747.742 1.163l.13.232a21.86 21.86 0 0 1-.265.002 12.88 12.88 0 0 1-1.379-.06 4.214 4.214 0 0 1-.51-.083 1.47 1.47 0 0 1-.2-.064A1 1 0 0 1 3.67 5.5zm1.366 5.366a1 1 0 0 1-1-1.732c.001 0 .016-.008.047-.02.037-.013.087-.028.153-.044.134-.032.305-.06.51-.083a12.88 12.88 0 0 1 1.379-.06c.09 0 .178 0 .266.002a21.82 21.82 0 0 1-.131.232c-.24.416-.497.83-.742 1.163a4.1 4.1 0 0 1-.327.4 1.483 1.483 0 0 1-.155.142zM9 12a1 1 0 0 1-2 0 1.476 1.476 0 0 1 .045-.206c.039-.131.1-.294.183-.483.166-.378.396-.808.637-1.223L8 9.858l.135.23c.241.415.47.845.637 1.223.083.19.144.352.183.484A1.338 1.338 0 0 1 9 12zm3.33-6.5a1 1 0 0 1-.366 1.366 1.478 1.478 0 0 1-.2.064c-.134.032-.305.06-.51.083-.412.045-.898.061-1.379.06-.09 0-.178 0-.266-.002l.131-.232c.24-.416.497-.83.742-1.163a4.1 4.1 0 0 1 .327-.4c.046-.05.085-.086.114-.11.026-.022.04-.03.041-.032a1 1 0 0 1 1.366.366zm-1.366 5.366a1.494 1.494 0 0 1-.155-.141 4.225 4.225 0 0 1-.327-.4A12.88 12.88 0 0 1 9.74 9.16a22 22 0 0 1-.13-.232l.265-.002c.48-.001.967.015 1.379.06.205.023.376.051.51.083.066.016.116.031.153.044l.048.02a1 1 0 1 1-1 1.732zM8 9a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
@@ -151,7 +149,7 @@ function SearchToggle() {
         width="16"
         height="16"
         fill="currentColor"
-        className="bi bi-search headerIcon"
+        className="bi bi-search header-icon"
         viewBox="0 0 16 16"
       >
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -171,7 +169,7 @@ function CartBadge({count}) {
         width="16"
         height="16"
         fill="currentColor"
-        className="bi bi-bag-fill headerIcon"
+        className="bi bi-bag-fill header-icon"
         viewBox="0 0 16 16"
       >
         <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />

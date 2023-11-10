@@ -3,7 +3,7 @@
 * routes/__index
 * --------------------------------------------------
 */
-.featured-collection {
+/* .featured-collection {
   display: block;
   margin-bottom: 2rem;
   position: relative;
@@ -20,14 +20,14 @@
   height: auto;
   max-height: 100%;
   object-fit: cover;
-}
+} */
 
 /*
   * --------------------------------------------------
   * routes/collections._index.tsx
   * --------------------------------------------------
   */
-.collections-grid {
+/* .collections-grid {
   display: grid;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
@@ -36,7 +36,7 @@
 
 .collection-item img {
   height: auto;
-}
+} */
 
 /*
   * --------------------------------------------------
@@ -44,7 +44,7 @@
   * --------------------------------------------------
   */
 
-.collectionTop {
+/* .collectionTop {
   padding: 10px;
   margin: 20px;
   margin-bottom: 50px;
@@ -60,7 +60,7 @@
   p {
     text-align: center;
   }
-}
+} */
 
 /* .collection-description {
     margin-bottom: 1rem;
@@ -70,7 +70,7 @@
     }
   } */
 
-.products-grid {
+/* .products-grid {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -102,21 +102,21 @@
 
 .productImage {
   margin: 10px;
-}
+} */
 
 /*
   * --------------------------------------------------
   * routes/products.$handle.tsx
   * --------------------------------------------------
   */
-.product {
+/* .product {
   margin-top: 50px;
   display: grid;
   @media (min-width: 45em) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 4rem;
   }
-}
+} */
 
 /* @media (width <= 1200px) {
     .product {
@@ -188,45 +188,14 @@
 
 /*
   * --------------------------------------------------
-  * routes/blog._index.tsx
-  * --------------------------------------------------
-  */
-.blog-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
-}
-
-.blog-article-image {
-  aspect-ratio: 3/2;
-  display: block;
-}
-
-.blog-article-image img {
-  height: 100%;
-}
-
-/*
-  * --------------------------------------------------
-  * routes/blog.$articlehandle.tsx
-  * --------------------------------------------------
-  */
-.article img {
-  height: auto;
-  width: 100%;
-}
-
-/*
-  * --------------------------------------------------
   * routes/account
   * --------------------------------------------------
   */
-.account-profile-marketing {
+/* .account-profile-marketing {
   display: flex;
   align-items: center;
 }
 
 .account-logout {
   display: inline-block;
-}
+} */
