@@ -375,14 +375,14 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
               type="hidden"
               value={JSON.stringify(analytics)}
             />
-            <Button
+            <button
               type="submit"
               onClick={onClick}
               disabled={disabled ?? fetcher.state !== 'idle'}
               className="addToCartButton"
             >
               {children}
-            </Button>
+            </button>
           </>
         )}
       </CartForm>
