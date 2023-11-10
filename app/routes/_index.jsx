@@ -37,7 +37,7 @@ export default function Homepage() {
       <OurMessage />
       <AboutUs />
       <HomeCollections collections={mainCollections} />
-      <WantCustom />
+      {/* <WantCustom /> */}
       <Connect />
     </div>
   );
