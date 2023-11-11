@@ -32,8 +32,12 @@ export function Aside({children, heading, id = 'aside'}) {
 }
 
 function CloseAside() {
+  const onClick = () => {
+    history.go(-1);
+  };
+
   return (
-    <a className="close" href="#">
+    <a className="close" onClick={onClick}>
       x
     </a>
   );

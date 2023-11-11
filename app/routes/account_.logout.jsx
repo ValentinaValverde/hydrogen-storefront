@@ -1,4 +1,5 @@
 import {json, redirect} from '@shopify/remix-oxygen';
+import {deleteSwymLocalStorage} from '../src/components/account/AccountLoginForm.client';
 
 /**
  * @type {V2_MetaFunction}
@@ -9,6 +10,7 @@ export const meta = () => {
 
 export async function loader() {
   return redirect('/account/login');
+  deleteSwymLocalStorage();
 }
 
 /**
