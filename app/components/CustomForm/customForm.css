@@ -18,3 +18,49 @@
     color: #233349;
   }
 }
+
+/*
+* --------------------------------------------------
+* custom_form._index.jsx
+* --------------------------------------------------
+*/
+
+.custom-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.customForm {
+  background-color: #233349;
+  border-radius: 16px;
+  width: 400px;
+  max-width: 95%;
+  margin: 20px;
+  margin-top: 75px;
+  padding: 30px;
+  text-align: center;
+  color: #edd6cc;
+  font-size: 20px;
+
+  input {
+    background-color: #9eafb6;
+    padding: 10px;
+    border-radius: 16px;
+    border: solid black 1px;
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 16px;
+    border: solid black 1px;
+    background-color: #c4772a;
+    color: black;
+    width: 100px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}

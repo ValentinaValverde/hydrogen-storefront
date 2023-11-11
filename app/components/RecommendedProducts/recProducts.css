@@ -1,4 +1,60 @@
+/*
+* --------------------------------------------------
+* HomeReccProducts.jsx
+* --------------------------------------------------
+*/
+
 .home-recc-prod-container {
   width: 95%;
   margin: 50px;
+}
+
+/*
+* --------------------------------------------------
+* RecommendedProducts.jsx
+* --------------------------------------------------
+*/
+
+.recommended-products {
+  margin-top: 75px;
+  background-color: #d3a292;
+  padding: 20px;
+
+  h2 {
+    font-size: 25px;
+  }
+}
+
+.recommended-products-grid {
+  /* background-color: black; */
+  display: flex;
+  height: auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.recommended-product {
+  background-color: #233349;
+  border-radius: 16px;
+  width: 20%;
+  height: auto;
+  margin: 10px;
+  padding-bottom: 15px;
+
+  .recc-prod-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 16px 16px 0px 0px;
+  }
+
+  h4 {
+    color: #edd6cc;
+    text-align: center;
+  }
+
+  small {
+    color: #edd6cc;
+    text-align: center;
+  }
 }

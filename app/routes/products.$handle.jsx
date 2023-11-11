@@ -343,12 +343,13 @@ function ProductOptions({option}) {
               replace
               to={to}
               style={{
-                border: isActive ? '1px solid white ' : '1px solid transparent',
-                backgroundColor: isActive ? 'white' : 'transparent',
-                color: isActive ? 'black' : 'white',
+                border: isActive ? '1px solid black ' : '1px solid transparent',
+                backgroundColor: isActive ? '#d3a292' : 'transparent',
+                color: isActive ? 'black' : 'black',
                 opacity: isAvailable ? 1 : 0.3,
                 borderRadius: '16px',
                 padding: '10px',
+                textDecoration: 'none',
               }}
             >
               {value}
