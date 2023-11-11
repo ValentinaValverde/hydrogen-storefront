@@ -30,6 +30,21 @@ export const YellowButton = styled.button`
   }
 `;
 
+export const PinkButton = styled.button`
+  background-color: #d3a292;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+  /* box-shadow: -2px 2px 2px black; */
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export const LoadMoreButton = styled.button`
   color: white;
   border: solid 2px white;

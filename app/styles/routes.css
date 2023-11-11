@@ -1,80 +1,86 @@
 /*
 * --------------------------------------------------
-* routes/__index
+* collections._index.jsx
 * --------------------------------------------------
 */
-/* .featured-collection {
-  display: block;
-  margin-bottom: 2rem;
-  position: relative;
-}
 
-.featured-collection-image {
-  aspect-ratio: 1 / 1;
-  @media (min-width: 45em) {
-    aspect-ratio: 16 / 9;
+.collection-page-header {
+  text-align: center;
+  padding: 50px;
+
+  h1 {
+    font-size: 75px;
   }
 }
 
-.featured-collection img {
-  height: auto;
-  max-height: 100%;
-  object-fit: cover;
-} */
+.collections-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 30px;
 
-/*
-  * --------------------------------------------------
-  * routes/collections._index.tsx
-  * --------------------------------------------------
-  */
-/* .collections-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(var(--grid-item-width), 1fr));
-  margin-bottom: 2rem;
+  .card {
+    background-color: black;
+    box-shadow: -2px 2px 2px black;
+    width: 30%;
+    height: 500px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 16px;
+    transition: 1s;
+  }
+
+  .card:hover {
+    scale: 1.1;
+  }
+
+  .Image {
+    border-radius: 16px 16px 0px 0px;
+    height: auto;
+    overflow: hidden;
+    height: 75%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  h5 {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+  }
 }
 
-.collection-item img {
-  height: auto;
-} */
+@media (width <= 800px) {
+  .card {
+    margin: 10px;
+    width: 40%;
+    height: 300px;
+  }
+}
 
 /*
-  * --------------------------------------------------
-  * routes/collections.$handle.tsx
-  * --------------------------------------------------
-  */
+* --------------------------------------------------
+* collections.$handle.jsx
+* --------------------------------------------------
+*/
 
-/* .collectionTop {
+.collectionTop {
   padding: 10px;
   margin: 20px;
   margin-bottom: 50px;
   text-align: center;
 
   h1 {
-    margin: 0;
-    font-family: 'Classical_Diary';
+    margin-top: 50px;
     font-size: 50px;
-    letter-spacing: 1px;
   }
+}
 
-  p {
-    text-align: center;
-  }
-} */
-
-/* .collection-description {
-    margin-bottom: 1rem;
-    max-width: 95%;
-    @media (min-width: 45em) {
-      max-width: 600px;
-    }
-  } */
-
-/* .products-grid {
+.products-grid {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #403d39;
+  background-color: #d3a292;
   margin: -30px;
   margin-bottom: 0px;
   padding-left: 50px;
@@ -95,34 +101,40 @@
 }
 
 .product-item {
-  color: white;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
   margin: 10px;
   margin-bottom: 20px;
+  line-height: 5px;
 }
 
-.productImage {
-  margin: 10px;
-} */
-
 /*
-  * --------------------------------------------------
-  * routes/products.$handle.tsx
-  * --------------------------------------------------
-  */
-/* .product {
+* --------------------------------------------------
+* products.$handle.jsx
+* --------------------------------------------------
+*/
+
+.back-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+
+.back-button:hover {
+  cursor: pointer;
+}
+
+.product {
   margin-top: 50px;
   display: grid;
   @media (min-width: 45em) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 4rem;
   }
-} */
-
-/* @media (width <= 1200px) {
-    .product {
-      margin-top: 50%;
-    }
-  } */
+}
 
 .product h1 {
   margin-top: 0;
@@ -135,13 +147,14 @@
 
 .product-image img {
   height: auto;
+  margin: 10px;
+  margin-top: 30px;
 }
 
 .product-main {
   align-self: start;
   position: sticky;
   top: 6rem;
-  color: white;
 
   .title {
     font-family: 'Classical_Diary';
@@ -186,16 +199,6 @@
     color: pink;
   } */
 
-/*
-  * --------------------------------------------------
-  * routes/account
-  * --------------------------------------------------
-  */
-/* .account-profile-marketing {
-  display: flex;
-  align-items: center;
+.money {
+  font-size: 20px;
 }
-
-.account-logout {
-  display: inline-block;
-} */
