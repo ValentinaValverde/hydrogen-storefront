@@ -79,7 +79,7 @@ function CartLineItem({layout, line}) {
           data={image}
           height={100}
           loading="lazy"
-          width={100}
+          width={150}
         />
       )}
 
@@ -94,7 +94,7 @@ function CartLineItem({layout, line}) {
             }
           }}
         >
-          <p>
+          <p className="cart-prod-title">
             <strong>{product.title}</strong>
           </p>
         </Link>
@@ -122,7 +122,7 @@ function CartCheckoutActions({checkoutUrl}) {
 
   return (
     <div>
-      <a href={checkoutUrl} target="_self">
+      <a href={checkoutUrl} target="_self" className="cont-checkout">
         <p>Continue to Checkout &rarr;</p>
       </a>
       <br />
@@ -169,7 +169,9 @@ function CartLineRemoveButton({lineIds}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
-      <button type="submit">Remove</button>
+      <button type="submit" className="cart-button">
+        Remove
+      </button>
     </CartForm>
   );
 }
@@ -192,6 +194,7 @@ function CartLineQuantity({line}) {
           disabled={quantity <= 1}
           name="decrease-quantity"
           value={prevQuantity}
+          className="quantity-cart-butt"
         >
           <span>&#8722; </span>
         </button>
@@ -202,6 +205,7 @@ function CartLineQuantity({line}) {
           aria-label="Increase quantity"
           name="increase-quantity"
           value={nextQuantity}
+          className="quantity-cart-butt"
         >
           <span>&#43;</span>
         </button>
@@ -289,20 +293,20 @@ function CartDiscounts({discountCodes}) {
             <div className="cart-discount">
               <code>{codes?.join(', ')}</code>
               &nbsp;
-              <button>Remove</button>
+              <button className="cart-button">Remove</button>
             </div>
           </UpdateDiscountForm>
         </div>
       </dl>
 
       {/* Show an input to apply a discount */}
-      <UpdateDiscountForm discountCodes={codes}>
+      {/* <UpdateDiscountForm discountCodes={codes}>
         <div>
           <input type="text" name="discountCode" placeholder="Discount code" />
           &nbsp;
           <button type="submit">Apply</button>
         </div>
-      </UpdateDiscountForm>
+      </UpdateDiscountForm> */}
     </div>
   );
 }
