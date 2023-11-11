@@ -105,7 +105,7 @@ export default function Register() {
       <h1>Register.</h1>
       <Form method="POST">
         <div className="registerForm">
-          <fieldset>
+          <fieldset className="sign-in-fieldset">
             <label htmlFor="email">Email address</label>
             <input
               id="email"
@@ -140,25 +140,24 @@ export default function Register() {
               minLength={8}
               required
             />
+            {error ? (
+              <p>
+                <mark>
+                  <small>{error}</small>
+                </mark>
+              </p>
+            ) : (
+              <br />
+            )}
+            <button type="submit" className="signInButton">
+              Register
+            </button>
           </fieldset>
         </div>
-
-        {error ? (
-          <p>
-            <mark>
-              <small>{error}</small>
-            </mark>
-          </p>
-        ) : (
-          <br />
-        )}
-        <button type="submit" className="registerButton">
-          Register
-        </button>
       </Form>
       <br />
       <p>
-        <Link to="/account/login" className="loginLink">
+        <Link to="/account/login" className="sign-in-link">
           Login →
         </Link>
       </p>

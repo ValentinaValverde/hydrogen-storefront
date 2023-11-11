@@ -48,8 +48,8 @@ export default function Recover() {
   const action = useActionData();
 
   return (
-    <div className="account-recover">
-      <div>
+    <div>
+      <div className="account-recover">
         {action?.resetRequested ? (
           <>
             <h1>Request Sent.</h1>
@@ -71,7 +71,7 @@ export default function Recover() {
             <br />
             <Form method="POST">
               <div className="forgotPasswordForm">
-                <fieldset>
+                <fieldset className="sign-in-fieldset">
                   <label htmlFor="email">Email</label>
                   <input
                     aria-label="Email address"
@@ -84,26 +84,25 @@ export default function Recover() {
                     required
                     type="email"
                   />
+                  {action?.error ? (
+                    <p>
+                      <mark>
+                        <small>{action.error}</small>
+                      </mark>
+                    </p>
+                  ) : (
+                    <br />
+                  )}
+                  <button type="submit" className="request-link-button">
+                    Request Reset Link
+                  </button>
                 </fieldset>
               </div>
-
-              {action?.error ? (
-                <p>
-                  <mark>
-                    <small>{action.error}</small>
-                  </mark>
-                </p>
-              ) : (
-                <br />
-              )}
-              <button type="submit" className="resetLinkButton">
-                Request Reset Link
-              </button>
             </Form>
             <div>
               <br />
               <p>
-                <Link to="/account/login" className="loginLink">
+                <Link to="/account/login" className="sign-in-link">
                   Login →
                 </Link>
               </p>
