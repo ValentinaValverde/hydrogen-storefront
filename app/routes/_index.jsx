@@ -40,7 +40,7 @@ export default function Homepage() {
       <AboutUs />
       <HomeCollections collections={mainCollections} />
       <OurMessage />
-      {/* <Connect /> */}
+      <Connect />
     </div>
   );
 }

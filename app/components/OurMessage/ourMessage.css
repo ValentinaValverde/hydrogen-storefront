@@ -1,0 +1,30 @@
+.ourMessageScreen {
+  background-color: #9eafb6;
+  color: white;
+  padding: 50px;
+}
+
+.ourMessageContainer {
+  background-color: #233349;
+  box-shadow: -2px 2px 2px black;
+  border-radius: 16px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  h1 {
+    font-size: 100px;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: right;
+    line-height: 30px;
+  }
+}
+
+.block {
+  width: 450px;
+}
