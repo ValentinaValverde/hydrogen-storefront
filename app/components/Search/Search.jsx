@@ -44,6 +44,7 @@ export function SearchForm({searchTerm}) {
         placeholder="Search…"
         ref={inputRef}
         type="search"
+        className="search-page-bar"
       />
       &nbsp;
       <button type="submit" className="searchButton">
@@ -111,41 +112,44 @@ function SearchResultsProductsGrid({products}) {
   return (
     <div className="search-result">
       <h2>Products</h2>
-      <Pagination connection={products}>
-        {({nodes, isLoading, NextLink}) => {
-          const itemsMarkup = nodes.map((product) => (
-            <div className="search-results-item" key={product.id}>
-              <Link prefetch="intent" to={`/products/${product.handle}`}>
-                {/* <img
-                  className="searchProductImage"
-                  src={product.variants.nodes.map((nodes) => {
-                    return nodes.image.url;
-                  })}
-                  alt="productImage"
-                ></img> */}
-                <p className="productSearchLink">{product.title}</p>
-              </Link>
-            </div>
-          ));
-          return (
-            <div>
-              <div>
-                {itemsMarkup}
-                <br />
+      <div className="search-page-container">
+        <Pagination connection={products}>
+          {({nodes, isLoading, NextLink}) => {
+            const itemsMarkup = nodes.map((product) => (
+              <div className="search-results-item" key={product.id}>
+                <Link prefetch="intent" to={`/products/${product.handle}`}>
+                  <img
+                    className="searchProductImage"
+                    src={product.variants.nodes.map((nodes) => {
+                      return nodes.image.url;
+                    })}
+                    alt="productImage"
+                  ></img>
+                  <p className="productSearchLink">{product.title}</p>
+                </Link>
               </div>
+            ));
+            return (
               <div>
-                <NextLink>
-                  {isLoading ? (
-                    'Loading...'
-                  ) : (
-                    <span className="loadMoreSearch">Load more ↓</span>
-                  )}
-                </NextLink>
+                <div>
+                  {itemsMarkup}
+                  <br />
+                </div>
+                <div>
+                  <NextLink>
+                    {isLoading ? (
+                      'Loading...'
+                    ) : (
+                      <span className="loadMoreSearch">Load more ↓</span>
+                    )}
+                  </NextLink>
+                </div>
               </div>
-            </div>
-          );
-        }}
-      </Pagination>
+            );
+          }}
+        </Pagination>
+      </div>
+
       <br />
     </div>
   );
