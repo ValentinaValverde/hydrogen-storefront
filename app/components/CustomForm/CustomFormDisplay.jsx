@@ -1,5 +1,5 @@
 import {Link} from '@remix-run/react';
-import {RedButton} from '../styledComponents/Button';
+import {YellowButton} from '../styledComponents/Button';
 
 export default function WantCustom() {
   return (
@@ -14,7 +14,7 @@ export default function WantCustom() {
             Want a <i>custom</i> product?
           </h1>
           <p>we got you covered!</p>
-          <RedButton>customize now!</RedButton>
+          <YellowButton>customize now!</YellowButton>
         </div>
       </Link>
     </>

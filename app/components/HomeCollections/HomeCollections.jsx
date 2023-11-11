@@ -16,7 +16,10 @@ export default function HomeCollections({collections}) {
                     return (
                       <>
                         <div key={something.id} className="collectionCard">
-                          <Link to={`collections/${something.handle}`}>
+                          <Link
+                            to={`collections/${something.handle}`}
+                            className="Link"
+                          >
                             <img src={something.image?.url} />
                             <div className="cardTitleContainer">
                               <div className="collectionCardTitle">

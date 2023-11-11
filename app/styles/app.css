@@ -3,3 +3,7 @@ body {
   background-color: #edd6cc;
   margin: 0;
 }
+
+.Link {
+  text-decoration: none;
+}
