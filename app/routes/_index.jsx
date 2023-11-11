@@ -34,10 +34,10 @@ export default function Homepage() {
   return (
     <div className="home">
       <Beginning />
+      <WantCustom />
       {/* <OurMessage /> */}
       {/* <AboutUs /> */}
       {/* <HomeCollections collections={mainCollections} /> */}
-      {/* <WantCustom /> */}
       {/* <Connect /> */}
     </div>
   );
