@@ -6,6 +6,7 @@ import {Header, HeaderMenu} from './Header/Header';
 import {CartMain} from './Cart/Cart';
 import {PredictiveSearchForm, PredictiveSearchResults} from './Search/Search';
 import AsideMenu from '../components/Aside/AsideMenu';
+import BetterFooter from './Footer/BetterFooter';
 
 /**
  * @param {LayoutProps}
@@ -24,6 +25,7 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
           {(footer) => <Footer menu={footer.menu} />}
         </Await>
       </Suspense> */}
+      <BetterFooter />
     </>
   );
 }

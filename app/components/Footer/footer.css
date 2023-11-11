@@ -1,5 +1,15 @@
-/*
-* --------------------------------------------------
-* components/Footer
-* --------------------------------------------------
-*/
+/* .footer-menu {
+  background-color: black;
+  padding: 20px;
+  position: sticky;
+  bottom: 0;
+} */
+
+.footer {
+  bottom: 0px;
+  padding-right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #a8512f;
+  color: #edd6cc;
+}

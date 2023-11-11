@@ -1,6 +1,6 @@
 .header-ctas {
   background-color: black;
-  position: sticky;
+  position: fixed;
   width: 100%;
   top: 0;
 
@@ -14,7 +14,9 @@
 
   .header-icon {
     color: white;
-    margin: 10px;
+    margin: 20px;
+    width: 20px;
+    height: 20px;
   }
 
   .malova-header-link {

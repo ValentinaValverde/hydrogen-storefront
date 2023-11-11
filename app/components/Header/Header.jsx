@@ -86,13 +86,11 @@ function HeaderCtas({isLoggedIn, cart}) {
             {/* {isLoggedIn ? 'Account' : 'Sign in'} */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="21"
-              height="21"
               fill="currentColor"
-              className="bi bi-person-fill header-icon"
+              className="bi bi-person header-icon"
               viewBox="0 0 16 16"
             >
-              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
             </svg>
           </NavLink>
         </div>
@@ -101,26 +99,26 @@ function HeaderCtas({isLoggedIn, cart}) {
         </NavLink>
         <div className="right-side">
           <SearchToggle />
-          <Link to="/custom_form">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="white"
-              className="bi bi-pencil-square header-icon"
-              viewBox="0 0 16 16"
-            >
-              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-              <path
-                fillRule="evenodd"
-                d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
-              />
-            </svg>
-          </Link>
+          <CustomFormIcon />
           <CartToggle cart={cart} />
         </div>
       </div>
     </nav>
+  );
+}
+
+function CustomFormIcon() {
+  return (
+    <Link to="/custom_form">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        className="bi bi-envelope header-icon"
+        viewBox="0 0 16 16"
+      >
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+      </svg>
+    </Link>
   );
 }
 
@@ -129,8 +127,6 @@ function HeaderMenuMobileToggle() {
     <a className="header-menu-mobile-toggle" href="#mobile-menu-aside">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="25"
-        height="25"
         fill="white"
         className="bi bi-flower3 header-icon"
         viewBox="0 0 16 16"
@@ -146,8 +142,6 @@ function SearchToggle() {
     <a href="#search-aside" className="navLinks">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
         fill="currentColor"
         className="bi bi-search header-icon"
         viewBox="0 0 16 16"
@@ -166,13 +160,11 @@ function CartBadge({count}) {
     <a href="#cart-aside" className="navLinks">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
         fill="currentColor"
-        className="bi bi-bag-fill header-icon"
+        className="bi bi-bag header-icon"
         viewBox="0 0 16 16"
       >
-        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
+        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
       </svg>
       {/* {count} */}
     </a>
