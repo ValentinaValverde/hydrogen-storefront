@@ -255,13 +255,14 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
       <br />
       <Link
         to="/collections"
+        className="cont-shopping-aside-link"
         onClick={() => {
           if (layout === 'aside') {
             window.location.href = '/collections';
           }
         }}
       >
-        Continue shopping →
+        Continue Shopping →
       </Link>
     </div>
   );

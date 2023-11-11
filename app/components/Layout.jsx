@@ -62,9 +62,12 @@ function SearchAside() {
                 placeholder="Search"
                 ref={inputRef}
                 type="search"
+                className="aside-search-bar"
               />
               &nbsp;
-              <button type="submit">Search</button>
+              <button type="submit" className="aside-search-button">
+                Search
+              </button>
             </div>
           )}
         </PredictiveSearchForm>
