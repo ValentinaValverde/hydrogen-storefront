@@ -77,7 +77,7 @@ export default function Login() {
       <h1>Sign In.</h1>
       <Form method="POST">
         <div className="signInForm">
-          <fieldset>
+          <fieldset className="sign-in-fieldset">
             <label htmlFor="email">Email address</label>
             <input
               id="email"
@@ -101,31 +101,30 @@ export default function Login() {
               minLength={8}
               required
             />
+            {error ? (
+              <p>
+                <mark>
+                  <small>{error}</small>
+                </mark>
+              </p>
+            ) : (
+              <br />
+            )}
+            <button type="submit" className="signInButton">
+              Sign in
+            </button>
           </fieldset>
         </div>
-
-        {error ? (
-          <p>
-            <mark>
-              <small>{error}</small>
-            </mark>
-          </p>
-        ) : (
-          <br />
-        )}
-        <button type="submit" className="signInButton">
-          Sign in
-        </button>
       </Form>
       <br />
       <div>
         <p>
-          <Link to="/account/recover" className="forgotPassword">
+          <Link to="/account/recover" className="sign-in-link">
             Forgot password →
           </Link>
         </p>
         <p>
-          <Link to="/account/register" className="register">
+          <Link to="/account/register" className="sign-in-link">
             Register →
           </Link>
         </p>

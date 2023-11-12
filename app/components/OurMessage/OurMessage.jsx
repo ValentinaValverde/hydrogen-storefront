@@ -4,7 +4,9 @@ export default function OurMessage() {
       <div className="ourMessageScreen">
         <div className="ourMessageContainer">
           <div className="block">
-            <h1 className="ourMessage">Our Message</h1>
+            <h1 className="ourMessage">
+              <i>Our Message</i>
+            </h1>
           </div>
 
           <div className="block">

@@ -20,13 +20,13 @@ export default function RecommendedProducts({products}) {
                     className="recommended-product"
                     to={`/products/${product.handle}`}
                   >
-                    <Image data={product.images.nodes[0]} aspectRatio="1/1" />
-                    <h4 className="whiteText">{product.title}</h4>
+                    <Image
+                      data={product.images.nodes[0]}
+                      className="recc-prod-img"
+                    />
+                    <h4>{product.title}</h4>
                     <small>
-                      <Money
-                        data={product.priceRange.minVariantPrice}
-                        className="whiteText"
-                      />
+                      <Money data={product.priceRange.minVariantPrice} />
                     </small>
                   </Link>
                 ))}

@@ -1,21 +1,60 @@
+/*
+* --------------------------------------------------
+* HomeReccProducts.jsx
+* --------------------------------------------------
+*/
+
+.home-recc-prod-container {
+  width: 95%;
+  margin: 50px;
+}
+
+/*
+* --------------------------------------------------
+* RecommendedProducts.jsx
+* --------------------------------------------------
+*/
+
 .recommended-products {
+  margin-top: 75px;
+  background-color: #d3a292;
+  padding: 20px;
+
   h2 {
-    font-family: Classical_Diary;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 
 .recommended-products-grid {
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(4, 1fr);
-  /* @media (min-width: 45em) {
-        grid-template-columns: repeat(4, 1fr);
-      } */
+  /* background-color: black; */
+  display: flex;
+  height: auto;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.recommended-product img {
+.recommended-product {
+  background-color: #233349;
+  border-radius: 16px;
+  width: 20%;
   height: auto;
+  margin: 10px;
+  padding-bottom: 15px;
+
+  .recc-prod-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 16px 16px 0px 0px;
+  }
+
+  h4 {
+    color: #edd6cc;
+    text-align: center;
+  }
+
+  small {
+    color: #edd6cc;
+    text-align: center;
+  }
 }

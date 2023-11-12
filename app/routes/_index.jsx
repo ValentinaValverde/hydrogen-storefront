@@ -6,6 +6,7 @@ import Beginning from '../components/Beginning/Beginning';
 import HomeCollections from '../components/HomeCollections/HomeCollections';
 import Connect from '../components/Connect/Connect';
 import WantCustom from '../components/CustomForm/CustomFormDisplay';
+import HomeReccProducts from '../components/RecommendedProducts/HomeReccProducts';
 import '../fonts/ClassicalDiary-Regular.ttf';
 
 // /**
@@ -34,10 +35,11 @@ export default function Homepage() {
   return (
     <div className="home">
       <Beginning />
-      <OurMessage />
+      <WantCustom />
+      <HomeReccProducts />
       <AboutUs />
       <HomeCollections collections={mainCollections} />
-      {/* <WantCustom /> */}
+      <OurMessage />
       <Connect />
     </div>
   );

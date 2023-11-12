@@ -6,8 +6,10 @@ export default function Connect() {
       <div className="connect">
         <div className="connectHeader">
           <div>
-            <h1>Connect with Us!</h1>
-            <p>We love to hear your stories!</p>
+            <h1>Connect with Us</h1>
+            <p>
+              <i>We love to hear your stories!</i>
+            </p>
           </div>
           <div className="igLogoBlock">
             <svg
@@ -23,13 +25,17 @@ export default function Connect() {
           </div>
         </div>
 
-        <div className="followUs">
+        {/* <div className="followUs">
           <Link to="https://www.instagram.com/malova_designs/" target="_blank">
             <span className="followSpan">Follow Us on Instagram &nbsp;</span>
           </Link>
-        </div>
+        </div> */}
 
-        <Link to="https://www.instagram.com/malova_designs/" target="_blank">
+        <Link
+          to="https://www.instagram.com/malova_designs/"
+          target="_blank"
+          className="Link"
+        >
           <div className="igPostContainer">
             <div className="igLogoContainer one">
               <svg

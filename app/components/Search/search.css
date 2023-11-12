@@ -3,54 +3,18 @@
 * components/Search
 * --------------------------------------------------
 */
+
+.search-page {
+  font-size: 20px;
+  padding: 20px;
+  margin-top: 50px;
+  background-color: #9eafb6;
+}
+
 .search-result {
   h2 {
     margin-top: 10px;
-    font-family: 'Classical_Diary';
   }
-}
-
-.productSearchLink {
-  color: white;
-  transition: 1s;
-  margin-bottom: 15px;
-}
-
-/* .productSearchLink:hover {
-    scale: 1.1;
-  } */
-
-.predictive-search {
-  height: calc(100vh - var(--header-height) - 40px);
-  overflow-y: auto;
-}
-
-.predictive-search-form {
-  background: var(--color-light);
-  position: sticky;
-  top: 0;
-}
-
-.predictive-search-result {
-  margin-bottom: 2rem;
-}
-
-.predictive-search-result h5 {
-  text-transform: uppercase;
-}
-
-.predictive-search-result-item {
-  margin-bottom: 0.5rem;
-}
-
-.predictive-search-result-item a {
-  align-items: center;
-  display: flex;
-}
-
-.predictive-search-result-item a img {
-  margin-right: 0.75rem;
-  height: 100%;
 }
 
 .search-result {
@@ -59,28 +23,13 @@
   justify-content: space-around; */
 }
 
-.search-results-item {
-  margin-bottom: 0.5rem;
-  /* width: 200px; */
-  /* display: flex;
-  justify-content: center; */
-}
-
 .loadMoreSearch {
-  color: white;
-  border: solid 2px white;
+  color: black;
+  text-decoration: none;
+  background-color: #c4772a;
   border-radius: 16px;
   padding: 10px;
-}
-
-.search {
-  font-size: 20px;
   margin: 10px;
-
-  h1 {
-    font-family: Classical_Diary;
-    font-size: 40px;
-  }
 }
 
 .searchProductImage {
@@ -89,25 +38,49 @@
 }
 
 .searchButton {
-  background-color: #f90093;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  font-family: 'Classical_Diary';
-  font-size: 20px;
   padding: 10px;
+  border-radius: 16px;
+  border: solid black 1px;
+  background-color: #233349;
+  color: #edd6cc;
 }
 
 .searchButton:hover {
   cursor: pointer;
 }
 
-/* .something {
-  background-color: antiquewhite;
-  display: flex;
-  justify-content: space-around;
-} */
+.search-page-bar {
+  background-color: #edd6cc;
+  padding: 10px;
+  border-radius: 16px;
+  border: solid black 1px;
+  width: 200px;
+  margin-bottom: 10px;
+}
 
-.something {
-  background-color: aliceblue;
+.search-results-item {
+  background-color: black;
+  border-radius: 16px;
+  width: 20%;
+  margin: 20px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+  }
+}
+
+.productSearchLink {
+  text-decoration: none;
+  padding-bottom: 20px;
+  color: #9eafb6;
+  transition: 1s;
+}
+
+/* HELP HERE!! */
+.search-page-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

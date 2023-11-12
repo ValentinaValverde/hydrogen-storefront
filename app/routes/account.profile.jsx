@@ -116,11 +116,11 @@ export default function AccountProfile() {
   console.log(customer);
   return (
     <div className="account-profile">
-      <h2>My profile</h2>
+      <h2>My Profile</h2>
       <br />
       <Form method="PUT">
         <legend>Personal information</legend>
-        <fieldset>
+        <fieldset className="sign-in-fieldset">
           <label htmlFor="firstName">First name</label>
           <input
             id="firstName"
@@ -164,23 +164,10 @@ export default function AccountProfile() {
             aria-label="Email address"
             defaultValue={customer.email ?? ''}
           />
-          <div className="account-profile-marketing">
-            <input
-              id="acceptsMarketing"
-              name="acceptsMarketing"
-              type="checkbox"
-              placeholder="Accept marketing"
-              aria-label="Accept marketing"
-              defaultChecked={customer.acceptsMarketing}
-            />
-            <label htmlFor="acceptsMarketing">
-              &nbsp; Subscribed to marketing communications
-            </label>
-          </div>
         </fieldset>
         <br />
         <legend>Change password (optional)</legend>
-        <fieldset>
+        <fieldset className="sign-in-fieldset">
           <label htmlFor="currentPassword">Current password</label>
           <input
             id="currentPassword"

@@ -22,11 +22,17 @@ export default function Collections() {
   const {collections} = useLoaderData();
 
   return (
-    <div className="collections">
-      <h1 className="collectionPageTitle">Collections</h1>
+    <div>
+      <div className="collection-page-header">
+        <h1>Collections</h1>
+        <p>NEVER SHOW THIS PAGE</p>
+      </div>
       <Pagination connection={collections}>
-        {({nodes, isLoading, NextLink}) => (
+        {({nodes, isLoading, PreviousLink, NextLink}) => (
           <div>
+            {/* <PreviousLink>
+              {isLoading ? 'Loading...' : <span>↑ Load previous</span>}
+            </PreviousLink> */}
             <CollectionsGrid collections={nodes} />
             <NextLink>
               {isLoading ? (
@@ -47,7 +53,7 @@ export default function Collections() {
  */
 function CollectionsGrid({collections}) {
   return (
-    <div className="collections-grid">
+    <div className="collections-container">
       {collections.map((collection, index) => (
         <CollectionItem
           key={collection.id}
@@ -67,24 +73,22 @@ function CollectionsGrid({collections}) {
  */
 function CollectionItem({collection, index}) {
   return (
-    <div className="collectionPageCard">
-      <Link
-        className="collection-item"
-        key={collection.id}
-        to={`/collections/${collection.handle}`}
-        prefetch="intent"
-      >
-        {collection?.image && (
-          <Image
-            alt={collection.image.altText || collection.title}
-            aspectRatio="1/1"
-            data={collection.image}
-            loading={index < 3 ? 'eager' : undefined}
-          />
-        )}
-        <h5 className="collectionPageCardTitle">{collection.title}</h5>
-      </Link>
-    </div>
+    <Link
+      key={collection.id}
+      to={`/collections/${collection.handle}`}
+      prefetch="intent"
+      className="card"
+    >
+      {collection?.image && (
+        <Image
+          alt={collection.image.altText || collection.title}
+          data={collection.image}
+          loading={index < 3 ? 'eager' : undefined}
+          className="Image"
+        />
+      )}
+      <h5>{collection.title}</h5>
+    </Link>
   );
 }
 

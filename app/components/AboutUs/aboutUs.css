@@ -1,8 +1,6 @@
 .aboutUsContainer {
+  background-color: #d3a292;
   padding: 10px;
-  background-color: #403d39;
-  margin-left: -20px;
-  margin-right: -20px;
 
   display: flex;
   flex-direction: row;
@@ -10,13 +8,13 @@
   flex-wrap: wrap;
 
   h1 {
-    font-size: 50px;
-    font-family: 'Classical_Diary';
-    letter-spacing: 3px;
+    font-size: 75px;
+    color: white;
   }
 
   .pTag {
-    color: white;
+    color: #edd6cc;
+    font-size: 20px;
   }
 
   img {
@@ -33,7 +31,7 @@
   }
 
   .heart {
-    color: pink;
+    color: #a8512f;
     width: 20px;
     height: 20px;
     margin: 20px;

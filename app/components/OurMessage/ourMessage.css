@@ -1,51 +1,30 @@
 .ourMessageScreen {
-  width: 90%;
-  margin: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: #c60f7b; */
+  background-color: #9eafb6;
+  color: white;
+  padding: 50px;
 }
 
 .ourMessageContainer {
+  background-color: #233349;
+  box-shadow: -2px 2px 2px black;
+  border-radius: 16px;
+  padding: 50px;
   display: flex;
-  margin: 20px;
-  padding: 10px;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  flex-grow: 1;
-  flex-shrink: 1;
-  width: 90%;
-  max-width: 90%;
 
-  background-color: gainsboro;
-  color: black;
-  box-shadow: -5px 5px 5px black;
-  border-radius: 5px;
-
-  .block {
-    width: 400px;
-    max-width: 90%;
+  h1 {
+    font-size: 100px;
   }
 
-  .ourMessage {
-    font-size: 75px;
-    font-family: 'Classical_Diary';
-    letter-spacing: 3px;
-    /* temporary solution: */
-    word-break: break-word;
-  }
-
-  .ourMessageScript {
+  p {
+    font-size: 20px;
     text-align: right;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    line-height: 30px;
   }
 }
 
-@media (width <= 800px) {
-  .ourMessageContainer {
-    margin: 0px;
-  }
+.block {
+  width: 450px;
 }

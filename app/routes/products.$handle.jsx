@@ -4,7 +4,7 @@ import {Await, Link, useLoaderData} from '@remix-run/react';
 import React from 'react';
 import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
-import {Button} from '../components/styledComponents/Button';
+import {RedButton} from '../components/styledComponents/Button';
 
 import {
   Image,
@@ -129,8 +129,10 @@ export default function Product() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          className="bi bi-arrow-left-square backButton"
+          className="bi bi-arrow-left-square back-button"
           viewBox="0 0 16 16"
+          width="10"
+          height="10"
           onClick={() => {
             history.go(-1);
           }}
@@ -275,7 +277,9 @@ function ProductPrice({selectedVariant}) {
           </div>
         </>
       ) : (
-        selectedVariant?.price && <Money data={selectedVariant?.price} />
+        selectedVariant?.price && (
+          <Money data={selectedVariant?.price} className="money" />
+        )
       )}
     </div>
   );
@@ -339,12 +343,13 @@ function ProductOptions({option}) {
               replace
               to={to}
               style={{
-                border: isActive ? '1px solid white ' : '1px solid transparent',
-                backgroundColor: isActive ? 'white' : 'transparent',
-                color: isActive ? 'black' : 'white',
+                border: isActive ? '1px solid black ' : '1px solid transparent',
+                backgroundColor: isActive ? '#d3a292' : 'transparent',
+                color: isActive ? 'black' : 'black',
                 opacity: isAvailable ? 1 : 0.3,
                 borderRadius: '16px',
                 padding: '10px',
+                textDecoration: 'none',
               }}
             >
               {value}
@@ -381,14 +386,14 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
               type="hidden"
               value={JSON.stringify(analytics)}
             />
-            <Button
+            <RedButton
               type="submit"
               onClick={onClick}
               disabled={disabled ?? fetcher.state !== 'idle'}
               className="addToCartButton"
             >
               {children}
-            </Button>
+            </RedButton>
           </>
         )}
       </CartForm>

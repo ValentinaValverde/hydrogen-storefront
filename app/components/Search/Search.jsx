@@ -44,6 +44,7 @@ export function SearchForm({searchTerm}) {
         placeholder="Search…"
         ref={inputRef}
         type="search"
+        className="search-page-bar"
       />
       &nbsp;
       <button type="submit" className="searchButton">
@@ -77,10 +78,12 @@ export function SearchResults({results}) {
           if (resourceResults.nodes[0]?.__typename === 'Product') {
             const productResults = resourceResults;
             return resourceResults.nodes.length ? (
-              <SearchResultsProductsGrid
-                key="products"
-                products={productResults}
-              />
+              <>
+                <SearchResultsProductsGrid
+                  key="products"
+                  products={productResults}
+                />
+              </>
             ) : null;
           }
 
@@ -109,40 +112,43 @@ function SearchResultsProductsGrid({products}) {
   return (
     <div className="search-result">
       <h2>Products</h2>
-      <Pagination connection={products}>
-        {({nodes, isLoading, NextLink}) => {
-          const itemsMarkup = nodes.map((product) => (
-            <div className="search-results-item" key={product.id}>
-              <Link prefetch="intent" to={`/products/${product.handle}`}>
-                <img
-                  src={product.variants.nodes.map((nodes) => {
-                    return nodes.image.url;
-                  })}
-                  alt="productImage"
-                ></img>
-                <p className="productSearchLink">{product.title}</p>
-              </Link>
-            </div>
-          ));
-          return (
-            <div>
-              <div>
-                {itemsMarkup}
-                <br />
+      <div className="search-page-container">
+        <Pagination connection={products}>
+          {({nodes, isLoading, NextLink}) => {
+            const itemsMarkup = nodes.map((product) => (
+              <div className="search-results-item" key={product.id}>
+                <Link prefetch="intent" to={`/products/${product.handle}`}>
+                  <img
+                    className="searchProductImage"
+                    src={product.variants.nodes.map((nodes) => {
+                      return nodes.image.url;
+                    })}
+                    alt="productImage"
+                  ></img>
+                  <p className="productSearchLink">{product.title}</p>
+                </Link>
               </div>
+            ));
+            return (
               <div>
-                <NextLink>
-                  {isLoading ? (
-                    'Loading...'
-                  ) : (
-                    <span className="loadMoreSearch">Load more ↓</span>
-                  )}
-                </NextLink>
+                <div>
+                  {itemsMarkup}
+                  <br />
+                </div>
+                <div>
+                  <NextLink>
+                    {isLoading ? (
+                      'Loading...'
+                    ) : (
+                      <span className="loadMoreSearch">Load more ↓</span>
+                    )}
+                  </NextLink>
+                </div>
               </div>
-            </div>
-          );
-        }}
-      </Pagination>
+            );
+          }}
+        </Pagination>
+      </div>
       <br />
     </div>
   );
@@ -216,7 +222,7 @@ export function PredictiveSearchForm({
       : searchAction;
     const newSearchTerm = event.target.value || '';
     fetcher.submit(
-      {q: newSearchTerm, limit: '6'},
+      {q: newSearchTerm, limit: '4'},
       {method, action: localizedAction},
     );
   }
@@ -257,12 +263,13 @@ export function PredictiveSearchResults() {
     window.location.href = event.currentTarget.href;
   }
 
+  //HERE IS THE SEARCH ASIDE STUFF!!
   if (!totalResults) {
     return <NoPredictiveSearchResults searchTerm={searchTerm} />;
   }
   return (
     <div className="predictive-search-results">
-      <div>
+      <div className="aside-search-result">
         {results.map(({type, items}) => (
           <PredictiveSearchResult
             goToSearchResult={goToSearchResult}
@@ -270,12 +277,17 @@ export function PredictiveSearchResults() {
             key={type}
             searchTerm={searchTerm}
             type={type}
+            // className="aside-search-link"
           />
         ))}
       </div>
       {/* view all results /search?q=term */}
       {searchTerm.current && (
-        <Link onClick={goToSearchResult} to={`/search?q=${searchTerm.current}`}>
+        <Link
+          onClick={goToSearchResult}
+          to={`/search?q=${searchTerm.current}`}
+          className="view-results-search-aside-link"
+        >
           <p>
             View all results for <q>{searchTerm.current}</q>
             &nbsp; →
@@ -305,6 +317,7 @@ function NoPredictiveSearchResults({searchTerm}) {
 /**
  * @param {SearchResultTypeProps}
  */
+//HERE IS THE SEARCH ASIDE STUFF
 function PredictiveSearchResult({goToSearchResult, items, searchTerm, type}) {
   const isSuggestions = type === 'queries';
   const categoryUrl = `/search?q=${
@@ -313,10 +326,15 @@ function PredictiveSearchResult({goToSearchResult, items, searchTerm, type}) {
 
   return (
     <div className="predictive-search-result" key={type}>
-      <Link prefetch="intent" to={categoryUrl} onClick={goToSearchResult}>
+      <Link
+        prefetch="intent"
+        to={categoryUrl}
+        onClick={goToSearchResult}
+        className="aside-subheaders"
+      >
         <h5>{isSuggestions ? 'Suggestions' : type}</h5>
       </Link>
-      <ul>
+      <ul className="aside-search-result-list">
         {items.map((item) => (
           <SearchResultItem
             goToSearchResult={goToSearchResult}
@@ -332,10 +350,15 @@ function PredictiveSearchResult({goToSearchResult, items, searchTerm, type}) {
 /**
  * @param {SearchResultItemProps}
  */
+//HERE IS MORE SEARCH ASIDE STUFF
 function SearchResultItem({goToSearchResult, item}) {
   return (
     <li className="predictive-search-result-item" key={item.id}>
-      <Link onClick={goToSearchResult} to={item.url}>
+      <Link
+        onClick={goToSearchResult}
+        to={item.url}
+        className="aside-search-link"
+      >
         {item.image?.url && (
           <Image
             alt={item.image.altText ?? ''}

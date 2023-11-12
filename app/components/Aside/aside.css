@@ -1,19 +1,13 @@
-/*
-* --------------------------------------------------
-* components/Aside
-* --------------------------------------------------
-*/
 aside {
-  background: var(--color-light);
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
   height: 100vh;
-  width: 50vw;
+  width: 40vw;
   /* max-width: var(--aside-width);
-    min-width: var(--aside-width); */
+      min-width: var(--aside-width); */
   position: fixed;
-  right: calc(-1 * var(--aside-width));
-  top: 0;
-  transition: transform 200ms ease-in-out;
+  top: 0px;
+  transition: transform 1s ease-in-out;
+  background-color: #c4772a;
 }
 
 @media (width <= 800px) {
@@ -27,15 +21,17 @@ aside {
   flex-direction: column;
 
   .link {
+    color: #a8512f;
+    text-decoration: none;
     margin-left: 10px;
     font-weight: normal;
     font-size: 30px;
     transition: 1s;
   }
 
-  /* .link:hover {
-      scale: 1.05;
-    } */
+  .link:hover {
+    color: black;
+  }
 
   @media (width <= 800px) {
     .link {
@@ -46,32 +42,19 @@ aside {
 
 aside header {
   align-items: center;
-  border-bottom: 1px solid var(--color-dark);
   display: flex;
-  height: var(--header-height);
   justify-content: space-between;
-  padding: 0 20px;
+  margin: 20px;
 }
 
 aside header h3 {
   margin: 5px;
-  font-family: 'Classical_Diary';
   font-size: 30px;
 }
 
 aside header .close {
   font-weight: bold;
-  opacity: 0.8;
   text-decoration: none;
-  transition: all 200ms;
-  width: 20px;
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.close {
-  font-size: 25px;
 }
 
 aside header h2 {
@@ -95,7 +78,6 @@ aside li {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.2);
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -103,10 +85,10 @@ aside li {
   position: fixed;
   right: 0;
   top: 0;
-  transition: opacity 400ms ease-in-out;
-  transition: opacity 400ms;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s;
   visibility: hidden;
-  z-index: 10;
+  z-index: 100;
   color: black;
 }
 
@@ -121,9 +103,9 @@ aside li {
   width: calc(100% - var(--aside-width));
 }
 
-.overlay .light {
+/* .overlay .light {
   background: rgba(255, 255, 255, 0.5);
-}
+} */
 
 .overlay .cancel {
   cursor: default;
@@ -142,4 +124,86 @@ aside li {
   &:target aside {
     transform: translateX(calc(var(--aside-width) * -1));
   }
+}
+
+/* 
+* --------------------------------------------------
+* SEARCH ASIDE
+* --------------------------------------------------
+*/
+
+.predictive-search {
+  color: white;
+
+  .aside-search-bar {
+    background-color: antiquewhite;
+    padding: 10px;
+    border-radius: 16px;
+    border: solid black 1px;
+  }
+
+  .aside-search-button {
+    padding: 10px;
+    border-radius: 16px;
+    border: solid black 1px;
+    background-color: black;
+    color: #edd6cc;
+  }
+}
+
+.predictive-search-form {
+  position: sticky;
+  top: 0;
+}
+
+.predictive-search-result {
+  margin-bottom: 20px;
+}
+
+.predictive-search-result h5 {
+  text-transform: uppercase;
+}
+
+.predictive-search-result-item {
+  margin-bottom: 0.5rem;
+}
+
+.predictive-search-result-item a {
+  align-items: center;
+  display: flex;
+}
+
+.predictive-search-result-item a img {
+  margin-right: 0.75rem;
+  height: 100%;
+}
+
+.aside-search-result {
+  color: black;
+}
+
+.view-results-search-aside-link {
+  color: black;
+  text-decoration: none;
+}
+
+.aside-subheaders {
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.aside-search-result-list {
+  color: #c4772a;
+}
+
+.aside-search-link {
+  color: #233349;
+  text-decoration: none;
+  transition: 1s;
+}
+
+.aside-search-link:hover {
+  color: black;
+  scale: 1.01;
 }

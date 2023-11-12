@@ -1,26 +1,15 @@
-/*
-* --------------------------------------------------
-* components/Footer
-* --------------------------------------------------
-*/
+/* .footer-menu {
+  background-color: black;
+  padding: 20px;
+  position: sticky;
+  bottom: 0;
+} */
+
 .footer {
-  background: var(--color-dark);
-  margin-top: auto;
-  margin-bottom: -75px;
-}
-
-.footer-menu-missing {
-  display: inline-block;
-  margin: 1rem;
-}
-
-.footer-menu {
-  align-items: center;
+  bottom: 0px;
+  padding-right: 30px;
   display: flex;
-  grid-gap: 1rem;
-  padding: 1rem;
-}
-
-.footer-menu a {
-  color: var(--color-light);
+  justify-content: flex-end;
+  background-color: #a8512f;
+  color: #edd6cc;
 }

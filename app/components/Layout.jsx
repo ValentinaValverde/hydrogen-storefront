@@ -6,6 +6,7 @@ import {Header, HeaderMenu} from './Header/Header';
 import {CartMain} from './Cart/Cart';
 import {PredictiveSearchForm, PredictiveSearchResults} from './Search/Search';
 import AsideMenu from '../components/Aside/AsideMenu';
+import BetterFooter from './Footer/BetterFooter';
 
 /**
  * @param {LayoutProps}
@@ -16,13 +17,15 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
       <CartAside cart={cart} />
       <SearchAside />
       <MobileMenuAside menu={header.menu} />
+      {/* HERE I AM: THIS IS THE HEADER!!! */}
       <Header header={header} cart={cart} isLoggedIn={isLoggedIn} />
       <main>{children}</main>
-      <Suspense>
+      {/* <Suspense>
         <Await resolve={footer}>
           {(footer) => <Footer menu={footer.menu} />}
         </Await>
-      </Suspense>
+      </Suspense> */}
+      <BetterFooter />
     </>
   );
 }
@@ -59,9 +62,12 @@ function SearchAside() {
                 placeholder="Search"
                 ref={inputRef}
                 type="search"
+                className="aside-search-bar"
               />
               &nbsp;
-              <button type="submit">Search</button>
+              <button type="submit" className="aside-search-button">
+                Search
+              </button>
             </div>
           )}
         </PredictiveSearchForm>

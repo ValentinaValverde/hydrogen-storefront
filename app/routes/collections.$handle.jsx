@@ -51,7 +51,7 @@ export default function Collection() {
     <div className="collection">
       <div className="collectionTop">
         <h1>{collection.title}</h1>
-        <p className="collection-description">
+        <p>
           <i>{collection.description}</i>
         </p>
       </div>

@@ -1,24 +1,24 @@
 .connectHeader {
-  /* background-color: white; */
+  color: white;
   display: flex;
   justify-content: space-between;
 
   .igLogoBlock {
-    /* background-color: wheat; */
     text-align: right;
     margin: 20px;
   }
 
   .igLogo {
-    color: #f90093;
+    padding-top: 75px;
+    color: #c4772a;
     width: 20px;
     height: 20px;
   }
 }
 
 .connect {
+  /* margin-top: 100px; */
   background-color: #000;
-  margin: -20px;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -26,28 +26,27 @@
   font-size: 20px;
 
   h1 {
+    padding-top: 75px;
     font-size: 50px;
-    font-family: 'Classical_Diary';
-    letter-spacing: 2px;
     margin: 0;
   }
 
   p {
     margin-bottom: 30px;
     margin-left: 10px;
-    color: white;
+    color: #c4772a;
   }
 
   .followSpan {
     color: white;
+    text-decoration: none;
   }
 
   .followUs {
     text-align: center;
     margin: 10px;
-    font-family: 'Classical_Diary';
-    letter-spacing: 1px;
   }
+
   .connectScript {
     margin-left: 50px;
     margin-right: 50px;

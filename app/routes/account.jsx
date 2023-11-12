@@ -126,32 +126,35 @@ function AccountMenu() {
   }
 
   return (
-    <nav role="navigation">
-      <NavLink
-        to="/account/orders"
-        // style={isActiveStyle}
-        className="accountLinks"
-      >
-        Orders &nbsp;
-      </NavLink>
-      &nbsp;|&nbsp;
-      <NavLink
-        to="/account/profile"
-        // style={isActiveStyle}
-        className="accountLinks"
-      >
-        &nbsp; Profile &nbsp;
-      </NavLink>
-      &nbsp;|&nbsp;
-      <NavLink
-        to="/account/addresses"
-        // style={isActiveStyle}
-        className="accountLinks"
-      >
-        &nbsp; Addresses &nbsp;
-      </NavLink>
-      &nbsp;|&nbsp;
-      <Logout />
+    <nav role="navigation" className="navigation">
+      <div className="block">
+        <NavLink
+          to="/account/orders"
+          style={isActiveStyle}
+          className="accountLinks"
+        >
+          Orders &nbsp;
+        </NavLink>
+        &nbsp;|&nbsp;
+        <NavLink
+          to="/account/profile"
+          style={isActiveStyle}
+          className="accountLinks"
+        >
+          &nbsp; Profile &nbsp;
+        </NavLink>
+        &nbsp;|&nbsp;
+        <NavLink
+          to="/account/addresses"
+          style={isActiveStyle}
+          className="accountLinks"
+        >
+          &nbsp; Addresses &nbsp;
+        </NavLink>
+      </div>
+      <div className="block">
+        <Logout />
+      </div>
     </nav>
   );
 }
@@ -159,7 +162,8 @@ function AccountMenu() {
 function Logout() {
   return (
     <Form className="account-logout" method="POST" action="/account/logout">
-      &nbsp;<button type="submit">Sign out</button>
+      &nbsp;
+      <button type="submit">Sign out</button>
     </Form>
   );
 }
