@@ -14,7 +14,7 @@ export default function WantCustom() {
             Want a <i>custom</i> product?
           </h1>
           <p>we got you covered!</p>
-          <YellowButton>customize now!</YellowButton>
+          <YellowButton className="yellow-button">customize now!</YellowButton>
         </div>
       </Link>
     </>

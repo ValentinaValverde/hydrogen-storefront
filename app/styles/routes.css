@@ -202,3 +202,17 @@
 .money {
   font-size: 20px;
 }
+
+.addToCartButton {
+  background-color: #a8512f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+}
+
+.addToCartButton:hover {
+  cursor: pointer;
+}

@@ -1,5 +1,4 @@
 import {Link} from '@remix-run/react';
-import {YellowButton} from '../styledComponents/Button';
 
 export default function Beginning() {
   return (
@@ -18,7 +17,7 @@ export default function Beginning() {
               <i>mental health matters</i>
             </p>
             <Link to={'collections/all-products'}>
-              <YellowButton>shop all</YellowButton>
+              <button className="button">shop all</button>
             </Link>
           </div>
         </div>

@@ -19,6 +19,20 @@
   }
 }
 
+.yellow-button {
+  background-color: #c4772a;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 16px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 16px;
+}
+
+.yellow-button:hover {
+  cursor: pointer;
+}
+
 /*
 * --------------------------------------------------
 * custom_form._index.jsx
