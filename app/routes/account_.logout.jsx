@@ -1,5 +1,5 @@
 import {json, redirect} from '@shopify/remix-oxygen';
-import {deleteSwymLocalStorage} from '../src/components/account/AccountLoginForm.client';
+// import {deleteSwymLocalStorage} from '../favorites_src/components/account/AccountLoginForm.client';
 
 /**
  * @type {V2_MetaFunction}
