@@ -1,5 +1,50 @@
 /*
 * --------------------------------------------------
+* account.jsx
+* --------------------------------------------------
+*/
+
+.navigation {
+  padding: 10px;
+  background-color: #d3a292;
+  height: 50px;
+  margin-top: -31px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .accountLinks {
+    margin: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .accountLinks:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.block {
+  button {
+    padding: 10px;
+    border-radius: 16px;
+    border: solid black 1px;
+    background-color: #c4772a;
+    color: black;
+    width: 100px;
+    right: 0px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+/*
+* --------------------------------------------------
 * account_.login.jsx & account_.register.jsx
 * --------------------------------------------------
 */
@@ -78,4 +123,48 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+}
+
+/*
+* --------------------------------------------------
+* account.orders.jsx
+* --------------------------------------------------
+*/
+
+.orders {
+  /* background-color: #9eafb6; */
+  padding: 20px;
+}
+
+/*
+* --------------------------------------------------
+* account.profile.jsx
+* --------------------------------------------------
+*/
+
+.account-profile {
+  padding: 20px;
+
+  button {
+    padding: 10px;
+    border-radius: 16px;
+    border: solid black 1px;
+    background-color: #c4772a;
+    color: black;
+    width: 100px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+/*
+* --------------------------------------------------
+* account.addresses.jsx
+* --------------------------------------------------
+*/
+
+.account-addresses {
+  padding: 20px;
 }

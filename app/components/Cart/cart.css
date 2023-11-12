@@ -75,3 +75,7 @@
   padding: 5px;
   background-color: #edd6cc;
 }
+
+.cart-button:hover {
+  cursor: pointer;
+}
