@@ -159,12 +159,12 @@ export default function Product() {
  * @param {{image: ProductVariantFragment['image']}}
  */
 function ProductImage({media}) {
-  console.log('MEDIA: ', media);
+  // console.log('MEDIA: ', media);
   const edges = media.edges;
   return (
     <div className="product-image">
       {edges.map(({node}) => {
-        console.log('PREVIEW IMAGE URL: ', node.previewImage.url);
+        // console.log('PREVIEW IMAGE URL: ', node.previewImage.url);
         return (
           <Image
             src={node.previewImage.url}
@@ -222,7 +222,7 @@ function ProductDescription({product}) {
     </>
   );
 }
-
+//SELECTED VARIANT PASSED HERE
 function ProductMain({selectedVariant, product, variants}) {
   const {title} = product;
 
@@ -322,6 +322,10 @@ function ProductForm({product, selectedVariant, variants}) {
       >
         {selectedVariant?.availableForSale ? 'ADD TO CART' : 'Sold out'}
       </AddToCartButton>
+      <WishlistButton
+        selectedVariant={selectedVariant}
+        // productData={productData}
+      />
     </div>
   );
 }
@@ -396,10 +400,6 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
               {children}
             </RedButton>
             {/* HERE IS MY WISHLIST BUTTON */}
-            <WishlistButton
-              selectedVariant={selectedVariant}
-              productData={productData}
-            />
           </>
         )}
       </CartForm>

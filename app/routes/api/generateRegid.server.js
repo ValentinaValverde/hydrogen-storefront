@@ -1,7 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 import {Buffer} from 'buffer';
-import {PRODUCT_CARD_FRAGMENT} from '../../lib/fragments';
-import {CacheNone, gql} from '@shopify/hydrogen';
+import {CacheNone} from '@shopify/hydrogen';
 import swymConfig from '../../swym/swym.config';
 
 /*
@@ -77,7 +76,7 @@ export async function api(_request, {queryShop}) {
     return {error: true};
   }
 }
-const CUSTOMER_QUERY = gql`
+const CUSTOMER_QUERY = graphql`
   ${PRODUCT_CARD_FRAGMENT}
   query CustomerDetails(
     $customerAccessToken: String!

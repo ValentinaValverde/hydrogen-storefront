@@ -1,7 +1,10 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 import {useContext, useEffect, useState} from 'react';
-// import {Dialog} from '@headlessui/react';
-import {AddToWishlist, createList, fetchList} from '../../swym/store-apis';
+import {Dialog} from '@headlessui/react';
+import {AddToWishlist} from '../../swym/store-apis';
+import {createList} from '../../swym/store-apis';
+import {fetchList} from '../../swym/store-apis';
+
 import SWYM_CONFIG from '../../swym/swym.config';
 import WishlistItem from './WishlistItem.client';
 import {DataContext} from './wishlist-context';
@@ -29,7 +32,9 @@ export const validateUniqueString = (newList, previousListArr, errorStr) => {
   }
 };
 
-function CreateList({
+//there is an error happening somewhere inside here...
+//was originally named CreateList (capital C matters!!)
+export default function MakeList({
   title,
   productId,
   productVariantId,
@@ -190,7 +195,6 @@ function CreateList({
   function validateAndSetListName(value) {
     setWishlistName(value);
     setError(validateWishlistName(value));
-    console.log(error);
   }
 
   return (
@@ -209,7 +213,7 @@ function CreateList({
         >
           {/* <IconClose stroke="black" style={{float: 'right'}} /> */}
         </button>
-        <Dialog.Panel>
+        <Dialog>
           <div className="swym-modal-content">
             <div className="swym-add-wishlist-selector">
               <div
@@ -264,7 +268,7 @@ function CreateList({
                   type="button"
                   loading={createListLoading}
                   onClick={createListByName}
-                  style={{background: '#CACBCF', borderRadius: 0}}
+                  style={{background: '#CACBCF', borderRadius: 16}}
                   className="swym-new-wishlist-btn swym-button swym-button-2 swym-color-2 swym-border-color-1 swym-border-button"
                 >
                   Create New Wishlist
@@ -280,10 +284,10 @@ function CreateList({
               </div>
             </div>
           </div>
-        </Dialog.Panel>
+        </Dialog>
       </div>
     </Dialog>
   );
 }
 
-export default CreateList;
+// export default MakeList;
