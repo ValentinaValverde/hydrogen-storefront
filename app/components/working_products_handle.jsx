@@ -161,6 +161,8 @@ function ProductImage({media}) {
             src={node.previewImage.url}
             alt="previewImage"
             className="productImage"
+            width="auto"
+            height="auto"
             key={node.id}
           />
         );

@@ -5,6 +5,10 @@ import React from 'react';
 import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
 import {RedButton} from '../components/styledComponents/Button';
+import {getSessionAndSessionId} from '../sessions';
+
+import {getPersonalizedRecommendations} from '@crossingminds/beam-react';
+import {BEAM_REACT_OPTIONS} from '../beam/config';
 
 import {
   Image,
@@ -29,17 +33,7 @@ export async function loader({params, request, context}) {
   const {handle} = params;
   // console.log('HANDLE: ', {handle});
   const {storefront} = context;
-  let recommendedProducts = [];
-  recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
-  // console.log('RECC PROD: ', recommendedProducts);
-  [recommendedProducts].slice(0, 1);
-  // recommendedProducts.filter((product) => {
-  //   //HERE!
-  //   product.collections[0].edges.find((node) => {
-  //     node.id === 'shopify/Collection/287546540172';
-  //   });
-  //   recommendedProducts.slice(0, 8);
-  // });
+  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>
@@ -92,9 +86,43 @@ export async function loader({params, request, context}) {
     variables: {handle},
   });
 
+  //this is where I start adding beam stuff
+  const {sessionId} = await getSessionAndSessionId(request);
+
+  const {itemIds: variantIdsForOurFavorites} =
+    await getPersonalizedRecommendations({
+      ...BEAM_REACT_OPTIONS,
+      sessionId,
+      sessionScenario: 'some scenario id',
+      maxResults: 8,
+    });
+
+  const {nodes: productVariants} = await context.storefront.query(
+    PRODUCTS_BY_VARIANT_QUERY,
+    {
+      variables: variantIdsForOurFavorites.map(
+        (variantId) => `gid://shopify/ProductVariant/${variantId}`,
+      ),
+    },
+  );
+
   // console.log('PRODUCT: ', product);
-  return defer({product, variants, recommendedProducts});
+  return defer({product, variants, recommendedProducts, productVariants});
 }
+
+//start beam
+export const shouldRevalidate = () => false;
+
+export function Index() {
+  const {productVariants} = useLoaderData();
+
+  return (
+    <div>
+      <Recommendations productVariants={productVariants} />
+    </div>
+  );
+}
+//end beam
 
 /**
  * @param {{
@@ -569,6 +597,31 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
       }
     }
   }
+`;
+
+export const PRODUCTS_BY_VARIANT_QUERY = `#graphql
+query variantProducts($ids: [ID!]!) {
+  nodes(ids: $ids) {
+    ... on ProductVariant {
+      id
+      image {
+        height
+        url
+        width
+      }
+      price {
+        amount
+      }
+      product {
+        id
+        descriptionHtml
+        handle
+        title
+      }
+      title
+    }
+  }
+}
 `;
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderArgs} LoaderArgs */
