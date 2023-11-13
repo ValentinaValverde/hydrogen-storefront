@@ -10,7 +10,7 @@ export default function RecommendedProducts({products}) {
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({products}) => {
-            console.log('products.nodes', products.nodes);
+            // console.log('products.nodes', products.nodes);
 
             return (
               <div className="recommended-products-grid">

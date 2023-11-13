@@ -45,7 +45,7 @@ export async function loader({request, params, context}) {
 export default function Collection() {
   /** @type {LoaderReturnData} */
   const {collection} = useLoaderData();
-  console.log('COLLECTION ID: ', collection.id);
+  // console.log('COLLECTION ID: ', collection.id);
 
   return (
     <div className="collection">
@@ -102,7 +102,7 @@ function ProductsGrid({products}) {
 function ProductItem({product, loading}) {
   const variant = product.variants.nodes[0];
   const variantUrl = useVariantUrl(product.handle, variant.selectedOptions);
-  console.log('MY SELECTED PRODUCT: ', product.handle);
+  // console.log('MY SELECTED PRODUCT: ', product.handle);
   return (
     <Link
       className="product-item"

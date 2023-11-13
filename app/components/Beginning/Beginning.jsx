@@ -9,9 +9,7 @@ export default function Beginning() {
             <h1>malova</h1>
             <h1>designs</h1>
           </div>
-          <div className="splash-image">
-            <img src="splash_image.png" alt="splash-image" />
-          </div>
+
           <div className="top-layer">
             <p>
               <i>mental health matters</i>
@@ -20,6 +18,9 @@ export default function Beginning() {
               <button className="button">shop all</button>
             </Link>
           </div>
+        </div>
+        <div className="splash-image">
+          <img src="splash_image.png" alt="splash-image" />
         </div>
       </div>
     </>

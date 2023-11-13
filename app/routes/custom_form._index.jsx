@@ -9,14 +9,6 @@ export default function CustomForm() {
   const [productChoice, setProductChoice] = useState('');
   const [sizeChoice, setSizeChoice] = useState('');
 
-  const onClick = () => {
-    console.log('clicked!!');
-    const name_value = document.getElementById('name').value;
-    const email_value = document.getElementById('email').value;
-    const phoneNum_value = document.getElementById('phoneNum').value;
-    console.log(name_value, email_value, phoneNum_value);
-  };
-
   const onChange = (e) => {
     setProductChoice(e.target.value);
   };
@@ -134,9 +126,7 @@ export default function CustomForm() {
                 name="other info"
               />
               <br />
-              <button type="submit" onClick={onClick}>
-                Submit
-              </button>
+              <button type="submit">Submit</button>
             </div>
           </form>
         </fieldset>

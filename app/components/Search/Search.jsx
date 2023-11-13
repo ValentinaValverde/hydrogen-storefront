@@ -107,7 +107,7 @@ export function SearchResults({results}) {
  * @param {Pick<SearchQuery, 'products'>}
  */
 function SearchResultsProductsGrid({products}) {
-  console.log('PRODUCTS: ', products);
+  // console.log('PRODUCTS: ', products);
 
   return (
     <div className="search-result">

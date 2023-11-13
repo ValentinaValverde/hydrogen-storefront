@@ -45,8 +45,7 @@
   display: flex;
   justify-content: center;
   z-index: 5;
-  position: absolute;
-  margin-top: -250px;
+  margin-top: -308px;
 
   img {
     width: 500px;
@@ -58,7 +57,7 @@
   justify-content: space-around;
   font-size: 20px;
   margin-top: 10px;
-  z-index: 1000;
+  background-color: #233349;
 
   p {
     margin-top: 5px;

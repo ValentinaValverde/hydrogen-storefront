@@ -27,11 +27,11 @@ export const meta = ({data}) => {
  */
 export async function loader({params, request, context}) {
   const {handle} = params;
-  console.log('HANDLE: ', {handle});
+  // console.log('HANDLE: ', {handle});
   const {storefront} = context;
   let recommendedProducts = [];
   recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY); //reference to graphql
-  console.log('RECC PROD: ', recommendedProducts);
+  // console.log('RECC PROD: ', recommendedProducts);
   [recommendedProducts].slice(0, 1);
   // recommendedProducts.filter((product) => {
   //   //HERE!
@@ -92,7 +92,7 @@ export async function loader({params, request, context}) {
     variables: {handle},
   });
 
-  console.log('PRODUCT: ', product);
+  // console.log('PRODUCT: ', product);
   return defer({product, variants, recommendedProducts});
 }
 
@@ -158,12 +158,12 @@ export default function Product() {
  * @param {{image: ProductVariantFragment['image']}}
  */
 function ProductImage({media}) {
-  console.log('MEDIA: ', media);
+  // console.log('MEDIA: ', media);
   const edges = media.edges;
   return (
     <div className="product-image">
       {edges.map(({node}) => {
-        console.log('PREVIEW IMAGE URL: ', node.previewImage.url);
+        // console.log('PREVIEW IMAGE URL: ', node.previewImage.url);
         return (
           <Image
             src={node.previewImage.url}
