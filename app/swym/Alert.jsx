@@ -29,12 +29,13 @@ const SwymAlert = ({title, info, open, toggleAlertState, type}) => {
     return null;
   }
 
-  let IconComp = IconTick;
+  // let IconComp = IconTick;
 
   if (type == 'error') {
     IconComp = () => (
       <div className="bg-red-500	text-white rounded-full p-1">
-        <IconClose />
+        {/* <IconClose /> */}
+        <p>Icon Close</p>
       </div>
     );
   }
