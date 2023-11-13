@@ -5,6 +5,7 @@ import React from 'react';
 import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
 import {RedButton} from '../components/styledComponents/Button';
+import {WishlistButton} from '../components/Wishlist/WishlistButton.client';
 
 import {
   Image,
@@ -394,6 +395,11 @@ function AddToCartButton({analytics, children, disabled, lines, onClick}) {
             >
               {children}
             </RedButton>
+            {/* HERE IS MY WISHLIST BUTTON */}
+            <WishlistButton
+              selectedVariant={selectedVariant}
+              productData={productData}
+            />
           </>
         )}
       </CartForm>
