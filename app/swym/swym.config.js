@@ -9,12 +9,13 @@
   @return:  swymSharedURL - this 'swym' can be updated to any folder name for custom implementation
   @return:  alertTimeOut - alert popup timout in ms 
 */
+// HELP !!!
 
 const SWYM_CONFIG = {
   REST_API_KEY:
-    'ZqthS4PnfTMF44_S0CvUgxWTEQ-oW5-fJtFKOjOlhED6QCDImHoXrDfWAlaFYHxc5-NeTm5uZ64mGDGNHQ7-4Q',
-  ENDPOINT: 'https://swymstore-v3dev-01-01.swymrelay.com/',
-  PID: '5UO2uvfobcvvmOhbLZl96G6LMikgiNtLIow/NNEOeGc=',
+    'ygi2khVmTFGMt6r1WK9aZ-66Ux25QF0lJph7Z17unrBWuyvfkXdWRnQ_vplm9AzrEh3a5iH_vHlDp8SknQIL6Q',
+  ENDPOINT: '',
+  PID: '5TBY8G6bwjsqtK93FZ+Ibgllexk7SyUv+CEpkm3yjN8=',
   defaultWishlistName: 'My Wishlist',
   alertTimeOut: 5000,
   swymSharedURL: 'swym/shared-wishlist',
