@@ -1,3 +1,6 @@
+// NONE OF THIS WORKS !!
+// This version attempts to implement the recommendations system from crossing minds.
+
 import {Suspense} from 'react';
 import {defer, redirect} from '@shopify/remix-oxygen';
 import {Await, Link, useLoaderData} from '@remix-run/react';
@@ -5,8 +8,10 @@ import React from 'react';
 import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
 import {RedButton} from '../components/styledComponents/Button';
+import {getSessionAndSessionId} from '../sessions';
 
-import Index from './recc';
+import {getPersonalizedRecommendations} from '@crossingminds/beam-react';
+import {BEAM_REACT_OPTIONS} from '../beam/config';
 
 import {
   Image,
@@ -89,8 +94,43 @@ export async function loader({params, request, context}) {
     throw new Response(null, {status: 404});
   }
 
-  return defer({product, variants, recommendedProducts});
+  //this is where I start adding beam stuff
+  const {sessionId} = await getSessionAndSessionId(request);
+
+  const {itemIds: variantIdsForOurFavorites} =
+    await getPersonalizedRecommendations({
+      ...BEAM_REACT_OPTIONS,
+      sessionId,
+      sessionScenario: 'some scenario id',
+      maxResults: 8,
+    });
+
+  const {nodes: productVariants} = await context.storefront.query(
+    PRODUCTS_BY_VARIANT_QUERY,
+
+    {
+      variables: variantIdsForOurFavorites.map(
+        (variantId) => `gid://shopify/ProductVariant/${variantId}`,
+      ),
+    },
+  );
+
+  return defer({product, variants, recommendedProducts, productVariants});
 }
+
+//start beam
+export const shouldRevalidate = () => false;
+
+export function Index() {
+  const {productVariants} = useLoaderData();
+  console.log({productVariants});
+  return (
+    <div>
+      <Recommendations productVariants={productVariants} />
+    </div>
+  );
+}
+//end beam
 
 /**
  * @param {{
@@ -249,7 +289,6 @@ function ProductMain({selectedVariant, product, variants}) {
           )}
         </Await>
       </Suspense>
-      {/* <Index /> */}
     </div>
   );
 }
@@ -566,6 +605,31 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
       }
     }
   }
+`;
+
+export const PRODUCTS_BY_VARIANT_QUERY = `#graphql
+query variantProducts($ids: [ID!]!) {
+  nodes(ids: $ids) {
+    ... on ProductVariant {
+      id
+      image {
+        height
+        url
+        width
+      }
+      price {
+        amount
+      }
+      product {
+        id
+        descriptionHtml
+        handle
+        title
+      }
+      title
+    }
+  }
+}
 `;
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderArgs} LoaderArgs */
