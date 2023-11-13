@@ -5,8 +5,11 @@ import {FunctionComponent} from 'react';
 import {useMemo} from 'react';
 
 import {BEAM_REACT_OPTIONS} from '~/beam/config';
-import {sessionId} from '~/utils/sessionId.client';
-import {SHOPIFY_ENTITY_TYPES, getIdFromShopifyEntityId} from '~/utils/shopify';
+import {sessionId} from '../../utils/sessionId.client';
+import {
+  SHOPIFY_ENTITY_TYPES,
+  getIdFromShopifyEntityId,
+} from '../../utils/shopify';
 
 import {AddToCartButton} from './AddToCartButton';
 import {ProductImage} from './ProductImage';
