@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-import {Button} from '~/components';
+// import {Button} from './index';
 import SwymAlert from '../../swym/Alert';
 import WishlistContext from './wishlist-context';
 import CreateWishList from './WishlistPopUp.client';
@@ -55,7 +55,7 @@ export function WishlistButton({
           title={alertBoxTitle}
           info={alertBoxInfo}
         />
-        <Button
+        <button
           disabled={disabled}
           width="full"
           loading={addToCartLoading}
@@ -66,7 +66,7 @@ export function WishlistButton({
           }}
         >
           {WishlistText} to Wishlist
-        </Button>
+        </button>
         {showCreateListPopup && (
           <CreateWishList
             setshowAlertBox={setshowAlertBox}

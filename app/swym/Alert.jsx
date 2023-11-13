@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {IconClose, IconTick} from '../components/index';
+import {IconClose, IconTick} from '../components/Wishlist/index'; //issues here
 import SWYM_CONFIG from './swym.config';
 
 /*

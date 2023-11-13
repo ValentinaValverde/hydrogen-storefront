@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'swym-font';
   src: url('./swym_fonts.woff?ullr2m') format('woff'),
     url('./swym_fonts.ttf?ullr2m') format('truetype'),
@@ -6,7 +6,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
-}
+} */
 .swym-modal-content {
   padding: 0;
   background: white;

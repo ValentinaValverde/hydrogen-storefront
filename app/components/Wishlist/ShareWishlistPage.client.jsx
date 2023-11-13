@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react';
 import {ProductOptionsProvider} from '@shopify/hydrogen';
 import './wishlistPage.css';
-import {AddToCartButton} from '@shopify/hydrogen';
-import {Heading, Text} from '~/components';
+// import {AddToCartButton} from '@shopify/hydrogen';
+// import {Heading, Text} from './index';
 import {
   callGenrateRegidAPI,
   fetchListWithContents,
@@ -48,8 +48,8 @@ export function ShareWishlistPage() {
   };
   return (
     <div className="mt-3 mb-20 ">
-      <Heading>{listName}</Heading>
-      <Text>{subHeading}</Text>
+      <heading>{listName}</heading>
+      <p>{subHeading}</p>
       <br />
       <br />
       <div className="grid-container">
@@ -91,13 +91,13 @@ export function ShareWishlistPage() {
                       }}
                     >
                       <a onClick={() => removeItemFromWishlist(l)}>
-                        <AddToCartButton
+                        <button
                           className="m-auto w-full bg-black p-4 rounded text-white"
                           variantId={`gid://shopify/ProductVariant/${l.epi}`}
                           accessibleAddingToCartLabel="Adding item to your cart"
                         >
                           Add to Cart
-                        </AddToCartButton>
+                        </button>
                       </a>
                     </ProductOptionsProvider>
                   </div>
