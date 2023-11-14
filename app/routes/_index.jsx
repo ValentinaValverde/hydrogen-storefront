@@ -36,7 +36,7 @@ export default function Homepage() {
     <div className="home">
       <Beginning />
       <WantCustom />
-      <HomeReccProducts />
+      {/* <HomeReccProducts /> */}
       <AboutUs />
       <HomeCollections collections={mainCollections} />
       <OurMessage />

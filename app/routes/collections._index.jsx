@@ -25,7 +25,7 @@ export default function Collections() {
     <div>
       <div className="collection-page-header">
         <h1>Collections</h1>
-        <p>NEVER SHOW THIS PAGE</p>
+        {/* <p>NEVER SHOW THIS PAGE</p> */}
       </div>
       <Pagination connection={collections}>
         {({nodes, isLoading, PreviousLink, NextLink}) => (
