@@ -90,6 +90,9 @@ export default function Cart() {
   const [root] = useMatches();
   const cart = root.data?.cart;
 
+  console.log({cart});
+  console.log({root});
+
   return (
     <div className="cart">
       <h1>Cart</h1>

@@ -12,6 +12,7 @@ export const meta = () => {
  * @param {LoaderArgs}
  */
 export async function loader({context}) {
+  // HERE maybe?
   if (await context.session.get('customerAccessToken')) {
     return redirect('/account');
   }
@@ -68,6 +69,7 @@ export async function action({request, context, params}) {
     if (!customerAccessToken) {
       throw new Error('Could not activate account.');
     }
+    // HERE maybe?
     session.set('customerAccessToken', customerAccessToken);
 
     return redirect('/account', {

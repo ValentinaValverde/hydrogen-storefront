@@ -12,6 +12,7 @@ export const meta = () => {
  * @param {LoaderArgs}
  */
 export async function loader({context}) {
+  // HERE maybe?
   if (await context.session.get('customerAccessToken')) {
     return redirect('/account');
   }
@@ -52,6 +53,7 @@ export async function action({request, context}) {
     }
 
     const {customerAccessToken} = customerAccessTokenCreate;
+    console.log({customerAccessToken});
     session.set('customerAccessToken', customerAccessToken);
 
     return redirect('/account', {

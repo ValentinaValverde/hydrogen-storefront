@@ -88,6 +88,9 @@ export function links() {
  */
 export async function loader({context}) {
   const {storefront, session, cart} = context;
+
+  console.log({context});
+  // HERE maybe?
   const customerAccessToken = await session.get('customerAccessToken');
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
 
