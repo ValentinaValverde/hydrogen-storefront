@@ -23,7 +23,7 @@ export const Recommendations = ({productVariants, title}) => {
   return (
     <div>
       <h2>{title}</h2>
-      <p>something here</p>
+      <p>this works!</p>
       <div>
         <Swiper
           navigation
@@ -33,7 +33,7 @@ export const Recommendations = ({productVariants, title}) => {
           centeredSlides={false}
           //   className={recommendationsSwipperStyle}
         >
-          <RecommendationsItem productVariant={productVariants} />
+          {/* <RecommendationsItem productVariant={productVariants} /> */}
 
           {/* example: */}
           {/* {products.nodes.map((product) => ( */}

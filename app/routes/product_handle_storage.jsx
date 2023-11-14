@@ -550,6 +550,7 @@ const PRODUCT_VARIANTS_FRAGMENT = `#graphql
   ${PRODUCT_VARIANT_FRAGMENT}
 `;
 
+//HERE
 const VARIANTS_QUERY = `#graphql
   ${PRODUCT_VARIANTS_FRAGMENT}
   query ProductVariants(
