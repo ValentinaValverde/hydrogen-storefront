@@ -2,13 +2,11 @@ import {
   CartLineEdge,
   ProductVariant,
 } from '@shopify/hydrogen/storefront-api-types';
-import classnames from 'classnames';
+import classnames from '../../../package.json';
 import {FunctionComponent} from 'react';
 import {useMemo} from 'react';
-
 import {ProductVariantType} from '~/types/product';
 import {ProductVariantSchema} from '../../types/product';
-
 import {ProductImageStyle} from './ProductImage.css';
 
 //   interface ProductImageProps {

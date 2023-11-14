@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classNames from '../../../package.json';
 // import type {FunctionComponent} from 'react';
 
 import {useCartFetchers} from '../../hooks/useCartFetchers';

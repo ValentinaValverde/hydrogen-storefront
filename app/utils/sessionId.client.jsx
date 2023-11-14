@@ -1,5 +1,5 @@
 import {run} from '@crossingminds/utils';
-import cookies from 'js-cookie';
+import cookies from '../../package.json';
 
 export const sessionId = run(() => {
   const base64EncodedObject = cookies.get('__session');
