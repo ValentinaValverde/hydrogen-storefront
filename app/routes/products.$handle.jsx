@@ -6,8 +6,6 @@ import {useState} from 'react';
 import RecommendedProducts from '../components/RecommendedProducts/RecommendedProducts';
 import {RedButton} from '../components/styledComponents/Button';
 
-import Index from './recc';
-
 import {
   Image,
   Money,
@@ -249,7 +247,6 @@ function ProductMain({selectedVariant, product, variants}) {
           )}
         </Await>
       </Suspense>
-      {/* <Index /> */}
     </div>
   );
 }

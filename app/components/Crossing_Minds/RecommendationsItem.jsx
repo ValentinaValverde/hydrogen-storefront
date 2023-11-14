@@ -30,7 +30,7 @@ export const RecommendationsItem = ({productVariant}) => {
   const {recordAddItemToCartInteraction, recordItemClickInteraction} =
     useRecordItemInteractions({
       ...BEAM_REACT_OPTIONS,
-      sessionId,
+      // sessionId,
     });
 
   const productVariantId = useMemo(
@@ -45,22 +45,23 @@ export const RecommendationsItem = ({productVariant}) => {
   return (
     <>
       <a
-        href={`/products/${productVariant.product.handle}?variant=${productVariantId}`}
+        href={`/products/${productVariant.handle}?variant=${productVariantId}`}
         onClick={() =>
           productVariantId && recordItemClickInteraction(productVariantId)
         }
       >
         <ProductImage
           // className={recommendationsItemImageStyle}
-          productVariant={productVariant}
+          productVariant={productVariant.images.nodes[0]}
         />
         <p
         // className={recommendationsItemTitleStyle}
         >
-          {productVariant.product.title}
+          {productVariant.title}
         </p>
       </a>
-      <fetcher.Form
+
+      {/* <fetcher.Form
         action="/cart"
         method="post"
         onSubmit={() =>
@@ -76,10 +77,10 @@ export const RecommendationsItem = ({productVariant}) => {
         <input type="hidden" name="lines" value={JSON.stringify(lines)} />
 
         <AddToCartButton
-          // className={recommendationsItemAddToCartButtonStyles}
+          className={recommendationsItemAddToCartButtonStyles}
           productVariantShopifyId={productVariant.id}
         />
-      </fetcher.Form>
+      </fetcher.Form> */}
     </>
   );
 };

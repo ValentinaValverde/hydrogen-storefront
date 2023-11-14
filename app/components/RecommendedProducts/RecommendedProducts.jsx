@@ -1,8 +1,11 @@
 import {Link, Await} from '@remix-run/react';
 import {Image, Money} from '@shopify/hydrogen';
 import {Suspense} from 'react';
+import {Recommendations} from '../Crossing_Minds/Recc';
 
 export default function RecommendedProducts({products}) {
+  console.log('PRODUCTS', products);
+
   return (
     <div className="recommended-products">
       <h2>Recommended Products</h2>
@@ -10,8 +13,6 @@ export default function RecommendedProducts({products}) {
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {({products}) => {
-            // console.log('products.nodes', products.nodes);
-
             return (
               <div className="recommended-products-grid">
                 {products.nodes.map((product) => (
@@ -36,6 +37,28 @@ export default function RecommendedProducts({products}) {
         </Await>
       </Suspense>
       <br />
+      <div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Await resolve={products}>
+            {({products}) => {
+              console.log('products.nodes', products.nodes);
+
+              return (
+                <div className="recommended-products-grid">
+                  {products.nodes.map((product) => (
+                    <>
+                      <Recommendations
+                        title={product.title}
+                        productVariants={product}
+                      />
+                    </>
+                  ))}
+                </div>
+              );
+            }}
+          </Await>
+        </Suspense>
+      </div>
     </div>
   );
 }

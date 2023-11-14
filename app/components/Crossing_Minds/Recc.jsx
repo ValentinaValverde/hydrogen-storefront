@@ -17,9 +17,13 @@ import {RecommendationsItem} from './RecommendationsItem';
 // }
 
 export const Recommendations = ({productVariants, title}) => {
+  console.log('PRODUCT VARIANTS: ', productVariants);
+  console.log('TITLE: ', title);
+
   return (
     <div>
       <h2>{title}</h2>
+      <p>something here</p>
       <div>
         <Swiper
           navigation
@@ -29,11 +33,15 @@ export const Recommendations = ({productVariants, title}) => {
           centeredSlides={false}
           //   className={recommendationsSwipperStyle}
         >
-          {productVariants.map((productVariant) => (
-            <SwiperSlide key={productVariant.id}>
-              <RecommendationsItem productVariant={productVariant} />
-            </SwiperSlide>
-          ))}
+          <RecommendationsItem productVariant={productVariants} />
+
+          {/* example: */}
+          {/* {products.nodes.map((product) => ( */}
+          {/* 
+          <SwiperSlide key={productVariants.id}>
+            <RecommendationsItem productVariant={productVariants} />
+          </SwiperSlide> */}
+          {/* ))} */}
         </Swiper>
       </div>
     </div>
