@@ -31,7 +31,6 @@ export async function action({request, context}) {
   return redirect('/', {
     headers: {
       'Set-Cookie': await session.commit(),
-      'Set-Cookie': 'cart=null',
     },
   });
 }
