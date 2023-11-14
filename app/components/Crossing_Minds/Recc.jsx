@@ -1,4 +1,4 @@
-// import {ProductVariant} from '@shopify/hydrogen/storefront-api-types';
+// import type {ProductVariant} from '@shopify/hydrogen/storefront-api-types';
 // import {FunctionComponent} from 'react';
 // import {Navigation} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';

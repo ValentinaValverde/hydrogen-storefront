@@ -18,17 +18,18 @@
     "@shopify/cli-hydrogen": "^5.5.1",
     "@shopify/hydrogen": "^2023.7.13",
     "@shopify/remix-oxygen": "^1.1.8",
+    "@vanilla-extract/css": "^1.14.0",
     "axios": "^1.6.1",
+    "classnames": "^2.3.2",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "isbot": "^3.6.6",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.1",
     "swiper": "^11.0.4",
-    "uuid": "^9.0.1",
-    "js-cookie": "^3.0.5",
-    "classnames": "^2.3.2"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@remix-run/dev": "1.19.1",

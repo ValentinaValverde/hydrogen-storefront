@@ -1,7 +1,5 @@
 import {useRecordItemInteractions} from '@crossingminds/beam-react';
 import {useFetcher, useMatches} from '@remix-run/react';
-import {ProductVariant} from '@shopify/hydrogen/storefront-api-types';
-import {FunctionComponent} from 'react';
 import {useMemo} from 'react';
 
 import {BEAM_REACT_OPTIONS} from '~/beam/config';

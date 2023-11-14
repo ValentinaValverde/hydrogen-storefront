@@ -1,7 +1,7 @@
 import {getPersonalizedRecommendations} from '@crossingminds/beam-react';
 import {BEAM_REACT_OPTIONS} from '../beam/config';
 import {useLoaderData} from '@remix-run/react';
-import Recommendations from '../components/Crossing_Minds/Recc';
+import {Recommendations} from '../components/Crossing_Minds/Recc';
 
 export const loader = async ({context, request}) => {
   const {sessionId} = await getSessionAndSessionId(request);
