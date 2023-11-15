@@ -33,7 +33,8 @@ export const Recommendations = ({productVariants, title}) => {
           centeredSlides={false}
           //   className={recommendationsSwipperStyle}
         >
-          {/* <RecommendationsItem productVariant={productVariants} /> */}
+          <p>what?</p>
+          <RecommendationsItem productVariant={productVariants} />
 
           {/* example: */}
           {/* {products.nodes.map((product) => ( */}

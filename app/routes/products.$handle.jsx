@@ -29,7 +29,7 @@ export async function loader({params, request, context}) {
   const {handle} = params;
   console.log('HANDLE: ', {handle});
   const {storefront} = context;
-  const recommendedProducts = storefront.query(VARIANTS_QUERY);
+  const recommendedProducts = storefront.query(RECOMMENDED_PRODUCTS_QUERY);
 
   const selectedOptions = getSelectedProductOptions(request).filter(
     (option) =>

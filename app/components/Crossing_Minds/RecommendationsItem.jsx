@@ -22,38 +22,39 @@ import {ProductImage} from './ProductImage';
 // }
 
 export const RecommendationsItem = ({productVariant}) => {
-  const [root] = useMatches();
-  const selectedLocale = root?.data?.selectedLocale;
-  const fetcher = useFetcher();
-  const lines = [{merchandiseId: productVariant.id, quantity: 1}];
+  // const [root] = useMatches();
+  // const selectedLocale = root?.data?.selectedLocale;
+  // const fetcher = useFetcher();
+  // const lines = [{merchandiseId: productVariant.id, quantity: 1}];
 
-  const {recordAddItemToCartInteraction, recordItemClickInteraction} =
-    useRecordItemInteractions({
-      ...BEAM_REACT_OPTIONS,
-      // sessionId,
-    });
+  // const {recordAddItemToCartInteraction, recordItemClickInteraction} =
+  //   useRecordItemInteractions({
+  //     ...BEAM_REACT_OPTIONS,
+  //     // sessionId,
+  //   });
 
-  const productVariantId = useMemo(
-    () =>
-      getIdFromShopifyEntityId(
-        SHOPIFY_ENTITY_TYPES.PRODUCT_VARIANT,
-        productVariant.id,
-      ),
-    [productVariant],
-  );
+  // const productVariantId = useMemo(
+  //   () =>
+  //     getIdFromShopifyEntityId(
+  //       SHOPIFY_ENTITY_TYPES.PRODUCT_VARIANT,
+  //       productVariant.id,
+  //     ),
+  //   [productVariant],
+  // );
 
   return (
     <>
-      <a
+      {/* <a
         href={`/products/${productVariant.handle}?variant=${productVariantId}`}
         onClick={() =>
           productVariantId && recordItemClickInteraction(productVariantId)
         }
-      >
-        <ProductImage
+      ></a> */}
+      <a href={`/products/${productVariant.handle}`}>
+        {/* <ProductImage
           // className={recommendationsItemImageStyle}
           productVariant={productVariant.images.nodes[0]}
-        />
+    /> */}
         <p
         // className={recommendationsItemTitleStyle}
         >
