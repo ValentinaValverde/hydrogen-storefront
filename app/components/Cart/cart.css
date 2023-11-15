@@ -31,6 +31,14 @@
 .cart-summary-aside {
   bottom: 0;
   position: absolute;
+  background-color: black;
+  color: #edd6cc;
+  width: 98.7%;
+  padding-left: 10px;
+}
+
+.white {
+  color: #edd6cc;
 }
 
 .cart-line-quantiy {

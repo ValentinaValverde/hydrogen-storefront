@@ -123,7 +123,7 @@ function CartCheckoutActions({checkoutUrl}) {
   return (
     <div>
       <a href={checkoutUrl} target="_self" className="cont-checkout">
-        <p>Continue to Checkout &rarr;</p>
+        <p className="white">Continue to Checkout &rarr;</p>
       </a>
       <br />
     </div>

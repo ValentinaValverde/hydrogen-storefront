@@ -143,16 +143,16 @@ function AccountMenu() {
         >
           &nbsp; Profile &nbsp;
         </NavLink>
-        &nbsp;|&nbsp;
+        {/* &nbsp;|&nbsp;
         <NavLink
           to="/account/addresses"
           style={isActiveStyle}
           className="accountLinks"
         >
           &nbsp; Addresses &nbsp;
-        </NavLink>
+        </NavLink> */}
       </div>
-      <div className="block">
+      <div className="block logout-block">
         <Logout />
       </div>
     </nav>

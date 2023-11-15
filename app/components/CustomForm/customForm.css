@@ -1,6 +1,6 @@
 .custom-form-display {
   background-color: #9eafb6;
-  height: 300px;
+  /* height: 300px; */
   padding: 20px;
   text-align: center;
   color: #edd6cc;
@@ -23,10 +23,10 @@
   background-color: #c4772a;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 15px;
   border-radius: 16px;
   font-family: 'DM Serif Display', serif;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .yellow-button:hover {

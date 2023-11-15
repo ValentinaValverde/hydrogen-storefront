@@ -11,8 +11,8 @@ aside {
 }
 
 @media (width <= 800px) {
-  .aside {
-    width: 75vw;
+  aside {
+    width: 100%;
   }
 }
 
@@ -62,16 +62,16 @@ aside header h2 {
   margin-top: 0;
 }
 
-aside main {
+/* aside main {
   margin: 1rem;
-}
+} */
 
-aside p {
+/* aside p {
   margin: 0 0 0.25rem;
   &:last-child {
     margin: 0;
   }
-}
+} */
 
 aside li {
   margin-bottom: 0.125rem;
@@ -140,6 +140,7 @@ aside li {
     padding: 10px;
     border-radius: 16px;
     border: solid black 1px;
+    margin-left: 20px;
   }
 
   .aside-search-button {
@@ -148,8 +149,15 @@ aside li {
     border: solid black 1px;
     background-color: black;
     color: #edd6cc;
+    display: none;
   }
 }
+
+/* @media (width <= 800px) {
+  .aside-search-bar {
+    margin-left: 20px;
+  }
+} */
 
 .predictive-search-form {
   position: sticky;
@@ -158,6 +166,7 @@ aside li {
 
 .predictive-search-result {
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .predictive-search-result h5 {
