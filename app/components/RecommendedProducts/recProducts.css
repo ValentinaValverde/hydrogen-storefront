@@ -58,3 +58,9 @@
     text-align: center;
   }
 }
+
+@media (width <= 800px) {
+  .recommended-product {
+    width: 40%;
+  }
+}

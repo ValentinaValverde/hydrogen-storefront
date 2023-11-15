@@ -67,7 +67,7 @@
 .collectionTop {
   padding: 10px;
   margin: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   text-align: center;
 
   h1 {
@@ -81,22 +81,25 @@
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: #d3a292;
-  margin: -30px;
-  margin-bottom: 0px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .product-item img {
   width: 300px;
   height: 300px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 @media (width <= 800px) {
-  .product-item img {
+  .product-item {
     width: 40%;
-    height: auto;
+  }
+
+  .product-item img {
+    height: 200px;
+    overflow: hidden;
   }
 }
 
@@ -106,7 +109,6 @@
   font-size: 18px;
   margin: 10px;
   margin-bottom: 20px;
-  line-height: 5px;
 }
 
 /*
@@ -155,9 +157,9 @@
   align-self: start;
   position: sticky;
   top: 6rem;
+  padding: 10px;
 
   .title {
-    font-family: 'Classical_Diary';
     font-size: 40px;
   }
 }
