@@ -144,6 +144,8 @@
 
 .orders {
   padding: 20px;
+  /* background-color: #9eafb6; */
+  min-height: 67vh;
 }
 
 /*

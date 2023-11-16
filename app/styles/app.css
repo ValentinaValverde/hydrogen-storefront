@@ -2,6 +2,8 @@ body {
   font-family: 'DM Serif Display', serif;
   background-color: #edd6cc;
   margin: 0;
+  height: 100vh;
+  min-height: 100vh;
 }
 
 .Link {
