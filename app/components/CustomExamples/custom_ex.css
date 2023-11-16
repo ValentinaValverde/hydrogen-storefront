@@ -10,7 +10,7 @@
   text-align: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
   img {
@@ -23,5 +23,12 @@
 
   p {
     font-size: 20px;
+  }
+
+  @media (width <= 800px) {
+    img {
+      width: 300px;
+      height: auto;
+    }
   }
 }
