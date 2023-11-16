@@ -4,13 +4,13 @@ Malova Designs is a small business centered around mental health awareness. Cust
 
 ## Table of Contents
 
-- [Challenges] (https://github.com/ValentinaValverde/hydrogen-storefront#challenges)
-- [Achievements] (https://github.com/ValentinaValverde/hydrogen-storefront#achievements)
-- [Template] (https://github.com/ValentinaValverde/hydrogen-storefront#hydrogen-template-skeleton)
-- [User_Stories] (https://github.com/ValentinaValverde/hydrogen-storefront#user-stories)
-- [Requirements] (https://github.com/ValentinaValverde/hydrogen-storefront#requirements)
-- [Stack] ()
-- [Wire Frames] ()
+- [Challenges](https://github.com/ValentinaValverde/hydrogen-storefront#challenges)
+- [Achievements](https://github.com/ValentinaValverde/hydrogen-storefront#achievements)
+- [Template](https://github.com/ValentinaValverde/hydrogen-storefront#hydrogen-template-skeleton)
+- [User Stories](https://github.com/ValentinaValverde/hydrogen-storefront#user-stories)
+- [Requirements](https://github.com/ValentinaValverde/hydrogen-storefront#requirements)
+- [Stack](https://github.com/ValentinaValverde/hydrogen-storefront#tech-stack)
+- [Wire Frames](https://github.com/ValentinaValverde/hydrogen-storefront#wireframes)
 
 ### Challenges
 
