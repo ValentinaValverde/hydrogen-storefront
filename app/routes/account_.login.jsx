@@ -12,7 +12,6 @@ export const meta = () => {
  * @param {LoaderArgs}
  */
 export async function loader({context}) {
-  // HERE maybe?
   if (await context.session.get('customerAccessToken')) {
     return redirect('/account');
   }
@@ -89,7 +88,6 @@ export default function Login() {
               required
               placeholder="Email address"
               aria-label="Email address"
-              // eslint-disable-next-line jsx-a11y/no-autofocus
               autoFocus
             />
             <label htmlFor="password">Password</label>

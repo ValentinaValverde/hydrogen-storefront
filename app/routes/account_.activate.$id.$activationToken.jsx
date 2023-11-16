@@ -12,7 +12,6 @@ export const meta = () => {
  * @param {LoaderArgs}
  */
 export async function loader({context}) {
-  // HERE maybe?
   if (await context.session.get('customerAccessToken')) {
     return redirect('/account');
   }
@@ -69,7 +68,6 @@ export async function action({request, context, params}) {
     if (!customerAccessToken) {
       throw new Error('Could not activate account.');
     }
-    // HERE maybe?
     session.set('customerAccessToken', customerAccessToken);
 
     return redirect('/account', {
@@ -106,7 +104,6 @@ export default function Activate() {
             aria-label="Password"
             minLength={8}
             required
-            // eslint-disable-next-line jsx-a11y/no-autofocus
             autoFocus
           />
           <label htmlFor="passwordConfirm">Re-enter password</label>

@@ -134,22 +134,3 @@ export default function CustomForm() {
     </>
   );
 }
-
-//name
-//email
-//phone number
-//product - drop-down menu - hoodie, crewneck, t-shirt, mug, glass can, elf
-//size (if applicable)
-//color - text
-//vinyl color
-
-// {productChoice == 'glassCan' ? (
-//   <>
-//     <option value="16">16oz</option>
-//     <option value="20">20oz</option>
-//   </>
-// ) : (
-//   <>
-//     <option>none</option>
-//   </>
-// )}

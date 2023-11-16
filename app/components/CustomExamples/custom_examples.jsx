@@ -1,8 +1,4 @@
-import {useState} from 'react';
-
 export default function CustomExamples() {
-  const Carousel = ({images}) => {};
-
   return (
     <>
       <h1 className="ex-title">

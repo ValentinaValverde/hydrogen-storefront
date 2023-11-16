@@ -4,10 +4,6 @@ import {YellowButton} from '../styledComponents/Button';
 export default function WantCustom() {
   return (
     <>
-      {/* <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
-      </style> */}
       <Link to="/custom_form" className="Link">
         <div className="custom-form-display">
           <h1>

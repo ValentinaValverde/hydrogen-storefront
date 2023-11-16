@@ -263,7 +263,6 @@ export function PredictiveSearchResults() {
     window.location.href = event.currentTarget.href;
   }
 
-  //HERE IS THE SEARCH ASIDE STUFF!!
   if (!totalResults) {
     return <NoPredictiveSearchResults searchTerm={searchTerm} />;
   }
@@ -277,7 +276,6 @@ export function PredictiveSearchResults() {
             key={type}
             searchTerm={searchTerm}
             type={type}
-            // className="aside-search-link"
           />
         ))}
       </div>
@@ -317,7 +315,6 @@ function NoPredictiveSearchResults({searchTerm}) {
 /**
  * @param {SearchResultTypeProps}
  */
-//HERE IS THE SEARCH ASIDE STUFF
 function PredictiveSearchResult({goToSearchResult, items, searchTerm, type}) {
   const isSuggestions = type === 'queries';
   const categoryUrl = `/search?q=${
@@ -350,7 +347,7 @@ function PredictiveSearchResult({goToSearchResult, items, searchTerm, type}) {
 /**
  * @param {SearchResultItemProps}
  */
-//HERE IS MORE SEARCH ASIDE STUFF
+
 function SearchResultItem({goToSearchResult, item}) {
   return (
     <li className="predictive-search-result-item" key={item.id}>

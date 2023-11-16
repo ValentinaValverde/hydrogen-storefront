@@ -15,9 +15,6 @@
  */
 
 export function Aside({children, heading, id = 'aside'}) {
-  // window.body.addEventListener('click');
-  // console.log('mouseddown');
-
   return (
     <div aria-modal className="overlay" id={id} role="dialog">
       <aside>

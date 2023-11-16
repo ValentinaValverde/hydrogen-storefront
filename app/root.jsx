@@ -13,10 +13,8 @@ import {
   isRouteErrorResponse,
 } from '@remix-run/react';
 import favicon from '../public/favicon.svg';
-import resetStyles from './styles/reset.css';
 import appStyles from './styles/app.css';
 import {Layout} from '~/components/Layout';
-// import tailwindCss from './styles/tailwind.css';
 import asideStyles from './components/Aside/aside.css';
 import headerStyles from './components/Header/header.css';
 import footerStyles from './components/Footer/footer.css';
@@ -54,7 +52,6 @@ export const shouldRevalidate = ({formMethod, currentUrl, nextUrl}) => {
 
 export function links() {
   return [
-    // {rel: 'stylesheet', href: tailwindCss},
     {rel: 'stylesheet', href: resetStyles},
     {rel: 'stylesheet', href: appStyles},
     {rel: 'stylesheet', href: asideStyles},
@@ -91,8 +88,9 @@ export function links() {
 export async function loader({context}) {
   const {storefront, session, cart} = context;
 
-  console.log({context});
   // HERE maybe?
+  console.log({context});
+
   const customerAccessToken = await session.get('customerAccessToken');
   const publicStoreDomain = context.env.PUBLIC_STORE_DOMAIN;
 

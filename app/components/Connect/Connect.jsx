@@ -25,12 +25,6 @@ export default function Connect() {
           </div>
         </div>
 
-        {/* <div className="followUs">
-          <Link to="https://www.instagram.com/malova_designs/" target="_blank">
-            <span className="followSpan">Follow Us on Instagram &nbsp;</span>
-          </Link>
-        </div> */}
-
         <Link
           to="https://www.instagram.com/malova_designs/"
           target="_blank"
