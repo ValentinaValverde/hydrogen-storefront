@@ -29,6 +29,13 @@ export default function CustomExamples() {
             <i>Teachers Gift</i>
           </p>
         </div>
+        <div>
+          <img src="pat1.JPG" />
+          <img src="pat2.JPG" />
+          <p>
+            <i>Carolina Code School</i>
+          </p>
+        </div>
       </div>
     </>
   );
