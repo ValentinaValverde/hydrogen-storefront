@@ -8,6 +8,7 @@ import Connect from '../components/Connect/Connect';
 import WantCustom from '../components/CustomForm/CustomFormDisplay';
 import HomeReccProducts from '../components/RecommendedProducts/HomeReccProducts';
 import '../fonts/ClassicalDiary-Regular.ttf';
+import CustomExamples from '../components/CustomExamples/custom_examples';
 
 // /**
 //  * @type {V2_MetaFunction}
@@ -37,6 +38,7 @@ export default function Homepage() {
       <Beginning />
       <WantCustom />
       {/* <HomeReccProducts /> */}
+      <CustomExamples />
       <AboutUs />
       <HomeCollections collections={mainCollections} />
       <OurMessage />

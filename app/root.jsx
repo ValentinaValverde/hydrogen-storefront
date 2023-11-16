@@ -30,6 +30,7 @@ import beginningStyles from './components/Beginning/beginning.css';
 import recProdStyles from './components/RecommendedProducts/recProducts.css';
 import customFormStyles from './components/CustomForm/customForm.css';
 import accountStyles from './styles/account_styles.css';
+import exStyles from './components/CustomExamples/custom_ex.css';
 
 import routeStyles from './styles/routes.css';
 
@@ -70,6 +71,7 @@ export function links() {
     {rel: 'stylesheet', href: recProdStyles},
     {rel: 'stylesheet', href: customFormStyles},
     {rel: 'stylesheet', href: accountStyles},
+    {rel: 'stylesheet', href: exStyles},
 
     {
       rel: 'preconnect',

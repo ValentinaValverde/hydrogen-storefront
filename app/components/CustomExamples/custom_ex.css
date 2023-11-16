@@ -1,0 +1,27 @@
+.ex-title {
+  text-align: center;
+  margin-top: 50px;
+  color: #a8512f;
+}
+
+.exmaple-container {
+  margin: 50px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    width: 450px;
+    height: auto;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: -2px 2px 2px black;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
