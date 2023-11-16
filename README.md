@@ -9,7 +9,7 @@ Malova Designs is a small business centered around mental health awareness. Cust
 - [Template](https://github.com/ValentinaValverde/hydrogen-storefront#hydrogen-template-skeleton)
 - [User Stories](https://github.com/ValentinaValverde/hydrogen-storefront#user-stories)
 - [Requirements](https://github.com/ValentinaValverde/hydrogen-storefront#requirements)
-- [Stack](https://github.com/ValentinaValverde/hydrogen-storefront#tech-stack)
+- [Tech Stack](https://github.com/ValentinaValverde/hydrogen-storefront#tech-stack)
 - [Wire Frames](https://github.com/ValentinaValverde/hydrogen-storefront#wireframes)
 
 ### Challenges
@@ -50,20 +50,42 @@ Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dov
 
 ## User Stories
 
-1. As a store manager, I want to add and remove products so that I can control what the customers see.
-2. As a store manager, I want to tag products to specific categories so that the product will appear in the correct collection.
-3. As a store manager, I want to see orders so that I can fulfill them.
-4. As a customer, I want to favorite products to keep track of products I like.
-5. As a customer, I want to add products to my shopping cart so that I can buy them.
-6. As a customer, I want to log in so that I can access my favorites and shopping cart.
-7. As a customer, I want to be able to place custom orders for special occasions.
-8. As a customer, I want to browse products from specific collections and see products only from that collection
-   - (example: I want to browse mugs in the mug collection.)
-9. As a customer, I want to
-10. As a customer, I want to
+1. As a customer, I want to see the website on my phone in case I don't have a computer
+2. As a customer, I want to browse collections so I can choose what type of products I want to browse
+3. As a customer, I want to see product information so I know what I'm buying
+4. As a customer, I want to search for products and collections so I can find what I'm looking for
+5. As a customer, I want to add products to my cart so I can buy them later
+6. As a customer, I want to login and logout so my cart is saved
+7. As a customer, I want to be able to order custom products on the site
+8. As a customer, I want to update my profile so the admin sees my correct information
+9. As a customer, I want to connect with the business on social media (links)
+10. As a customer, I want to favorite products to keep track of products I like
 
 ## Requirements
 
+- Build Responsive UI that works across various screen sizes
+- CRUD functionality
+- Implement at least one 3rd-party API
+- Deploy the application
+- Minimum viable product must be completed by the end of Week 2
+
 ## Tech Stack
 
+### Frontend
+
+- Shopify's Hydrogen
+- Remix
+- Graphiql
+- Web3Forms
+  - (used so that user information is sent directly to my email when they submit the custom form)
+
+### Langauges
+
+- HTML
+- CSS
+- Javascript
+- GraphQL
+
 ## WireFrames
+
+![Test Image](https://static.wikia.nocookie.net/konosuba/images/6/6b/Potato_Anime.jpg/revision/latest/thumbnail/width/360/height/360?cb=20230515180011)
