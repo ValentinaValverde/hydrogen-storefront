@@ -84,3 +84,7 @@
 .cart-button:hover {
   cursor: pointer;
 }
+
+.space {
+  margin-left: 10px;
+}

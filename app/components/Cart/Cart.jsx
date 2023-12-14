@@ -252,14 +252,14 @@ export function CartEmpty({hidden = false, layout = 'aside'}) {
   return (
     <div hidden={hidden}>
       <br />
-      <p>
+      <p className="space">
         Looks like you haven&rsquo;t added anything yet, let&rsquo;s get you
         started!
       </p>
       <br />
       <Link
         to="/collections"
-        className="cont-shopping-aside-link"
+        className="cont-shopping-aside-link space"
         onClick={() => {
           if (layout === 'aside') {
             window.location.href = '/collections';
