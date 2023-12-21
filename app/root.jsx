@@ -86,8 +86,6 @@ export function links() {
  */
 export async function loader({context}) {
   const {storefront, session, cart} = context;
-
-  // HERE maybe?
   console.log({context});
 
   const customerAccessToken = await session.get('customerAccessToken');
@@ -135,7 +133,6 @@ export default function App() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
 
-  //THIS IS WHERE EVERYTHING IS!!
   return (
     <html lang="en">
       <head>

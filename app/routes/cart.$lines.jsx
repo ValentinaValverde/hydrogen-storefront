@@ -54,6 +54,7 @@ export async function loader({request, context, params}) {
     });
   }
 
+  //LOOK HERE!!!
   // Update cart id in cookie
   const headers = cart.setCartId(cartResult.id);
 

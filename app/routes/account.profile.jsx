@@ -94,6 +94,7 @@ export async function action({request, context}) {
       );
     }
 
+    //HERE!!! is the cart stored with the profile info?
     return json(
       {error: null, customer: updated.customerUpdate?.customer},
       {

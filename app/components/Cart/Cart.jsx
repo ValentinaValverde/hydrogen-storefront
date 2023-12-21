@@ -1,6 +1,8 @@
 import {CartForm, Image, Money} from '@shopify/hydrogen';
 import {Link} from '@remix-run/react';
 import {useVariantUrl} from '~/utils';
+// ADDED THIS HERE, refered to the package code but it's in tsx
+import {CartLineUpdateInput} from '@shopify/hydrogen/storefront-api-types';
 
 /**
  * @param {CartMainProps}

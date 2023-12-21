@@ -10,6 +10,7 @@ import {
 import {
   createRequestHandler,
   getStorefrontHeaders,
+  // LOOK HERE!!!
   createCookieSessionStorage,
 } from '@shopify/remix-oxygen';
 
@@ -115,6 +116,7 @@ export class HydrogenSession {
    * @param {string[]} secrets
    */
   static async init(request, secrets) {
+    //LOOK HERE!!!
     const storage = createCookieSessionStorage({
       cookie: {
         name: 'session',
